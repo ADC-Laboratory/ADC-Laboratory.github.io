@@ -1,1 +1,1 @@
-# This is the website of iSAIL lab.
+# This is the website of SDC-Lab.
