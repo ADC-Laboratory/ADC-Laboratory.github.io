@@ -3338,7 +3338,7 @@ input, select, textarea {
 		/* Banner */
 
 			#banner {
-				height: 20em;
+				height: 0em;
 			}
 
 				#banner header {
