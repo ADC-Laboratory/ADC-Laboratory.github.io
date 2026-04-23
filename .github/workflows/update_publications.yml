@@ -1,0 +1,47 @@
+name: Update Publications from Google Scholar
+
+# 运行时机：
+# 1. 每周一 UTC 02:00（北京时间周一 10:00）自动跑
+# 2. 手动在 Actions 页面点击 "Run workflow" 立即跑
+on:
+  schedule:
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+# 允许 action 向仓库写入 commit
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest   # GitHub 海外服务器 → 可直连 Google Scholar
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r tool/requirements.txt
+
+      - name: Fetch from Google Scholar & update HTML
+        run: python tool/fetch_scholar.py
+
+      - name: Commit & push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Scholar Updater Bot"
+          git add publications.html tool/cache/ tool/backups/ || true
+          if git diff --staged --quiet; then
+            echo "没有变化，跳过 commit"
+          else
+            git commit -m "chore: auto-update publications from Google Scholar ($(date +'%Y-%m-%d'))"
+            git push
+          fi
