@@ -858,6 +858,19 @@
     "arxiv_id": null
   },
   {
+    "title": "On the Optimization Landscape of Dynamic Output Feedback: A Case Study for Linear Quadratic Regulator",
+    "authors": "J. Duan, W. Cao, Y. Zheng, L. Zhao",
+    "venue": "2022 IEEE 61st Conference on Decision and Control (CDC)",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/cdc51059.2022.9992503",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W4315488852",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1109/cdc51059.2022.9992503",
+    "arxiv_id": null
+  },
+  {
     "title": "Policy-Iteration-Based Finite-Horizon Approximate Dynamic Programming for Continuous-Time Nonlinear Optimal Control",
     "authors": "Z. Lin, J. Duan, S. E. Li, H. Ma, J. Li, J. Chen, B. Cheng, J. Ma",
     "venue": "IEEE Transactions on Neural Networks and Learning Systems",
@@ -960,6 +973,45 @@
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2208.08744",
     "arxiv_id": "2208.08744"
+  },
+  {
+    "title": "Self-Learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
+    "authors": "Y. Ren, J. Jiang, G. Zhan, S. E. Li, C. Chen, K. Li, J. Duan",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/tits.2022.3196167",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W3213557649",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1109/tits.2022.3196167",
+    "arxiv_id": null
+  },
+  {
+    "title": "Point Instance Segmentation Considering Feature Enhancement for Lane Detection",
+    "authors": "B. Zhao, X. Li, H. Li, C. Chen, Y. Ren, J. Duan",
+    "venue": "2022 41st Chinese Control Conference (CCC)",
+    "year": 2022,
+    "url": "https://doi.org/10.23919/ccc55666.2022.9902759",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W4312382033",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.23919/ccc55666.2022.9902759",
+    "arxiv_id": null
+  },
+  {
+    "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
+    "authors": "J. Duan, J. Li, S. E. Li, L. Zhao",
+    "venue": "2022 American Control Conference (ACC)",
+    "year": 2022,
+    "url": "https://doi.org/10.23919/acc53348.2022.9867384",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W4294692180",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.23919/acc53348.2022.9867384",
+    "arxiv_id": null
   },
   {
     "title": "Model-Based Chance-Constrained Reinforcement Learning via Separated Proportional-Integral Lagrangian",
@@ -1467,6 +1519,19 @@
     "is_preprint": true,
     "doi": null,
     "arxiv_id": "1911.11397"
+  },
+  {
+    "title": "Promoting connected and automated vehicles with cooperative sensing and control technology",
+    "authors": "S. E. Li, X. Long, C. Liu, J. Duan, Y. Bian",
+    "venue": "Institution of Engineering and Technology eBooks",
+    "year": 2019,
+    "url": "https://doi.org/10.1049/pbtr025e_ch23",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W3005406119",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1049/pbtr025e_ch23",
+    "arxiv_id": null
   },
   {
     "title": "Generalized Policy Iteration for Optimal Control in Continuous Time.",
