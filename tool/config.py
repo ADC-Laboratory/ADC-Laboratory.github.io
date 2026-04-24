@@ -124,13 +124,26 @@ BOLD_AUTHORS = [
 ]
 
 # ============ 论文分类关键词 ============
+# 注意：这只是最后的兜底。分类优先级是：
+#   1. is_preprint → arxiv
+#   2. OpenAlex work_type / source_type
+#   3. DOI/URL 启发式（IEEE、ACM、AAAI、PMLR、Elsevier 等）
+#   4. 下面这个 venue 关键词匹配（只在前面都没命中时生效）
 CATEGORY_RULES = [
     ("arxiv",         ["arxiv", "arxiv preprint"]),
-    ("book_chapter",  ["chapter", "book chapter", "in book:"]),
+    ("book_chapter",  ["chapter", "book chapter", "in book:", "elsevier ebook", "ebook"]),
     ("conference",    [
+        # 通用词
         "conference", "proceedings", "workshop", "symposium",
-        "iccv", "cvpr", "icml", "neurips", "nips", "aaai", "ijcai", "iclr",
-        "acc", "cdc", "icra", "iros", "iv symposium", "itsc", "icus",
+        # 机器学习/AI
+        "iccv", "cvpr", "eccv", "icml", "neurips", "nips", "aaai",
+        "ijcai", "iclr", "aistats", "colt", "corl", "uai",
+        # 控制/机器人
+        "acc", "cdc", "icra", "iros", "ecc", "ifac",
+        # 智能交通/车辆
+        "iv symposium", "itsc", "icus", "cvci", "iavvc",
+        # NLP/CV 其他
+        "acl", "emnlp", "naacl", "wacv", "bmvc",
     ]),
     ("journal",       ["journal", "transactions", "letters", "magazine",
                         "ieee trans", "nature", "science"]),

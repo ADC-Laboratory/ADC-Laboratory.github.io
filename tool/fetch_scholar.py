@@ -53,6 +53,9 @@ class Pub:
     is_preprint: bool = False
     doi: Optional[str] = None
     arxiv_id: Optional[str] = None  # 如果能找到对应的 arXiv ID
+    # 来自 OpenAlex 的结构化类型，用于精确分类
+    work_type: str = ""   # journal-article / proceedings-article / book-chapter / book / preprint / ...
+    source_type: str = "" # journal / conference / book / book series / ebook platform / repository / ...
 
     def title_key(self) -> str:
         """规范化标题作为去重 key。
@@ -359,10 +362,11 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
             primary_url, download_url, doi, arxiv_id = _best_url(w)
             oa_id = w["id"].rsplit("/", 1)[-1]
 
-            # 判断是不是预印本
+            # 判断是不是预印本（同时保存结构化类型用于分类）
             work_type = (w.get("type") or "").lower()
             src = (w.get("primary_location") or {}).get("source") or {}
             src_name = (src.get("display_name") or "").lower()
+            src_type = (src.get("type") or "").lower()
             is_preprint = (
                 work_type in {"preprint", "posted-content"}
                 or "arxiv" in src_name
@@ -380,6 +384,8 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
                 is_preprint=is_preprint,
                 doi=doi,
                 arxiv_id=arxiv_id,
+                work_type=work_type,
+                source_type=src_type,
             )
             pubs.append(pub)
         except Exception as e:
@@ -469,13 +475,110 @@ def _suggest_suspicious(pubs: list[Pub]) -> None:
 #  分类 + 作者加粗
 # =============================================================================
 
+def _category_from_doi(doi: str) -> Optional[str]:
+    """从 DOI/URL pattern 推断论文类型。
+    
+    策略：各大出版商的 DOI 有固定 pattern，用正则识别。
+    返回 "conference"/"journal"/None（无法判断时）。
+    """
+    if not doi:
+        return None
+    d = doi.lower()
+
+    # ---- IEEE Xplore (10.1109) ----
+    # 会议: 10.1109/{abbr}{conf_num}.{year}...   e.g. 10.1109/cdc57313.2025.xxx
+    # 期刊: 10.1109/{abbr}.{year}...             e.g. 10.1109/tnnls.2024.xxx
+    m = re.search(r"10\.1109/([a-z]+)(\d*)\.", d)
+    if m:
+        return "conference" if m.group(2) else "journal"
+
+    # ---- ACM (10.1145) ----
+    # ACM 会议论文集的 DOI 通常是 10.1145/{7-digit-conf-id}.{paper-id}
+    # 期刊的 DOI 通常包含期刊短名，如 10.1145/3528223 (TOG)，结构单调
+    # 最可靠信号：ACM 会议 DOI 后接 doi.org 的论文常来自 dl.acm.org/doi/{doi}
+    # 这里简单用：DOI 路径段数量 ≥ 2 且第一段是纯数字的 → 会议
+    m = re.search(r"10\.1145/(\d+)\.(\d+)", d)
+    if m:
+        return "conference"
+
+    # ---- AAAI (10.1609/aaai) ----
+    # AAAI 的 DOI 形如 10.1609/aaai.v37i5.25865 或 10.1609/aimag.v44i3.xxxx
+    # aaai.* → 会议；aimag.* → 期刊 (AI Magazine)
+    if re.search(r"10\.1609/aaai\.", d):
+        return "conference"
+    if re.search(r"10\.1609/aimag\.", d):
+        return "journal"
+
+    # ---- JMLR / PMLR 系列（ICML、AISTATS、CoLT、CoRL 等走 PMLR）----
+    # PMLR 没有 DOI，用 URL 判断
+    # proceedings.mlr.press / openreview.net → 基本都是会议
+    if "proceedings.mlr.press" in d or "openreview.net" in d:
+        return "conference"
+
+    # ---- OpenReview (ICLR / NeurIPS / 部分 workshop) ----
+    # openreview.net/forum?id=xxx → 通常会议（NeurIPS、ICLR 的正式渠道）
+    # 上面的 "openreview.net" 规则已覆盖
+
+    # ---- Springer LNCS 会议集 (10.1007/978-...) ----
+    # 注意：这也可能是 book chapter，不能强行归类
+    # 让它回落到 work_type / venue 判断
+
+    # ---- Elsevier journals (10.1016/j.xxx) ----
+    # j.xxx 基本都是期刊；j.ifacol.xxx 是 IFAC 会议(IFAC-PapersOnLine 算 proceedings)
+    m = re.search(r"10\.1016/j\.([a-z]+)", d)
+    if m:
+        short = m.group(1)
+        if short in {"ifacol"}:  # IFAC-PapersOnLine (会议)
+            return "conference"
+        return "journal"  # 其他 Elsevier 期刊
+
+    # ---- Wiley journals (10.1002 / 10.1049) ----
+    # 多为期刊，没有明显会议 pattern；不强行判断让回落
+
+    return None
+
+
 def categorize(pub: Pub) -> str:
-    """根据 venue 关键词给论文分类"""
+    """给论文分类。优先用 OpenAlex 返回的结构化类型（work_type / source_type），
+    然后用 DOI 启发式，最后用 venue 文本关键词。
+    """
+    # 1. Preprint 永远归 arxiv
+    if pub.is_preprint:
+        return "arxiv"
+
+    # 2. OpenAlex 的 work type（最权威）
+    wt = (pub.work_type or "").lower()
+    if wt in ("book-chapter", "book", "reference-entry", "monograph"):
+        return "book_chapter"
+    if wt == "proceedings-article":
+        return "conference"
+    if wt == "journal-article":
+        return "journal"
+
+    # 3. source type 辅助判断
+    st = (pub.source_type or "").lower()
+    if st in ("book", "book series", "ebook platform"):
+        return "book_chapter"
+    if st == "conference":
+        return "conference"
+    if st == "journal":
+        return "journal"
+    if st == "repository":
+        return "arxiv"
+
+    # 4. DOI / URL 启发式（针对 OpenAlex 没标 type 的论文特别有效）
+    for candidate in [pub.doi or "", pub.url or "", pub.pub_url or ""]:
+        doi_cat = _category_from_doi(candidate)
+        if doi_cat:
+            return doi_cat
+
+    # 5. 回落到 venue 关键词匹配
     v = (pub.venue or "").lower()
     for cat, keywords in config.CATEGORY_RULES:
         for kw in keywords:
             if kw.lower() in v:
                 return cat
+
     return config.DEFAULT_CATEGORY
 
 
