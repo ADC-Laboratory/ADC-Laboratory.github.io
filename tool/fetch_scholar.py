@@ -61,8 +61,14 @@ class Pub:
 
 
 # =============================================================================
-#  Scholar 抓取
+#  OpenAlex 抓取（不会被封 IP，GitHub Actions 可直连）
 # =============================================================================
+
+import urllib.parse
+import urllib.request
+
+OPENALEX_BASE = "https://api.openalex.org"
+
 
 def setup_proxy():
     """根据 config 设置代理。GitHub Actions 上无需代理。"""
@@ -73,54 +79,189 @@ def setup_proxy():
     print(f"[proxy] 已启用代理: {config.PROXY_HTTP}")
 
 
+def _oa_get(path: str, params: dict) -> dict:
+    """带 mailto 的 OpenAlex GET（进礼貌池速度更快）"""
+    if getattr(config, "OPENALEX_EMAIL", ""):
+        params = dict(params)
+        params["mailto"] = config.OPENALEX_EMAIL
+    url = f"{OPENALEX_BASE}{path}?{urllib.parse.urlencode(params)}"
+    req = urllib.request.Request(
+        url,
+        headers={"User-Agent": "ADC-Lab-Publication-Updater (duanjl15@163.com)"},
+    )
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def _resolve_author_id() -> str:
+    """解析配置的作者身份，返回 OpenAlex 作者 ID（形如 A5012345678）"""
+    # 优先级 1：显式配置的 OpenAlex ID
+    oa_id = getattr(config, "OPENALEX_AUTHOR_ID", "").strip()
+    if oa_id:
+        print(f"[openalex] 使用配置的作者 ID: {oa_id}")
+        return oa_id
+
+    # 优先级 2：ORCID → OpenAlex
+    orcid = getattr(config, "AUTHOR_ORCID", "").strip()
+    if orcid:
+        print(f"[openalex] 用 ORCID {orcid} 查作者 ...")
+        r = _oa_get(f"/authors/orcid:{orcid}", {})
+        aid = r["id"].rsplit("/", 1)[-1]
+        print(f"[openalex] 找到 {aid} ({r.get('display_name')})")
+        return aid
+
+    # 优先级 3：按名字搜索，挑最高匹配的
+    name = getattr(config, "AUTHOR_NAME", "Jingliang Duan")
+    print(f"[openalex] 按名字搜索作者: {name}")
+    r = _oa_get("/authors", {"search": name, "per_page": 10})
+    results = r.get("results", [])
+    if not results:
+        raise RuntimeError(f"OpenAlex 找不到名字为 '{name}' 的作者")
+
+    # 用机构关键词辅助挑选正确的 Dr. Duan（北京科技大学 / 清华 / Tsinghua / USTB）
+    hints = [s.lower() for s in getattr(
+        config, "AUTHOR_INSTITUTION_HINTS",
+        ["University of Science and Technology Beijing", "USTB", "Tsinghua"],
+    )]
+
+    def score(a):
+        s = 0
+        affs = a.get("last_known_institutions") or []
+        for inst in affs:
+            nm = (inst.get("display_name") or "").lower()
+            for h in hints:
+                if h in nm:
+                    s += 100
+        s += min(a.get("works_count", 0), 50)  # 作品多的加分，但封顶
+        return s
+
+    results.sort(key=score, reverse=True)
+    best = results[0]
+    aid = best["id"].rsplit("/", 1)[-1]
+    affs = best.get("last_known_institutions") or []
+    aff_name = affs[0].get("display_name") if affs else "(无机构)"
+    print(f"[openalex] 挑选: {aid} - {best.get('display_name')} @ {aff_name}")
+    print(f"[openalex]   works_count={best.get('works_count')}, 备选 {len(results)-1} 个已跳过")
+    return aid
+
+
+def _format_authors(authorships: list) -> str:
+    """把 OpenAlex 的 authorships 数组格式化成 'J Duan, Y Ren, ...' 形式"""
+    names = []
+    for a in authorships:
+        author = a.get("author") or {}
+        name = author.get("display_name", "").strip()
+        if not name:
+            continue
+        # 转成 "J Duan" 式缩写（除了我们关心的加粗名字）
+        parts = name.split()
+        if len(parts) >= 2:
+            initials = " ".join(p[0] + "." for p in parts[:-1] if p)
+            short = f"{initials} {parts[-1]}"
+        else:
+            short = name
+        names.append(short)
+    return ", ".join(names)
+
+
+def _extract_venue(work: dict) -> str:
+    """从 OpenAlex work 对象提取 venue 字段"""
+    # arXiv 和 preprint 特殊处理
+    loc = work.get("primary_location") or {}
+    src = loc.get("source") or {}
+    src_type = (src.get("type") or "").lower()
+    src_name = (src.get("display_name") or "").strip()
+
+    if work.get("type") == "preprint" or "arxiv" in src_name.lower():
+        arxiv_id = ""
+        for lid in (work.get("ids") or {}).values():
+            if isinstance(lid, str) and "arxiv" in lid.lower():
+                arxiv_id = lid.rsplit("/", 1)[-1]
+                break
+        if arxiv_id:
+            return f"arXiv preprint arXiv:{arxiv_id}"
+        return "arXiv preprint"
+
+    return src_name
+
+
+def _best_url(work: dict) -> tuple[str, Optional[str]]:
+    """返回 (主链接, 下载链接)"""
+    # DOI 优先作为主链接
+    doi = work.get("doi")
+    primary = doi or work.get("id", "")
+
+    # 找 open access PDF 作为下载链接
+    oa = work.get("open_access") or {}
+    pdf = oa.get("oa_url")
+    if not pdf:
+        # 备选：任一 location 的 pdf
+        for loc in work.get("locations") or []:
+            if loc.get("pdf_url"):
+                pdf = loc["pdf_url"]
+                break
+
+    return primary, pdf
+
+
 def fetch_from_scholar(max_results: int) -> list[Pub]:
-    """用 scholarly 库抓取作者的所有论文"""
-    from scholarly import scholarly, ProxyGenerator
+    """从 OpenAlex 抓取作者全部论文。
+    函数名保留 fetch_from_scholar 以避免影响其他模块。
+    """
+    author_id = _resolve_author_id()
 
-    # 如果用了代理，也告诉 scholarly 使用
-    if config.USE_PROXY:
-        pg = ProxyGenerator()
-        pg.SingleProxy(http=config.PROXY_HTTP, https=config.PROXY_HTTPS)
-        scholarly.use_proxy(pg)
+    print(f"[openalex] 正在抓取 {author_id} 的作品列表 ...")
+    all_works = []
+    page = 1
+    per_page = 200  # OpenAlex 上限
+    while len(all_works) < max_results:
+        r = _oa_get("/works", {
+            "filter": f"author.id:{author_id}",
+            "per_page": per_page,
+            "page": page,
+            "sort": "publication_year:desc",
+        })
+        batch = r.get("results", [])
+        if not batch:
+            break
+        all_works.extend(batch)
+        total = r.get("meta", {}).get("count", 0)
+        print(f"[openalex]   已拉取 {len(all_works)}/{total}")
+        if len(batch) < per_page:
+            break
+        page += 1
 
-    print(f"[scholar] 正在查找作者 {config.SCHOLAR_USER_ID} ...")
-    author = scholarly.search_author_id(config.SCHOLAR_USER_ID)
-    author = scholarly.fill(author, sections=["publications"])
-
-    pubs_raw = author.get("publications", [])
-    print(f"[scholar] 作者共有 {len(pubs_raw)} 篇论文，将抓取前 {min(max_results, len(pubs_raw))} 篇详情")
+    all_works = all_works[:max_results]
+    print(f"[openalex] 共 {len(all_works)} 篇论文，开始格式化 ...")
 
     pubs: list[Pub] = []
-    for i, p in enumerate(pubs_raw[:max_results]):
+    for i, w in enumerate(all_works):
         try:
-            # 填充详细信息（需要额外请求，会有速率限制）
-            filled = scholarly.fill(p)
-            bib = filled.get("bib", {})
+            title = (w.get("title") or "").strip()
+            if not title:
+                continue
 
-            # 解析年份
-            year = None
-            raw_year = bib.get("pub_year") or bib.get("year")
-            if raw_year:
-                try:
-                    year = int(str(raw_year)[:4])
-                except ValueError:
-                    pass
+            year = w.get("publication_year")
+            authorships = w.get("authorships") or []
+            authors_str = _format_authors(authorships)
+            venue = _extract_venue(w)
+            primary_url, download_url = _best_url(w)
+            oa_id = w["id"].rsplit("/", 1)[-1]
 
             pub = Pub(
-                title=bib.get("title", "").strip(),
-                authors=bib.get("author", "").strip(),
-                venue=(bib.get("journal") or bib.get("venue")
-                       or bib.get("conference") or bib.get("booktitle") or "").strip(),
+                title=title,
+                authors=authors_str,
+                venue=venue,
                 year=year,
-                url=filled.get("pub_url", "") or filled.get("eprint_url", ""),
-                pub_url=filled.get("pub_url") or filled.get("eprint_url"),
-                scholar_id=filled.get("author_pub_id", ""),
+                url=primary_url,
+                pub_url=download_url,
+                scholar_id=oa_id,  # 复用这个字段保存 OpenAlex ID
             )
             pubs.append(pub)
-            print(f"  [{i+1}/{max_results}] {pub.year or '????'}: {pub.title[:70]}")
-            time.sleep(config.REQUEST_DELAY)
+            if i < 5 or i % 20 == 0:
+                print(f"  [{i+1}/{len(all_works)}] {year or '????'}: {title[:70]}")
         except Exception as e:
-            print(f"  [{i+1}] 抓取失败: {e}")
+            print(f"  [{i+1}] 处理失败: {e}")
             continue
 
     return pubs
@@ -224,19 +365,29 @@ def extract_existing_keys(soup: BeautifulSoup) -> set[str]:
 
 
 def find_section_ol(soup: BeautifulSoup, section_name: str):
-    """找到指定 h2 下方的 <ol> 元素"""
+    """找到指定 h2 下方的 <ol> 元素。
+    如果只有 <ul> 没有嵌套 <ol>（如 ArXiv Papers 区块），就在 <ul> 里自动建一个空 <ol>。
+    """
     for header in soup.find_all("header"):
         h2 = header.find("h2")
         if h2 and h2.get_text(strip=True) == section_name:
-            # 往下找第一个 <ol>
+            # 往下找第一个 <ul> 或 <ol>
             node = header
             for _ in range(10):
                 node = node.find_next_sibling()
                 if node is None:
                     break
-                ol = node.find("ol") if hasattr(node, "find") else None
+                if not hasattr(node, "find"):
+                    continue
+                # 优先找直接的 <ol>
+                ol = node.find("ol") if node.name != "ol" else node
                 if ol:
                     return ol
+                # 找到了 <ul> 但里面没 <ol>：就地建一个
+                if node.name == "ul":
+                    new_ol = soup.new_tag("ol")
+                    node.append(new_ol)
+                    return new_ol
     return None
 
 

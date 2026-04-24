@@ -1,4 +1,4 @@
-name: Update Publications from Google Scholar
+name: Update Publications from OpenAlex
 
 # 运行时机：
 # 1. 每周一 UTC 02:00（北京时间周一 10:00）自动跑
@@ -14,7 +14,8 @@ permissions:
 
 jobs:
   update:
-    runs-on: ubuntu-latest   # GitHub 海外服务器 → 可直连 Google Scholar
+    runs-on: ubuntu-latest
+    timeout-minutes: 5   # OpenAlex 只需几秒，10 分钟远远够
 
     steps:
       - name: Checkout repository
@@ -31,17 +32,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r tool/requirements.txt
 
-      - name: Fetch from Google Scholar & update HTML
+      - name: Fetch from OpenAlex & update HTML
         run: python tool/fetch_scholar.py
 
       - name: Commit & push changes
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "Scholar Updater Bot"
+          git config --local user.name "Publication Updater Bot"
           git add publications.html tool/cache/ tool/backups/ || true
           if git diff --staged --quiet; then
             echo "没有变化，跳过 commit"
           else
-            git commit -m "chore: auto-update publications from Google Scholar ($(date +'%Y-%m-%d'))"
+            git commit -m "chore: auto-update publications from OpenAlex ($(date +'%Y-%m-%d'))"
             git push
           fi

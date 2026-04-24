@@ -1,45 +1,54 @@
-# Google Scholar 自动更新 - 安装指南
+# 修复：从 Google Scholar 切到 OpenAlex
 
-这组文件为 ADC Lab 网站添加了 **自动从 Google Scholar 更新出版物** 的能力。
+## 为什么要切？
 
-## 📦 文件清单
-
-需要把这些文件放到你仓库的对应位置：
+之前跑 GitHub Actions 失败，日志显示：
 
 ```
-ADC-Laboratory.github.io/
-├── tool/
-│   ├── fetch_scholar.py       ← 主脚本
-│   ├── config.py              ← 配置
-│   ├── requirements.txt       ← Python 依赖
-│   └── README.md              ← 详细说明
-└── .github/
-    └── workflows/
-        └── update_publications.yml   ← GitHub Actions 自动化
+scholarly._proxy_generator.MaxTriesExceededException: Cannot Fetch from Google Scholar.
 ```
 
-## 🎯 快速上手（3 步）
+这是 Google Scholar **主动封了 GitHub Actions 的数据中心 IP**。这是一个已知且无法绕过的问题——scholarly 官方文档也承认需要买付费代理服务才能稳定工作。
 
-### 1️⃣ 复制文件到仓库
+**OpenAlex** 是学术界的开放替代品：
+- 免费、稳定、不封 IP
+- 覆盖 2.86 亿篇学术作品
+- GitHub Actions 可以直连
 
-把上面清单里的文件放到对应位置，commit & push 到 GitHub。
+## 要替换的文件
 
-### 2️⃣ 打开 GitHub Actions 写权限
+把这 4 个文件覆盖到你仓库的对应位置，然后提交：
 
-仓库页面 → **Settings** → **Actions** → **General** → **Workflow permissions** → 选 **Read and write permissions** → Save。
+1. `tool/fetch_scholar.py` —— 抓取模块改成 OpenAlex
+2. `tool/config.py` —— 配置支持 OpenAlex
+3. `tool/requirements.txt` —— 去掉了 scholarly 依赖
+4. `.github/workflows/update_publications.yml` —— 轻微更新
 
-### 3️⃣ 手动触发一次测试
+其他文件（`test_offline.py`, `README.md` 等）都是可选更新。
 
-仓库页面 → **Actions** → 左边 `Update Publications from Google Scholar` → **Run workflow**。
+## 提交步骤
 
-等几分钟，如果成功，仓库里会出现一个新 commit，`publications.html` 已经被更新。
+```bash
+# 复制文件后
+git add tool/ .github/
+git commit -m "fix: switch from Google Scholar to OpenAlex (no more IP blocking)"
+git push
+```
 
-之后每周一 UTC 02:00（北京时间周一 10:00）自动运行。
+## 重新运行 Action
 
----
+GitHub 仓库 → **Actions** → **Update Publications from OpenAlex** → **Run workflow**
 
-## 💡 为什么这个方案特别适合你
+这次应该几分钟就能跑完（OpenAlex 响应很快）。
 
-你在大陆，访问 Google Scholar 有限制。**GitHub Actions 的 runner 跑在海外服务器上**，直接就能访问，完全绕开了你本地的网络问题。脚本跑完，还会自动把更新后的 `publications.html` commit 回仓库，**你的网站等于自动更新了**——什么都不用管。
+## 首次跑成功后的优化
 
-更详细的文档、本地运行方式、配置选项都在 `tool/README.md` 里。
+第一次跑完，**查看日志**，会看到类似：
+
+```
+[openalex] 挑选: A5012345678 - Jingliang Duan @ University of Science and Technology Beijing
+```
+
+把那个 `A5012345678` 填回 `tool/config.py` 的 `OPENALEX_AUTHOR_ID`，commit 推上去。
+
+这样以后就不会再每次搜一遍，而是直接用固定的 ID，100% 不会挑错人。
