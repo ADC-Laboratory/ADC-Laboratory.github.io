@@ -10,7 +10,9 @@
     "oa_id": "W7154219613",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2604.10635",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "On the Optimization Landscape of Observer-based Dynamic Linear Quadratic Control",
@@ -23,7 +25,9 @@
     "oa_id": "W7154539430",
     "is_preprint": true,
     "doi": null,
-    "arxiv_id": "2604.10635"
+    "arxiv_id": "2604.10635",
+    "work_type": "article",
+    "source_type": "repository"
   },
   {
     "title": "A smooth reinforcement learning method for trajectory tracking and collision avoidance of wheeled vehicle",
@@ -36,7 +40,9 @@
     "oa_id": "W7138947887",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.eswa.2026.132112",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Transformer-based explicit model predictive control with variable prediction horizon",
@@ -49,7 +55,9 @@
     "oa_id": "W7132823576",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.engappai.2026.114345",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Learn a Robust Policy for Real-World Driving With Adversarial Reinforcement Learning",
@@ -62,7 +70,9 @@
     "oa_id": "W7131276747",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tiv.2026.3667572",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
@@ -75,7 +85,9 @@
     "oa_id": "W7130617831",
     "is_preprint": true,
     "doi": null,
-    "arxiv_id": "2602.15620"
+    "arxiv_id": "2602.15620",
+    "work_type": "article",
+    "source_type": "repository"
   },
   {
     "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
@@ -88,7 +100,9 @@
     "oa_id": "W7130361034",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2602.15620",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Mixed Policy Gradient for Accelerated Reinforcement Learning with Performance Enhancement",
@@ -101,7 +115,9 @@
     "oa_id": "W7130699649",
     "is_preprint": true,
     "doi": "https://doi.org/10.2139/ssrn.6277047",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
@@ -114,7 +130,9 @@
     "oa_id": "W7123353619",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cdc57313.2025.11312093",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Distributional Soft Actor-Critic with Diffusion Policy",
@@ -127,7 +145,9 @@
     "oa_id": "W7136717072",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc60802.2025.11423690",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Mind Your Entropy: From Maximum Entropy to Trajectory Entropy-Constrained RL",
@@ -140,7 +160,9 @@
     "oa_id": "W4416349077",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2511.11592",
-    "arxiv_id": "2511.11592"
+    "arxiv_id": "2511.11592",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Generative Reinforcement Learning for Multimodal Trajectory Planning in Autonomous Driving",
@@ -153,7 +175,9 @@
     "oa_id": "W7125920477",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cvci66304.2025.11348183",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Hierarchical MPC-based safe shared control for forward collision avoidance in collaborative driving",
@@ -166,7 +190,9 @@
     "oa_id": "W4414345095",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.conengprac.2025.106581",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Diffeomorphism-Transformed Iterative Linear Quadratic Regulator for Constrained Motion Planning in Autonomous Driving",
@@ -179,7 +205,9 @@
     "oa_id": "W4414116833",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tits.2025.3601596",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "TransMPC: Transformer-based Explicit MPC with Variable Prediction Horizon",
@@ -192,7 +220,9 @@
     "oa_id": "W4416065906",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2509.07381",
-    "arxiv_id": "2509.07381"
+    "arxiv_id": "2509.07381",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Comparative Analysis of Uncertainty Quantification Models in Deep Learning for Dose Prediction of Radiotherapy",
@@ -205,7 +235,9 @@
     "oa_id": "W4414574560",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.ijrobp.2025.06.3313",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "PTU: A Pyramid Transformer Learning Framework with Low-Rank Approximation for Voxel-Level Dose Prediction of Radiotherapy",
@@ -218,7 +250,9 @@
     "oa_id": "W4414574978",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.ijrobp.2025.06.3314",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Enhanced DACER Algorithm with Multimodal Q-value Distribution for Risk-Sensitive Stochastic Vehicle Environments",
@@ -231,7 +265,9 @@
     "oa_id": "W4413018597",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iv64158.2025.11097380",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Distributional Soft Actor-Critic with Harmonic Gradient for Safe and Efficient Autonomous Driving in Multi-Lane Scenarios",
@@ -244,7 +280,9 @@
     "oa_id": "W4413018168",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iv64158.2025.11097749",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Towards robust motion control in multi-source uncertain scenarios by robust policy iteration",
@@ -257,7 +295,9 @@
     "oa_id": "W4411476331",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.commtr.2025.100191",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Enhanced DACER Algorithm with High Diffusion Efficiency",
@@ -270,7 +310,9 @@
     "oa_id": "W4414812729",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2505.23426",
-    "arxiv_id": "2505.23426"
+    "arxiv_id": "2505.23426",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Physics Informed Neural Pose Estimation for Real-Time Shape Reconstruction of Soft Continuum Robots",
@@ -283,7 +325,9 @@
     "oa_id": "W4410737906",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/lra.2025.3573629",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Distributional Soft Actor-Critic with Harmonic Gradient for Safe and Efficient Autonomous Driving in Multi-lane Scenarios",
@@ -296,7 +340,9 @@
     "oa_id": "W4417298493",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2505.13532",
-    "arxiv_id": "2505.13532"
+    "arxiv_id": "2505.13532",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Understanding Connection Between PMP and HJB Equations from the Perspective of Hamilton Dynamics",
@@ -309,7 +355,9 @@
     "oa_id": "W4409128893",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tai.2025.3557399",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Reinforcement Learning for Industrial Control: From Toolkit Development to Practical Applications",
@@ -322,7 +370,9 @@
     "oa_id": "W4409059820",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/b978-0-443-14081-5.00026-x",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "book-chapter",
+    "source_type": "ebook platform"
   },
   {
     "title": "Feasible Policy Iteration With Guaranteed Safe Exploration",
@@ -335,7 +385,9 @@
     "oa_id": "W4408564563",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tcyb.2025.3542223",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Smooth policy iteration for zero-sum Markov Games",
@@ -348,7 +400,9 @@
     "oa_id": "W4407755323",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.neucom.2025.129666",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Distributional Soft Actor-Critic With Three Refinements",
@@ -361,7 +415,9 @@
     "oa_id": "W4406983280",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tpami.2025.3537087",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
@@ -374,7 +430,9 @@
     "oa_id": "W4406880232",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2501.15217",
-    "arxiv_id": "2501.15217"
+    "arxiv_id": "2501.15217",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Tractor Semi-Trailer Off-Tracking and Stability Approximate Bi-Level Policy Optimization",
@@ -387,7 +445,9 @@
     "oa_id": "W4413318836",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tase.2025.3600553",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Off-Road Distributed-Drive Electric Vehicle Trajectory Tracking Control with Constrained Transformer Mpc",
@@ -400,7 +460,9 @@
     "oa_id": "W4411168073",
     "is_preprint": true,
     "doi": "https://doi.org/10.2139/ssrn.5288495",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Conformal Symplectic Optimization for Stable Reinforcement Learning",
@@ -413,7 +475,9 @@
     "oa_id": "W4405055433",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tnnls.2024.3511670",
-    "arxiv_id": "2412.02291"
+    "arxiv_id": "2412.02291",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Real-Time Resilient Tracking Control for Autonomous Vehicles Through Triple Iterative Approximate Dynamic Programming",
@@ -426,7 +490,9 @@
     "oa_id": "W4404293873",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tits.2024.3489019",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Data-Driven Safe Learning and Control with Safety Certificates",
@@ -439,7 +505,9 @@
     "oa_id": "W4404130614",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/b978-0-443-14081-5.00043-x",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "book-chapter",
+    "source_type": "ebook platform"
   },
   {
     "title": "Guiding Reinforcement Learning with Incomplete System Dynamics",
@@ -452,7 +520,9 @@
     "oa_id": "W4404306252",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2410.16821",
-    "arxiv_id": "2410.16821"
+    "arxiv_id": "2410.16821",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Driving at Realistic Urban Intersections with Adversarial Reinforcement Learning",
@@ -465,7 +535,9 @@
     "oa_id": "W4405362986",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iavvc63304.2024.10786444",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Guiding Reinforcement Learning with Incomplete System Dynamics",
@@ -478,7 +550,9 @@
     "oa_id": "W4405778651",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iros58592.2024.10802721",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Smooth Filtering Neural Network for Reinforcement Learning",
@@ -491,7 +565,9 @@
     "oa_id": "W4401725926",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tiv.2024.3446823",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Inverse Model Predictive Control: Learning Optimal Control Cost Functions for MPC",
@@ -504,7 +580,9 @@
     "oa_id": "W4401567246",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tii.2024.3424238",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Distributional Soft Actor-Critic for Decision-Making in On-Ramp Merge Scenarios",
@@ -517,7 +595,9 @@
     "oa_id": "W4401009784",
     "is_preprint": false,
     "doi": "https://doi.org/10.1007/s42154-023-00260-1",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Multi-Style Distributional Soft Actor-Critic: Learning a Unified Policy for Diverse Control Behaviors",
@@ -530,7 +610,9 @@
     "oa_id": "W4400944787",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tiv.2024.3432891",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Diffusion Actor-Critic with Entropy Regulator",
@@ -543,7 +625,9 @@
     "oa_id": "W4399062113",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2405.15177",
-    "arxiv_id": "2405.15177"
+    "arxiv_id": "2405.15177",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Enhance Sample Efficiency and Robustness of End-to-End Urban Autonomous Driving via Semantic Masked World Model",
@@ -556,7 +640,9 @@
     "oa_id": "W4398249471",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tits.2024.3400227",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Reinforcement Learning Based Motion Control Method for Electrical-hydraulic Valve-Controlled System",
@@ -569,7 +655,9 @@
     "oa_id": "W4398226126",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tmech.2024.3397297",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Encoding Distributional Soft Actor-Critic for Autonomous Driving in Multi-Lane Scenarios [Research Frontier]",
@@ -582,7 +670,9 @@
     "oa_id": "W4394006698",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/mci.2024.3364428",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Policy Bifurcation in Safe Reinforcement Learning",
@@ -595,7 +685,9 @@
     "oa_id": "W4393064008",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2403.12847",
-    "arxiv_id": "2403.12847"
+    "arxiv_id": "2403.12847",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Fuel-efficient predictive cruise control using the explicit MPC method for commercial vehicles",
@@ -608,7 +700,9 @@
     "oa_id": "W4392404776",
     "is_preprint": false,
     "doi": "https://doi.org/10.1504/ijvd.2024.10062758",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Diffusion Actor-Critic with Entropy Regulator",
@@ -621,7 +715,9 @@
     "oa_id": "W4415797600",
     "is_preprint": false,
     "doi": "https://doi.org/10.52202/079017-1717",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Safe Integrated Control of Drill Boom in Hole-Seeking Task Via Reinforcement Learning",
@@ -634,7 +730,9 @@
     "oa_id": "W4405838356",
     "is_preprint": true,
     "doi": "https://doi.org/10.2139/ssrn.5073824",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Fuel-efficient predictive cruise control using the explicit MPC method for commercial vehicles",
@@ -647,7 +745,9 @@
     "oa_id": "W4401461207",
     "is_preprint": false,
     "doi": "https://doi.org/10.1504/ijvd.2024.140432",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "RL-Driven MPPI: Accelerating Online Control Laws Calculation With Offline Policy",
@@ -660,7 +760,9 @@
     "oa_id": "W4390422151",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tiv.2023.3348134",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Integrated Drill Boom Hole-Seeking Control via Reinforcement Learning",
@@ -673,7 +775,9 @@
     "oa_id": "W4389364149",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2312.01836",
-    "arxiv_id": "2312.01836"
+    "arxiv_id": "2312.01836",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Safe Model-Based Reinforcement Learning With an Uncertainty-Aware Reachability Certificate",
@@ -686,7 +790,9 @@
     "oa_id": "W4389065366",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tase.2023.3292388",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Training Multi-layer Neural Networks on Ising Machine",
@@ -699,7 +805,9 @@
     "oa_id": "W4388514186",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2311.03408",
-    "arxiv_id": "2311.03408"
+    "arxiv_id": "2311.03408",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Optimization Landscape of Policy Gradient Methods for Discrete-Time Static Output Feedback",
@@ -712,7 +820,9 @@
     "oa_id": "W4387965994",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tcyb.2023.3323316",
-    "arxiv_id": "2310.19022"
+    "arxiv_id": "2310.19022",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Integrated Drill Boom Hole-Seeking Control via Reinforcement Learning",
@@ -725,7 +835,9 @@
     "oa_id": "W4388872643",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icus58632.2023.10318393",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Distributional Soft Actor-Critic with Three Refinements",
@@ -738,7 +850,9 @@
     "oa_id": "W4387560490",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2310.05858",
-    "arxiv_id": "2310.05858"
+    "arxiv_id": "2310.05858",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Global Convergence of Two-Timescale Actor-Critic for Solving Linear Quadratic Regulator",
@@ -751,7 +865,9 @@
     "oa_id": "W4382239134",
     "is_preprint": false,
     "doi": "https://doi.org/10.1609/aaai.v37i6.25865",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "Continuous-Time Policy Optimization",
@@ -764,7 +880,9 @@
     "oa_id": "W4382935770",
     "is_preprint": false,
     "doi": "https://doi.org/10.23919/acc55779.2023.10156372",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Improve generalization of driving policy at signalized intersections with adversarial learning",
@@ -777,7 +895,9 @@
     "oa_id": "W4376631496",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.trc.2023.104161",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "On the Optimization Landscape of Dynamic Output Feedback Linear Quadratic Control",
@@ -790,7 +910,9 @@
     "oa_id": "W4376481351",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tac.2023.3275732",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "GOPS: A general optimal control problem solver for autonomous driving and industrial control applications",
@@ -803,7 +925,9 @@
     "oa_id": "W4366158867",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.commtr.2023.100096",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Relaxed Policy Iteration Algorithm for Nonlinear Zero-Sum Games With Application to H-Infinity Control",
@@ -816,7 +940,9 @@
     "oa_id": "W4364856217",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tac.2023.3266277",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Relaxed Actor-Critic With Convergence Guarantees for Continuous-Time Optimal Control of Nonlinear Systems",
@@ -829,7 +955,9 @@
     "oa_id": "W4323897042",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tiv.2023.3255264",
-    "arxiv_id": "1909.05402"
+    "arxiv_id": "1909.05402",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Policy Iteration Based Approximate Dynamic Programming Toward Autonomous Driving in Constrained Dynamic Environment",
@@ -842,7 +970,9 @@
     "oa_id": "W4319997953",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tits.2023.3237568",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Primal-Dual Estimator Learning Method with Feasibility and Near-Optimality Guarantees",
@@ -855,7 +985,9 @@
     "oa_id": "W4315488589",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cdc51059.2022.9992814",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "On the Optimization Landscape of Dynamic Output Feedback: A Case Study for Linear Quadratic Regulator",
@@ -868,7 +1000,9 @@
     "oa_id": "W4315488852",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cdc51059.2022.9992503",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "Policy-Iteration-Based Finite-Horizon Approximate Dynamic Programming for Continuous-Time Nonlinear Optimal Control",
@@ -881,7 +1015,9 @@
     "oa_id": "W4312567063",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tnnls.2022.3225090",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Smoothing Policy Iteration for Zero-sum Markov Games",
@@ -894,7 +1030,9 @@
     "oa_id": "W4310823427",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2212.01623",
-    "arxiv_id": "2212.01623"
+    "arxiv_id": "2212.01623",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Distributed Model Predictive Control of Connected Multi-Vehicle Systems at Unsignalized Intersections",
@@ -907,7 +1045,9 @@
     "oa_id": "W4313288791",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icus55513.2022.9986954",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "Safe Model-Based Reinforcement Learning with an Uncertainty-Aware Reachability Certificate",
@@ -920,7 +1060,9 @@
     "oa_id": "W4306705158",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2210.07553",
-    "arxiv_id": "2210.07553"
+    "arxiv_id": "2210.07553",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Integrated eco-driving automation of intelligent vehicles in multi-lane scenario via model-accelerated reinforcement learning",
@@ -933,7 +1075,9 @@
     "oa_id": "W4295813067",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.trc.2022.103863",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "On the Optimization Landscape of Dynamic Output Feedback: A Case Study for Linear Quadratic Regulator",
@@ -946,7 +1090,9 @@
     "oa_id": "W4295682930",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2209.05042",
-    "arxiv_id": "2209.05042"
+    "arxiv_id": "2209.05042",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Self-learning Decision and Control for Highly Automated Vehicles",
@@ -959,7 +1105,9 @@
     "oa_id": "W4295063144",
     "is_preprint": false,
     "doi": "https://doi.org/10.1007/978-3-031-06780-8_11",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "book-chapter",
+    "source_type": "book series"
   },
   {
     "title": "Global Convergence of Two-timescale Actor-Critic for Solving Linear Quadratic Regulator",
@@ -972,7 +1120,9 @@
     "oa_id": "W4292448171",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2208.08744",
-    "arxiv_id": "2208.08744"
+    "arxiv_id": "2208.08744",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Self-Learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
@@ -985,7 +1135,9 @@
     "oa_id": "W3213557649",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tits.2022.3196167",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Point Instance Segmentation Considering Feature Enhancement for Lane Detection",
@@ -998,7 +1150,9 @@
     "oa_id": "W4312382033",
     "is_preprint": false,
     "doi": "https://doi.org/10.23919/ccc55666.2022.9902759",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
@@ -1011,7 +1165,9 @@
     "oa_id": "W4294692180",
     "is_preprint": false,
     "doi": "https://doi.org/10.23919/acc53348.2022.9867384",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "Model-Based Chance-Constrained Reinforcement Learning via Separated Proportional-Integral Lagrangian",
@@ -1024,7 +1180,9 @@
     "oa_id": "W3195860693",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tnnls.2022.3175595",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Improve Generalization of Driving Policy at Signalized Intersections with Adversarial Learning",
@@ -1037,7 +1195,9 @@
     "oa_id": "W4223457629",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2204.04403",
-    "arxiv_id": "2204.04403"
+    "arxiv_id": "2204.04403",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Primal-dual Estimator Learning: an Offline Constrained Moving Horizon Estimation Method with Feasibility and Near-optimality Guarantees",
@@ -1050,7 +1210,9 @@
     "oa_id": "W4226043072",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2204.02857",
-    "arxiv_id": "2204.02857"
+    "arxiv_id": "2204.02857",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Applications of Distributional Soft Actor-Critic in Real-world Autonomous Driving",
@@ -1063,7 +1225,9 @@
     "oa_id": "W4282944332",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icccr54399.2022.9790288",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Recurrent Model Predictive Control: Learning an Explicit Recurrent Controller for Nonlinear Systems",
@@ -1076,7 +1240,9 @@
     "oa_id": "W4214851269",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tie.2022.3153800",
-    "arxiv_id": "2102.10289"
+    "arxiv_id": "2102.10289",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "On the Optimization Landscape of Dynamic Output Feedback Linear Quadratic Control",
@@ -1089,7 +1255,9 @@
     "oa_id": "W4226467685",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2201.09598",
-    "arxiv_id": "2201.09598"
+    "arxiv_id": "2201.09598",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Fixed-Dimensional and Permutation Invariant State Representation of Autonomous Driving",
@@ -1102,7 +1270,9 @@
     "oa_id": "W3165559047",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tits.2021.3136588",
-    "arxiv_id": "2105.11299"
+    "arxiv_id": "2105.11299",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Adaptive dynamic programming for nonaffine nonlinear optimal control problem with state constraints",
@@ -1115,7 +1285,9 @@
     "oa_id": "W3209549283",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.neucom.2021.04.134",
-    "arxiv_id": "1911.11397"
+    "arxiv_id": "1911.11397",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Self-learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
@@ -1128,7 +1300,9 @@
     "oa_id": "W4306315223",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2110.12359",
-    "arxiv_id": "2110.12359"
+    "arxiv_id": "2110.12359",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Encoding Integrated Decision and Control for Autonomous Driving with Mixed Traffic Flow.",
@@ -1141,7 +1315,9 @@
     "oa_id": "W3209991460",
     "is_preprint": false,
     "doi": null,
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
@@ -1154,7 +1330,9 @@
     "oa_id": "W3201944662",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2109.13132",
-    "arxiv_id": "2109.13132"
+    "arxiv_id": "2109.13132",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Belief state separated reinforcement learning for autonomous vehicle decision making under uncertainty",
@@ -1167,7 +1345,9 @@
     "oa_id": "W3210962293",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc48978.2021.9564576",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Encoding Distributional Soft Actor-Critic for Autonomous Driving in Multi-lane Scenarios",
@@ -1180,7 +1360,9 @@
     "oa_id": "W3201463221",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2109.05540",
-    "arxiv_id": "2109.05540"
+    "arxiv_id": "2109.05540",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Model-based Chance-Constrained Reinforcement Learning via Separated Proportional-Integral Lagrangian",
@@ -1193,7 +1375,9 @@
     "oa_id": "W4308706865",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2108.11623",
-    "arxiv_id": "2108.11623"
+    "arxiv_id": "2108.11623",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Separated Proportional-Integral Lagrangian for Chance Constrained Reinforcement Learning",
@@ -1206,7 +1390,9 @@
     "oa_id": "W3133255192",
     "is_preprint": true,
     "doi": "https://doi.org/10.1109/iv48863.2021.9575205",
-    "arxiv_id": "2102.08539"
+    "arxiv_id": "2102.08539",
+    "work_type": "preprint",
+    "source_type": ""
   },
   {
     "title": "Cover: International Journal of Intelligent Systems, Volume 36 Issue 8 August 2021",
@@ -1219,7 +1405,9 @@
     "oa_id": "W4205452881",
     "is_preprint": false,
     "doi": "https://doi.org/10.1002/int.22574",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Distributional Soft Actor-Critic: Off-Policy Reinforcement Learning for Addressing Value Estimation Errors",
@@ -1232,7 +1420,9 @@
     "oa_id": "W3015082424",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tnnls.2021.3082568",
-    "arxiv_id": "2001.02811"
+    "arxiv_id": "2001.02811",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Direct and indirect reinforcement learning",
@@ -1245,7 +1435,9 @@
     "oa_id": "W3167264379",
     "is_preprint": false,
     "doi": "https://doi.org/10.1002/int.22466",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Integrated Decision and Control: Towards Interpretable and Efficient Driving Intelligence.",
@@ -1258,7 +1450,9 @@
     "oa_id": "W3138915777",
     "is_preprint": true,
     "doi": null,
-    "arxiv_id": "2103.10290"
+    "arxiv_id": "2103.10290",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Integrated Decision and Control: Towards Interpretable and Computationally Efficient Driving Intelligence",
@@ -1271,7 +1465,9 @@
     "oa_id": "W3160223607",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2103.10290",
-    "arxiv_id": "2103.10290"
+    "arxiv_id": "2103.10290",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Approximate Optimal Filter for Linear Gaussian Time-invariant Systems",
@@ -1284,7 +1480,9 @@
     "oa_id": "W3135893859",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2103.05505",
-    "arxiv_id": "2103.05505"
+    "arxiv_id": "2103.05505",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Decision-Making under On-Ramp merge Scenarios by Distributional Soft Actor-Critic Algorithm",
@@ -1297,7 +1495,9 @@
     "oa_id": "W3133570884",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2103.04535",
-    "arxiv_id": "2103.04535"
+    "arxiv_id": "2103.04535",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Mixed Policy Gradient.",
@@ -1310,7 +1510,9 @@
     "oa_id": "W3130974966",
     "is_preprint": true,
     "doi": null,
-    "arxiv_id": "2102.11513"
+    "arxiv_id": "2102.11513",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Recurrent Model Predictive Control",
@@ -1323,7 +1525,9 @@
     "oa_id": "W3133216895",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2102.11736",
-    "arxiv_id": "2102.11736"
+    "arxiv_id": "2102.11736",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Mixed Policy Gradient: off-policy reinforcement learning driven jointly by data and model",
@@ -1336,7 +1540,9 @@
     "oa_id": "W4392220968",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2102.11513",
-    "arxiv_id": "2102.11513"
+    "arxiv_id": "2102.11513",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Separated Proportional-Integral Lagrangian for Chance Constrained\\n Reinforcement Learning",
@@ -1349,7 +1555,9 @@
     "oa_id": "W3216680232",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2102.08539",
-    "arxiv_id": "2102.08539"
+    "arxiv_id": "2102.08539",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Solving Finite-Horizon HJB for Optimal Control of Continuous-Time Systems",
@@ -1362,7 +1570,9 @@
     "oa_id": "W3131282584",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icccr49711.2021.9349412",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Reinforced Optimal Estimator",
@@ -1375,7 +1585,9 @@
     "oa_id": "W4205534431",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.ifacol.2021.11.201",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Continuous-time finite-horizon ADP for automated vehicle controller design with high efficiency",
@@ -1388,7 +1600,9 @@
     "oa_id": "W3110685645",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icus50048.2020.9274944",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "conference"
   },
   {
     "title": "Improving Generalization of Reinforcement Learning with Minimax Distributional Soft Actor-Critic",
@@ -1401,7 +1615,9 @@
     "oa_id": "W3114647763",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc45102.2020.9294300",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Safe Reinforcement Learning for Autonomous Vehicles through Parallel Constrained Policy Optimization",
@@ -1414,7 +1630,9 @@
     "oa_id": "W3115648115",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc45102.2020.9294262",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Ternary Policy Iteration Algorithm for Nonlinear Robust Control",
@@ -1427,7 +1645,9 @@
     "oa_id": "W3042581999",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2007.06810",
-    "arxiv_id": "2007.06810"
+    "arxiv_id": "2007.06810",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Continuous-time finite-horizon ADP for automated vehicle controller design with high efficiency",
@@ -1440,7 +1660,9 @@
     "oa_id": "W3039423374",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2007.02070",
-    "arxiv_id": "2007.02070"
+    "arxiv_id": "2007.02070",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Safe Reinforcement Learning for Autonomous Vehicles through Parallel Constrained Policy Optimization",
@@ -1453,7 +1675,9 @@
     "oa_id": "W3009759305",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2003.01303",
-    "arxiv_id": "2003.01303"
+    "arxiv_id": "2003.01303",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Improving Generalization of Reinforcement Learning with Minimax Distributional Soft Actor-Critic",
@@ -1466,7 +1690,9 @@
     "oa_id": "W3006409413",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2002.05502",
-    "arxiv_id": "2002.05502"
+    "arxiv_id": "2002.05502",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Hierarchical reinforcement learning for self‐driving decision‐making without reliance on labelled driving data",
@@ -1479,7 +1705,9 @@
     "oa_id": "W3002044607",
     "is_preprint": false,
     "doi": "https://doi.org/10.1049/iet-its.2019.0317",
-    "arxiv_id": "2001.09816"
+    "arxiv_id": "2001.09816",
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Addressing Value Estimation Errors in Reinforcement Learning with a State-Action Return Distribution Function",
@@ -1492,7 +1720,9 @@
     "oa_id": "W2998945017",
     "is_preprint": false,
     "doi": null,
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": ""
   },
   {
     "title": "Direct and indirect reinforcement learning",
@@ -1505,7 +1735,9 @@
     "oa_id": "W2996357468",
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.1912.10600",
-    "arxiv_id": "1912.10600"
+    "arxiv_id": "1912.10600",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Deep adaptive dynamic programming for nonaffine nonlinear optimal control problem with state constraints",
@@ -1518,7 +1750,9 @@
     "oa_id": "W2991604404",
     "is_preprint": true,
     "doi": null,
-    "arxiv_id": "1911.11397"
+    "arxiv_id": "1911.11397",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Promoting connected and automated vehicles with cooperative sensing and control technology",
@@ -1531,7 +1765,9 @@
     "oa_id": "W3005406119",
     "is_preprint": false,
     "doi": "https://doi.org/10.1049/pbtr025e_ch23",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "book-chapter",
+    "source_type": "ebook platform"
   },
   {
     "title": "Generalized Policy Iteration for Optimal Control in Continuous Time.",
@@ -1544,7 +1780,9 @@
     "oa_id": "W2972670442",
     "is_preprint": true,
     "doi": null,
-    "arxiv_id": "1909.05402"
+    "arxiv_id": "1909.05402",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Drivers’ Braking Behaviors in Different Motion Patterns of Vehicle-Bicycle Conflicts",
@@ -1557,7 +1795,9 @@
     "oa_id": "W2919095742",
     "is_preprint": false,
     "doi": "https://doi.org/10.1155/2019/4023970",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Markov probabilistic decision making of self-driving cars in highway with random traffic flow: a simulation study",
@@ -1570,7 +1810,9 @@
     "oa_id": "W2897676672",
     "is_preprint": false,
     "doi": "https://doi.org/10.1108/jicv-01-2018-0003",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Driver braking behavior analysis to improve autonomous emergency braking systems in typical Chinese vehicle-bicycle conflicts",
@@ -1583,7 +1825,9 @@
     "oa_id": "W2752924917",
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/j.aap.2017.08.022",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Performance Enhanced Predictive Control for Adaptive Cruise Control System Considering Road Elevation Information",
@@ -1596,6 +1840,8 @@
     "oa_id": "W2744452518",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/tiv.2017.2736246",
-    "arxiv_id": null
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   }
 ]
