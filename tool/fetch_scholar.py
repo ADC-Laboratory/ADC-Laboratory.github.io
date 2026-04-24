@@ -129,10 +129,16 @@ def _resolve_author_id() -> str:
     if not results:
         raise RuntimeError(f"OpenAlex 找不到名字为 '{name}' 的作者")
 
-    # 用机构关键词辅助挑选正确的 Dr. Duan（北京科技大学 / 清华 / Tsinghua / USTB）
+    # 用机构关键词辅助挑选正确的 Dr. Duan
+    # 段老师工作/访学经历：USTB（现职）、清华（博士）、NUS、UC Berkeley
     hints = [s.lower() for s in getattr(
         config, "AUTHOR_INSTITUTION_HINTS",
-        ["University of Science and Technology Beijing", "USTB", "Tsinghua"],
+        [
+            "University of Science and Technology Beijing", "USTB",
+            "Tsinghua",
+            "National University of Singapore", "NUS",
+            "University of California, Berkeley", "UC Berkeley", "Berkeley",
+        ],
     )]
 
     def score(a):

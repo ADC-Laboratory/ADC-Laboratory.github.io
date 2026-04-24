@@ -24,9 +24,18 @@ AUTHOR_NAME = "Jingliang Duan"
 # 机构关键词：用于在多个同名作者中挑出正确的那个
 # 任一关键词命中，匹配分就 +100
 AUTHOR_INSTITUTION_HINTS = [
+    # 现职
     "University of Science and Technology Beijing",
     "USTB",
-    "Tsinghua",              # 博士阶段在清华
+    # 博士 + 合作
+    "Tsinghua",
+    # 访学经历
+    "National University of Singapore",
+    "NUS",
+    "University of California, Berkeley",
+    "UC Berkeley",
+    "Berkeley",
+    # 兜底：其他可能的联合机构
     "Beijing Institute",
 ]
 
