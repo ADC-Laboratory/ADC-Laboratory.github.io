@@ -1,0 +1,1252 @@
+[
+  {
+    "title": "On the Optimization Landscape of Observer-based Dynamic Linear Quadratic Control",
+    "authors": "J. Duan, J. Li, Y. Ma, L. Tang, G. Li, L. Zhang, S. E. Li, L. Zhao",
+    "venue": "arXiv preprint arXiv:arxiv.2604.10635",
+    "year": 2026,
+    "url": "https://doi.org/10.48550/arxiv.2604.10635",
+    "pub_url": "https://doi.org/10.48550/arxiv.2604.10635",
+    "category": "",
+    "scholar_id": "W7154219613"
+  },
+  {
+    "title": "On the Optimization Landscape of Observer-based Dynamic Linear Quadratic Control",
+    "authors": "J. Duan, J. Li, Y. Ma, L. Tang, G. Li, L. Zhang, S. E. Li, L. Zhao",
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://openalex.org/W7154539430",
+    "pub_url": "https://arxiv.org/pdf/2604.10635",
+    "category": "",
+    "scholar_id": "W7154539430"
+  },
+  {
+    "title": "A smooth reinforcement learning method for trajectory tracking and collision avoidance of wheeled vehicle",
+    "authors": "L. Chen, X. Song, J. Zhao, W. Wang, Y. Wang, L. Xiao, S. E. Li, F. Ma, J. Duan",
+    "venue": "Expert Systems with Applications",
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.eswa.2026.132112",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7138947887"
+  },
+  {
+    "title": "Transformer-based explicit model predictive control with variable prediction horizon",
+    "authors": "S. Wu, J. Wu, X. Cao, F. Zhang, G. Yu, J. Zhao, Y. Qu, F. Ma, J. Duan",
+    "venue": "Engineering Applications of Artificial Intelligence",
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.engappai.2026.114345",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7132823576"
+  },
+  {
+    "title": "Learn a Robust Policy for Real-World Driving With Adversarial Reinforcement Learning",
+    "authors": "Y. Ren, G. Zhan, S. X. Li, J. Duan, Y. Lyu, Y. Guan, K. Li",
+    "venue": "IEEE Transactions on Intelligent Vehicles",
+    "year": 2026,
+    "url": "https://doi.org/10.1109/tiv.2026.3667572",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7131276747"
+  },
+  {
+    "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
+    "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, J. Duan, S. E. Li",
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://openalex.org/W7130617831",
+    "pub_url": "https://arxiv.org/pdf/2602.15620",
+    "category": "",
+    "scholar_id": "W7130617831"
+  },
+  {
+    "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
+    "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, J. Duan, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2602.15620",
+    "year": 2026,
+    "url": "https://doi.org/10.48550/arxiv.2602.15620",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7130361034"
+  },
+  {
+    "title": "Mixed Policy Gradient for Accelerated Reinforcement Learning with Performance Enhancement",
+    "authors": "Y. Guan, J. Li, J. Duan, J. Gao, Y. Ma, B. Cheng, S. E. Li",
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://doi.org/10.2139/ssrn.6277047",
+    "pub_url": "https://doi.org/10.2139/ssrn.6277047",
+    "category": "",
+    "scholar_id": "W7130699649"
+  },
+  {
+    "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
+    "authors": "T. Zhang, P. Yuan, G. Zhan, Z. Lin, Y. Lyu, Z. Qin, J. Duan, L. Zhang, S. E. Li",
+    "venue": "",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/cdc57313.2025.11312093",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7123353619"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic with Diffusion Policy",
+    "authors": "T. Liu, Y. Wang, X. Song, W. Zou, L. Chen, L. Wang, B. Shuai, J. Duan, C. Liu",
+    "venue": "",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/itsc60802.2025.11423690",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7136717072"
+  },
+  {
+    "title": "Mind Your Entropy: From Maximum Entropy to Trajectory Entropy-Constrained RL",
+    "authors": "G. Zhan, L. Wang, P. Wang, F. Zhang, J. Duan, M. Tomizuka, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2511.11592",
+    "year": 2025,
+    "url": "https://doi.org/10.48550/arxiv.2511.11592",
+    "pub_url": "https://arxiv.org/pdf/2511.11592",
+    "category": "",
+    "scholar_id": "W4416349077"
+  },
+  {
+    "title": "Generative Reinforcement Learning for Multimodal Trajectory Planning in Autonomous Driving",
+    "authors": "W. Zou, L. Tao, Y. Wang, X. Zhang, B. Shuai, J. Duan, S. X. Li",
+    "venue": "",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/cvci66304.2025.11348183",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W7125920477"
+  },
+  {
+    "title": "Hierarchical MPC-based safe shared control for forward collision avoidance in collaborative driving",
+    "authors": "H. Yan, Y. Qu, R. Li, W. Li, H. Chu, J. Zhao, G. Yu, F. Ma, S. E. Li, J. Duan",
+    "venue": "Control Engineering Practice",
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.conengprac.2025.106581",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4414345095"
+  },
+  {
+    "title": "Diffeomorphism-Transformed Iterative Linear Quadratic Regulator for Constrained Motion Planning in Autonomous Driving",
+    "authors": "Z. Zhu, H. Liu, W. Wang, J. Duan, H. Zhao, J. Ma",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/tits.2025.3601596",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4414116833"
+  },
+  {
+    "title": "TransMPC: Transformer-based Explicit MPC with Variable Prediction Horizon",
+    "authors": "S. Wu, J. Wu, C. Xingyu, F. Zhang, G. Yu, J. Zhao, Y. Qu, F. Ma, J. Duan",
+    "venue": "arXiv preprint arXiv:arxiv.2509.07381",
+    "year": 2025,
+    "url": "https://doi.org/10.48550/arxiv.2509.07381",
+    "pub_url": "https://arxiv.org/pdf/2509.07381",
+    "category": "",
+    "scholar_id": "W4416065906"
+  },
+  {
+    "title": "Comparative Analysis of Uncertainty Quantification Models in Deep Learning for Dose Prediction of Radiotherapy",
+    "authors": "L. Chen, Z. Wang, T. Zhang, W. Wang, X. Sun, J. Duan, Y. Gao, Z. An, L. Zhao",
+    "venue": "International Journal of Radiation Oncology*Biology*Physics",
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.ijrobp.2025.06.3313",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4414574560"
+  },
+  {
+    "title": "PTU: A Pyramid Transformer Learning Framework with Low-Rank Approximation for Voxel-Level Dose Prediction of Radiotherapy",
+    "authors": "L. Chen, Z. Wang, T. Zhang, W. Wang, X. Sun, J. Duan, Y. Gao, Z. An, L. Zhao",
+    "venue": "International Journal of Radiation Oncology*Biology*Physics",
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.ijrobp.2025.06.3314",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4414574978"
+  },
+  {
+    "title": "Enhanced DACER Algorithm with Multimodal Q-value Distribution for Risk-Sensitive Stochastic Vehicle Environments",
+    "authors": "T. Liu, X. Song, Y. Wang, W. Zou, B. Shuai, H. Gao, W. He, J. Duan, S. E. Li",
+    "venue": "",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/iv64158.2025.11097380",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4413018597"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic with Harmonic Gradient for Safe and Efficient Autonomous Driving in Multi-Lane Scenarios",
+    "authors": "F. Zhang, G. Zhan, B. Shuai, T. Zhang, J. Duan, S. E. Li",
+    "venue": "",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/iv64158.2025.11097749",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4413018168"
+  },
+  {
+    "title": "Towards robust motion control in multi-source uncertain scenarios by robust policy iteration",
+    "authors": "J. Li, L. Tao, W. Zou, Y. Zhang, B. Shuai, J. Duan, S. E. Li, H. Sun, Y. Wang, Y. Gao, Y. Heng, A. Jiang",
+    "venue": "Communications in Transportation Research",
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.commtr.2025.100191",
+    "pub_url": "https://doi.org/10.1016/j.commtr.2025.100191",
+    "category": "",
+    "scholar_id": "W4411476331"
+  },
+  {
+    "title": "Enhanced DACER Algorithm with High Diffusion Efficiency",
+    "authors": "Y. Wang, L. Wang, T. Mining, W. Zou, X. Song, W. Wang, T. Liu, G. Zhan, Z. Tianze, S. Liu, Z. He, F. Zhang, J. Duan, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2505.23426",
+    "year": 2025,
+    "url": "https://doi.org/10.48550/arxiv.2505.23426",
+    "pub_url": "https://arxiv.org/pdf/2505.23426",
+    "category": "",
+    "scholar_id": "W4414812729"
+  },
+  {
+    "title": "Physics Informed Neural Pose Estimation for Real-Time Shape Reconstruction of Soft Continuum Robots",
+    "authors": "G. Zhan, X. An, Y. Jiang, J. Duan, H. Zhao, S. E. Li",
+    "venue": "IEEE Robotics and Automation Letters",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/lra.2025.3573629",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4410737906"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic with Harmonic Gradient for Safe and Efficient Autonomous Driving in Multi-lane Scenarios",
+    "authors": "F. Zhang, G. Zhan, B. Shuai, Z. Tianyi, J. Duan, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2505.13532",
+    "year": 2025,
+    "url": "https://doi.org/10.48550/arxiv.2505.13532",
+    "pub_url": "https://arxiv.org/pdf/2505.13532",
+    "category": "",
+    "scholar_id": "W4417298493"
+  },
+  {
+    "title": "Understanding Connection Between PMP and HJB Equations from the Perspective of Hamilton Dynamics",
+    "authors": "X. Zhang, Y. Lyu, S. E. Li, J. Duan, G. Zhan, C. Liu, B. Cheng, K. Li",
+    "venue": "IEEE Transactions on Artificial Intelligence",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/tai.2025.3557399",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4409128893"
+  },
+  {
+    "title": "Reinforcement Learning for Industrial Control: From Toolkit Development to Practical Applications",
+    "authors": "J. Duan, W. Wang, Y. Lyu, X. Zhang, X. Song, L. Xiao, S. E. Li",
+    "venue": "Elsevier eBooks",
+    "year": 2025,
+    "url": "https://doi.org/10.1016/b978-0-443-14081-5.00026-x",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4409059820"
+  },
+  {
+    "title": "Feasible Policy Iteration With Guaranteed Safe Exploration",
+    "authors": "Y. Zhang, Y. Yang, S. E. Li, Y. Lyu, J. Duan, Z. Zheng, D. Zhang",
+    "venue": "IEEE Transactions on Cybernetics",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/tcyb.2025.3542223",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4408564563"
+  },
+  {
+    "title": "Smooth policy iteration for zero-sum Markov Games",
+    "authors": "Y. Ren, Y. Lyu, W. Wang, S. E. Li, Z. Li, J. Duan",
+    "venue": "Neurocomputing",
+    "year": 2025,
+    "url": "https://doi.org/10.1016/j.neucom.2025.129666",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4407755323"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic With Three Refinements",
+    "authors": "J. Duan, W. Wang, L. Xiao, J. Gao, S. E. Li, C. Liu, Y. Zhang, B. Cheng, K. Li",
+    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/tpami.2025.3537087",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4406983280"
+  },
+  {
+    "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
+    "authors": "T. Zhang, Y. Puzhen, G. Zhan, L. Ziyu, Y. Lyu, Z. Qin, J. Duan, L. Zhang, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2501.15217",
+    "year": 2025,
+    "url": "https://doi.org/10.48550/arxiv.2501.15217",
+    "pub_url": "https://arxiv.org/pdf/2501.15217",
+    "category": "",
+    "scholar_id": "W4406880232"
+  },
+  {
+    "title": "Tractor Semi-Trailer Off-Tracking and Stability Approximate Bi-Level Policy Optimization",
+    "authors": "F. Zhang, J. Duan, H. Liu, X. Cao, S. Nie, C. Guo, Y. Xie, J. Ma, S. Wang",
+    "venue": "IEEE Transactions on Automation Science and Engineering",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/tase.2025.3600553",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4413318836"
+  },
+  {
+    "title": "Off-Road Distributed-Drive Electric Vehicle Trajectory Tracking Control with Constrained Transformer Mpc",
+    "authors": "F. Zhang, S. Wu, Y. Zhang, H. Liu, S. Nie, J. Duan, R. Liu, C. Xiang",
+    "venue": "arXiv preprint",
+    "year": 2025,
+    "url": "https://doi.org/10.2139/ssrn.5288495",
+    "pub_url": "https://doi.org/10.2139/ssrn.5288495",
+    "category": "",
+    "scholar_id": "W4411168073"
+  },
+  {
+    "title": "Conformal Symplectic Optimization for Stable Reinforcement Learning",
+    "authors": "Y. Lyu, X. Zhang, S. E. Li, J. Duan, L. Tao, Q. Xu, L. He, K. Li",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tnnls.2024.3511670",
+    "pub_url": "https://arxiv.org/pdf/2412.02291",
+    "category": "",
+    "scholar_id": "W4405055433"
+  },
+  {
+    "title": "Real-Time Resilient Tracking Control for Autonomous Vehicles Through Triple Iterative Approximate Dynamic Programming",
+    "authors": "W. Li, J. Geng, Y. Cheng, L. Tang, J. Duan, F. Duan, S. E. Li",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tits.2024.3489019",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4404293873"
+  },
+  {
+    "title": "Data-Driven Safe Learning and Control with Safety Certificates",
+    "authors": "H. Ma, Y. Yang, W. Zou, G. Zhan, Z. Zheng, J. Duan, B. Shuai, C. Chen, S. E. Li",
+    "venue": "Elsevier eBooks",
+    "year": 2024,
+    "url": "https://doi.org/10.1016/b978-0-443-14081-5.00043-x",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4404130614"
+  },
+  {
+    "title": "Guiding Reinforcement Learning with Incomplete System Dynamics",
+    "authors": "S. Wang, J. Duan, N. P. Lawrence, P. D. Loewen, M. G. Forbes, R. B. Gopaluni, L. Zhang",
+    "venue": "arXiv preprint arXiv:arxiv.2410.16821",
+    "year": 2024,
+    "url": "https://doi.org/10.48550/arxiv.2410.16821",
+    "pub_url": "https://arxiv.org/pdf/2410.16821",
+    "category": "",
+    "scholar_id": "W4404306252"
+  },
+  {
+    "title": "Driving at Realistic Urban Intersections with Adversarial Reinforcement Learning",
+    "authors": "Y. Ren, L. Tao, J. Duan, H. Li, B. Jiang, S. E. Li",
+    "venue": "",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/iavvc63304.2024.10786444",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4405362986"
+  },
+  {
+    "title": "Guiding Reinforcement Learning with Incomplete System Dynamics",
+    "authors": "S. Wang, J. Duan, N. P. Lawrence, P. D. Loewen, M. G. Forbes, R. B. Gopaluni, L. Zhang",
+    "venue": "",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/iros58592.2024.10802721",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4405778651"
+  },
+  {
+    "title": "Smooth Filtering Neural Network for Reinforcement Learning",
+    "authors": "W. Wang, J. Duan, X. Song, L. Xiao, L. Chen, Y. Wang, B. Cheng, S. E. Li",
+    "venue": "IEEE Transactions on Intelligent Vehicles",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tiv.2024.3446823",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4401725926"
+  },
+  {
+    "title": "Inverse Model Predictive Control: Learning Optimal Control Cost Functions for MPC",
+    "authors": "F. Zhang, J. Duan, H. Xu, H. Chen, H. Liu, S. Nie, S. E. Li",
+    "venue": "IEEE Transactions on Industrial Informatics",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tii.2024.3424238",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4401567246"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic for Decision-Making in On-Ramp Merge Scenarios",
+    "authors": "J. Duan, Y. Kong, C. Jiao, Y. Guan, S. E. Li, C. Chen, B. Nie, K. Li",
+    "venue": "Automotive Innovation",
+    "year": 2024,
+    "url": "https://doi.org/10.1007/s42154-023-00260-1",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4401009784"
+  },
+  {
+    "title": "Multi-Style Distributional Soft Actor-Critic: Learning a Unified Policy for Diverse Control Behaviors",
+    "authors": "L. Xiao, Y. Lyu, F. Zhang, L. Chen, G. Yu, S. E. Li, F. Ma, J. Duan",
+    "venue": "IEEE Transactions on Intelligent Vehicles",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tiv.2024.3432891",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4400944787"
+  },
+  {
+    "title": "Diffusion Actor-Critic with Entropy Regulator",
+    "authors": "Y. Wang, L. Wang, Y. Jiang, W. Zou, T. Liu, X. Song, W. Wang, X. Liming, J. Wu, J. Duan, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2405.15177",
+    "year": 2024,
+    "url": "https://doi.org/10.48550/arxiv.2405.15177",
+    "pub_url": "https://arxiv.org/pdf/2405.15177",
+    "category": "",
+    "scholar_id": "W4399062113"
+  },
+  {
+    "title": "Enhance Sample Efficiency and Robustness of End-to-End Urban Autonomous Driving via Semantic Masked World Model",
+    "authors": "Z. Gao, Y. Mu, C. Chen, J. Duan, P. Luo, Y. Lu, S. E. Li",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tits.2024.3400227",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4398249471"
+  },
+  {
+    "title": "Reinforcement Learning Based Motion Control Method for Electrical-hydraulic Valve-Controlled System",
+    "authors": "L. Gao, J. Zhao, J. Duan, S. Liu, F. Ma",
+    "venue": "IEEE/ASME Transactions on Mechatronics",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/tmech.2024.3397297",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4398226126"
+  },
+  {
+    "title": "Encoding Distributional Soft Actor-Critic for Autonomous Driving in Multi-Lane Scenarios [Research Frontier]",
+    "authors": "J. Duan, Y. Ren, F. Zhang, J. Li, S. E. Li, Y. Guan, K. Li",
+    "venue": "IEEE Computational Intelligence Magazine",
+    "year": 2024,
+    "url": "https://doi.org/10.1109/mci.2024.3364428",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4394006698"
+  },
+  {
+    "title": "Policy Bifurcation in Safe Reinforcement Learning",
+    "authors": "W. Zou, L. Yao, J. Li, Y. Yang, S. E. Li, J. Duan, X. Zhan, J. Liu, Y. Zhang, K. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2403.12847",
+    "year": 2024,
+    "url": "https://doi.org/10.48550/arxiv.2403.12847",
+    "pub_url": "https://arxiv.org/pdf/2403.12847",
+    "category": "",
+    "scholar_id": "W4393064008"
+  },
+  {
+    "title": "Fuel-efficient predictive cruise control using the explicit MPC method for commercial vehicles",
+    "authors": "J. Duan, F. Zhang, Y. Yin, C. Jiao, G. Xie, C. Zhang, S. E. Li, Z. Xin",
+    "venue": "International Journal of Vehicle Design",
+    "year": 2024,
+    "url": "https://doi.org/10.1504/ijvd.2024.10062758",
+    "pub_url": "http://dx.doi.org/10.1504/ijvd.2024.10062758",
+    "category": "",
+    "scholar_id": "W4392404776"
+  },
+  {
+    "title": "Diffusion Actor-Critic with Entropy Regulator",
+    "authors": "J. Duan, Y. Jiang, S. E. Li, T. Liu, X. Song, L. Wang, W. Wang, Y. Wang, J. Wu, X. Liming, W. Zou",
+    "venue": "",
+    "year": 2024,
+    "url": "https://doi.org/10.52202/079017-1717",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4415797600"
+  },
+  {
+    "title": "Safe Integrated Control of Drill Boom in Hole-Seeking Task Via Reinforcement Learning",
+    "authors": "H. Yan, H. Xu, Y. Lyu, J. Wu, L. Gao, G. Li, J. Duan, F. Ma",
+    "venue": "arXiv preprint",
+    "year": 2024,
+    "url": "https://doi.org/10.2139/ssrn.5073824",
+    "pub_url": "https://doi.org/10.2139/ssrn.5073824",
+    "category": "",
+    "scholar_id": "W4405838356"
+  },
+  {
+    "title": "Fuel-efficient predictive cruise control using the explicit MPC method for commercial vehicles",
+    "authors": "F. Zhang, J. Duan, Y. Yin, C. Jiao, G. Xie, C. Zhang, S. E. Li, Z. Xin",
+    "venue": "International Journal of Vehicle Design",
+    "year": 2024,
+    "url": "https://doi.org/10.1504/ijvd.2024.140432",
+    "pub_url": "http://dx.doi.org/10.1504/ijvd.2024.140432",
+    "category": "",
+    "scholar_id": "W4401461207"
+  },
+  {
+    "title": "RL-Driven MPPI: Accelerating Online Control Laws Calculation With Offline Policy",
+    "authors": "Y. Qu, H. Chu, S. Gao, J. Guan, H. Yan, L. Xiao, S. E. Li, J. Duan",
+    "venue": "IEEE Transactions on Intelligent Vehicles",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tiv.2023.3348134",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4390422151"
+  },
+  {
+    "title": "Integrated Drill Boom Hole-Seeking Control via Reinforcement Learning",
+    "authors": "H. Yan, H. Xu, H. Gao, F. Ma, S. E. Li, J. Duan",
+    "venue": "arXiv preprint arXiv:arxiv.2312.01836",
+    "year": 2023,
+    "url": "https://doi.org/10.48550/arxiv.2312.01836",
+    "pub_url": "https://arxiv.org/pdf/2312.01836",
+    "category": "",
+    "scholar_id": "W4389364149"
+  },
+  {
+    "title": "Safe Model-Based Reinforcement Learning With an Uncertainty-Aware Reachability Certificate",
+    "authors": "D. Yu, W. Zou, Y. Yang, H. Ma, S. E. Li, Y. Yin, J. Chen, J. Duan",
+    "venue": "IEEE Transactions on Automation Science and Engineering",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tase.2023.3292388",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4389065366"
+  },
+  {
+    "title": "Training Multi-layer Neural Networks on Ising Machine",
+    "authors": "X. Song, T. Liu, S. E. Li, J. Duan, W. Wang, K. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2311.03408",
+    "year": 2023,
+    "url": "https://doi.org/10.48550/arxiv.2311.03408",
+    "pub_url": "https://arxiv.org/pdf/2311.03408",
+    "category": "",
+    "scholar_id": "W4388514186"
+  },
+  {
+    "title": "Optimization Landscape of Policy Gradient Methods for Discrete-Time Static Output Feedback",
+    "authors": "J. Duan, J. Li, X. Chen, K. Zhao, S. E. Li, L. Zhao",
+    "venue": "IEEE Transactions on Cybernetics",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tcyb.2023.3323316",
+    "pub_url": "https://arxiv.org/pdf/2310.19022",
+    "category": "",
+    "scholar_id": "W4387965994"
+  },
+  {
+    "title": "Integrated Drill Boom Hole-Seeking Control via Reinforcement Learning",
+    "authors": "H. Yan, H. Xu, H. Gao, F. Ma, S. E. Li, J. Duan",
+    "venue": "",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/icus58632.2023.10318393",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4388872643"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic with Three Refinements",
+    "authors": "J. Duan, W. Wang, L. Xiao, J. Gao, S. E. Li, L. Chang, Z. Ya-Qin, C. Bo, L. Keqiang",
+    "venue": "arXiv preprint arXiv:arxiv.2310.05858",
+    "year": 2023,
+    "url": "https://doi.org/10.48550/arxiv.2310.05858",
+    "pub_url": "https://arxiv.org/pdf/2310.05858",
+    "category": "",
+    "scholar_id": "W4387560490"
+  },
+  {
+    "title": "Global Convergence of Two-Timescale Actor-Critic for Solving Linear Quadratic Regulator",
+    "authors": "X. Chen, J. Duan, Y. Liang, L. Zhao",
+    "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "year": 2023,
+    "url": "https://doi.org/10.1609/aaai.v37i6.25865",
+    "pub_url": "https://ojs.aaai.org/index.php/AAAI/article/download/25865/25637",
+    "category": "",
+    "scholar_id": "W4382239134"
+  },
+  {
+    "title": "Continuous-Time Policy Optimization",
+    "authors": "G. Zhan, Y. Jiang, J. Duan, S. E. Li, B. Cheng, K. Li",
+    "venue": "",
+    "year": 2023,
+    "url": "https://doi.org/10.23919/acc55779.2023.10156372",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4382935770"
+  },
+  {
+    "title": "Improve generalization of driving policy at signalized intersections with adversarial learning",
+    "authors": "Y. Ren, G. Zhan, L. Tang, S. E. Li, J. Jiang, K. Li, J. Duan",
+    "venue": "Transportation Research Part C Emerging Technologies",
+    "year": 2023,
+    "url": "https://doi.org/10.1016/j.trc.2023.104161",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4376631496"
+  },
+  {
+    "title": "On the Optimization Landscape of Dynamic Output Feedback Linear Quadratic Control",
+    "authors": "J. Duan, W. Cao, Y. Zheng, L. Zhao",
+    "venue": "IEEE Transactions on Automatic Control",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tac.2023.3275732",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4376481351"
+  },
+  {
+    "title": "GOPS: A general optimal control problem solver for autonomous driving and industrial control applications",
+    "authors": "W. Wang, Y. Zhang, J. Gao, Y. Jiang, Y. Yang, Z. Zheng, W. Zou, J. Li, C. Zhang, W. Cao, G. Xie, J. Duan, S. E. Li",
+    "venue": "Communications in Transportation Research",
+    "year": 2023,
+    "url": "https://doi.org/10.1016/j.commtr.2023.100096",
+    "pub_url": "https://doi.org/10.1016/j.commtr.2023.100096",
+    "category": "",
+    "scholar_id": "W4366158867"
+  },
+  {
+    "title": "Relaxed Policy Iteration Algorithm for Nonlinear Zero-Sum Games With Application to H-Infinity Control",
+    "authors": "J. Li, S. E. Li, J. Duan, Y. Lyu, W. Zou, Y. Guan, Y. Yin",
+    "venue": "IEEE Transactions on Automatic Control",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tac.2023.3266277",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4364856217"
+  },
+  {
+    "title": "Relaxed Actor-Critic With Convergence Guarantees for Continuous-Time Optimal Control of Nonlinear Systems",
+    "authors": "J. Duan, J. Li, Q. Ge, S. E. Li, M. Bujarbaruah, F. Ma, D. Zhang",
+    "venue": "IEEE Transactions on Intelligent Vehicles",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tiv.2023.3255264",
+    "pub_url": "https://arxiv.org/pdf/1909.05402",
+    "category": "",
+    "scholar_id": "W4323897042"
+  },
+  {
+    "title": "Policy Iteration Based Approximate Dynamic Programming Toward Autonomous Driving in Constrained Dynamic Environment",
+    "authors": "Z. Lin, J. Ma, J. Duan, S. E. Li, H. Ma, B. Cheng, T. H. Lee",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2023,
+    "url": "https://doi.org/10.1109/tits.2023.3237568",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4319997953"
+  },
+  {
+    "title": "Primal-Dual Estimator Learning Method with Feasibility and Near-Optimality Guarantees",
+    "authors": "W. Cao, J. Duan, S. E. Li, C. Chen, C. Liu, Y. Wang",
+    "venue": "2022 IEEE 61st Conference on Decision and Control (CDC)",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/cdc51059.2022.9992814",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4315488589"
+  },
+  {
+    "title": "On the Optimization Landscape of Dynamic Output Feedback: A Case Study for Linear Quadratic Regulator",
+    "authors": "J. Duan, W. Cao, Y. Zheng, L. Zhao",
+    "venue": "2022 IEEE 61st Conference on Decision and Control (CDC)",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/cdc51059.2022.9992503",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4315488852"
+  },
+  {
+    "title": "Policy-Iteration-Based Finite-Horizon Approximate Dynamic Programming for Continuous-Time Nonlinear Optimal Control",
+    "authors": "Z. Lin, J. Duan, S. E. Li, H. Ma, J. Li, J. Chen, B. Cheng, J. Ma",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/tnnls.2022.3225090",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4312567063"
+  },
+  {
+    "title": "Smoothing Policy Iteration for Zero-sum Markov Games",
+    "authors": "Y. Ren, Y. Lyu, W. Wang, S. E. Li, Z. Li, J. Duan",
+    "venue": "arXiv preprint arXiv:arxiv.2212.01623",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2212.01623",
+    "pub_url": "https://arxiv.org/pdf/2212.01623",
+    "category": "",
+    "scholar_id": "W4310823427"
+  },
+  {
+    "title": "Distributed Model Predictive Control of Connected Multi-Vehicle Systems at Unsignalized Intersections",
+    "authors": "Q. Ge, G. Sartoretti, J. Duan, S. E. Li, Y. Yin, S. Zheng",
+    "venue": "2022 IEEE International Conference on Unmanned Systems (ICUS)",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/icus55513.2022.9986954",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4313288791"
+  },
+  {
+    "title": "Safe Model-Based Reinforcement Learning with an Uncertainty-Aware Reachability Certificate",
+    "authors": "D. Yu, W. Zou, Y. Yang, H. Ma, S. E. Li, J. Duan, J. Chen",
+    "venue": "arXiv preprint arXiv:arxiv.2210.07553",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2210.07553",
+    "pub_url": "https://arxiv.org/pdf/2210.07553",
+    "category": "",
+    "scholar_id": "W4306705158"
+  },
+  {
+    "title": "Integrated eco-driving automation of intelligent vehicles in multi-lane scenario via model-accelerated reinforcement learning",
+    "authors": "Z. Gu, Y. Yin, S. E. Li, J. Duan, F. Zhang, S. Zheng, R. Yang",
+    "venue": "Transportation Research Part C Emerging Technologies",
+    "year": 2022,
+    "url": "https://doi.org/10.1016/j.trc.2022.103863",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4295813067"
+  },
+  {
+    "title": "On the Optimization Landscape of Dynamic Output Feedback: A Case Study for Linear Quadratic Regulator",
+    "authors": "J. Duan, W. Cao, Y. Zheng, L. Zhao",
+    "venue": "arXiv preprint arXiv:arxiv.2209.05042",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2209.05042",
+    "pub_url": "https://arxiv.org/pdf/2209.05042",
+    "category": "",
+    "scholar_id": "W4295682930"
+  },
+  {
+    "title": "Self-learning Decision and Control for Highly Automated Vehicles",
+    "authors": "J. Chen, J. Duan, Y. Guan, Q. Sun, Y. Yin, S. E. Li",
+    "venue": "Lecture notes in intelligent transportation and infrastructure",
+    "year": 2022,
+    "url": "https://doi.org/10.1007/978-3-031-06780-8_11",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4295063144"
+  },
+  {
+    "title": "Global Convergence of Two-timescale Actor-Critic for Solving Linear Quadratic Regulator",
+    "authors": "X. Chen, J. Duan, Y. Liang, L. Zhao",
+    "venue": "arXiv preprint arXiv:arxiv.2208.08744",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2208.08744",
+    "pub_url": "https://arxiv.org/pdf/2208.08744",
+    "category": "",
+    "scholar_id": "W4292448171"
+  },
+  {
+    "title": "Self-Learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
+    "authors": "Y. Ren, J. Jiang, G. Zhan, S. E. Li, C. Chen, K. Li, J. Duan",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/tits.2022.3196167",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3213557649"
+  },
+  {
+    "title": "Point Instance Segmentation Considering Feature Enhancement for Lane Detection",
+    "authors": "B. Zhao, X. Li, H. Li, C. Chen, Y. Ren, J. Duan",
+    "venue": "2022 41st Chinese Control Conference (CCC)",
+    "year": 2022,
+    "url": "https://doi.org/10.23919/ccc55666.2022.9902759",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4312382033"
+  },
+  {
+    "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
+    "authors": "J. Duan, J. Li, S. E. Li, L. Zhao",
+    "venue": "2022 American Control Conference (ACC)",
+    "year": 2022,
+    "url": "https://doi.org/10.23919/acc53348.2022.9867384",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4294692180"
+  },
+  {
+    "title": "Model-Based Chance-Constrained Reinforcement Learning via Separated Proportional-Integral Lagrangian",
+    "authors": "B. Peng, J. Duan, J. Chen, S. E. Li, G. Xie, C. Zhang, Y. Guan, Y. Mu, E. Sun",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/tnnls.2022.3175595",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3195860693"
+  },
+  {
+    "title": "Improve Generalization of Driving Policy at Signalized Intersections with Adversarial Learning",
+    "authors": "Y. Ren, G. Zhan, L. Tang, S. E. Li, J. Jiang, J. Duan",
+    "venue": "arXiv preprint arXiv:arxiv.2204.04403",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2204.04403",
+    "pub_url": "https://arxiv.org/pdf/2204.04403",
+    "category": "",
+    "scholar_id": "W4223457629"
+  },
+  {
+    "title": "Primal-dual Estimator Learning: an Offline Constrained Moving Horizon Estimation Method with Feasibility and Near-optimality Guarantees",
+    "authors": "W. Cao, J. Duan, S. E. Li, C. Chen, C. Liu, Y. Wang",
+    "venue": "arXiv preprint arXiv:arxiv.2204.02857",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2204.02857",
+    "pub_url": "https://arxiv.org/pdf/2204.02857",
+    "category": "",
+    "scholar_id": "W4226043072"
+  },
+  {
+    "title": "Applications of Distributional Soft Actor-Critic in Real-world Autonomous Driving",
+    "authors": "J. Duan, F. Zhang, S. E. Li, Y. Ren, B. Cheng, Z. Xin",
+    "venue": "",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/icccr54399.2022.9790288",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4282944332"
+  },
+  {
+    "title": "Recurrent Model Predictive Control: Learning an Explicit Recurrent Controller for Nonlinear Systems",
+    "authors": "Z. Liu, J. Duan, W. Wang, S. E. Li, Y. Yin, Z. Lin, B. Cheng",
+    "venue": "IEEE Transactions on Industrial Electronics",
+    "year": 2022,
+    "url": "https://doi.org/10.1109/tie.2022.3153800",
+    "pub_url": "https://arxiv.org/pdf/2102.10289",
+    "category": "",
+    "scholar_id": "W4214851269"
+  },
+  {
+    "title": "On the Optimization Landscape of Dynamic Output Feedback Linear Quadratic Control",
+    "authors": "J. Duan, W. Cao, Y. Zheng, L. Zhao",
+    "venue": "arXiv preprint arXiv:arxiv.2201.09598",
+    "year": 2022,
+    "url": "https://doi.org/10.48550/arxiv.2201.09598",
+    "pub_url": "https://arxiv.org/pdf/2201.09598",
+    "category": "",
+    "scholar_id": "W4226467685"
+  },
+  {
+    "title": "Fixed-Dimensional and Permutation Invariant State Representation of Autonomous Driving",
+    "authors": "J. Duan, D. Yu, S. E. Li, W. Wang, Y. Ren, Z. Lin, B. Cheng",
+    "venue": "IEEE Transactions on Intelligent Transportation Systems",
+    "year": 2021,
+    "url": "https://doi.org/10.1109/tits.2021.3136588",
+    "pub_url": "https://arxiv.org/pdf/2105.11299",
+    "category": "",
+    "scholar_id": "W3165559047"
+  },
+  {
+    "title": "Adaptive dynamic programming for nonaffine nonlinear optimal control problem with state constraints",
+    "authors": "J. Duan, Z. Liu, S. E. Li, Q. Sun, Z. Jia, B. Cheng",
+    "venue": "Neurocomputing",
+    "year": 2021,
+    "url": "https://doi.org/10.1016/j.neucom.2021.04.134",
+    "pub_url": "https://arxiv.org/pdf/1911.11397",
+    "category": "",
+    "scholar_id": "W3209549283"
+  },
+  {
+    "title": "Self-learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
+    "authors": "Y. Ren, J. Jiang, D. Yu, S. E. Li, J. Duan, C. Chen, K. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2110.12359",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2110.12359",
+    "pub_url": "https://arxiv.org/pdf/2110.12359",
+    "category": "",
+    "scholar_id": "W4306315223"
+  },
+  {
+    "title": "Encoding Integrated Decision and Control for Autonomous Driving with Mixed Traffic Flow.",
+    "authors": "Y. Ren, J. Jiang, J. Duan, S. E. Li, D. Yu, G. Zhan",
+    "venue": "",
+    "year": 2021,
+    "url": "https://openalex.org/W3209991460",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3209991460"
+  },
+  {
+    "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
+    "authors": "J. Duan, J. Li, S. E. Li, L. Zhao",
+    "venue": "arXiv preprint arXiv:arxiv.2109.13132",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2109.13132",
+    "pub_url": "https://arxiv.org/pdf/2109.13132",
+    "category": "",
+    "scholar_id": "W3201944662"
+  },
+  {
+    "title": "Belief state separated reinforcement learning for autonomous vehicle decision making under uncertainty",
+    "authors": "Z. Gu, Y. Yang, J. Duan, S. E. Li, J. Chen, W. Cao, S. Zheng",
+    "venue": "",
+    "year": 2021,
+    "url": "https://doi.org/10.1109/itsc48978.2021.9564576",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3210962293"
+  },
+  {
+    "title": "Encoding Distributional Soft Actor-Critic for Autonomous Driving in Multi-lane Scenarios",
+    "authors": "J. Duan, Y. Ren, F. Zhang, Y. Guan, D. Yu, S. E. Li, B. Cheng, L. Zhao",
+    "venue": "arXiv preprint arXiv:arxiv.2109.05540",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2109.05540",
+    "pub_url": "https://arxiv.org/pdf/2109.05540",
+    "category": "",
+    "scholar_id": "W3201463221"
+  },
+  {
+    "title": "Model-based Chance-Constrained Reinforcement Learning via Separated Proportional-Integral Lagrangian",
+    "authors": "B. Peng, J. Duan, J. Chen, S. E. Li, G. Xie, C. Zhang, Y. Guan, Y. Mu, E. Sun",
+    "venue": "arXiv preprint arXiv:arxiv.2108.11623",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2108.11623",
+    "pub_url": "https://arxiv.org/pdf/2108.11623",
+    "category": "",
+    "scholar_id": "W4308706865"
+  },
+  {
+    "title": "Separated Proportional-Integral Lagrangian for Chance Constrained Reinforcement Learning",
+    "authors": "B. Peng, Y. Mu, J. Duan, Y. Guan, S. E. Li, J. Chen",
+    "venue": "arXiv preprint",
+    "year": 2021,
+    "url": "https://doi.org/10.1109/iv48863.2021.9575205",
+    "pub_url": "https://arxiv.org/pdf/2102.08539",
+    "category": "",
+    "scholar_id": "W3133255192"
+  },
+  {
+    "title": "Cover: International Journal of Intelligent Systems, Volume 36 Issue 8 August 2021",
+    "authors": "Y. Guan, S. E. Li, J. Duan, J. Li, Y. Ren, Q. Sun, B. Cheng",
+    "venue": "International Journal of Intelligent Systems",
+    "year": 2021,
+    "url": "https://doi.org/10.1002/int.22574",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W4205452881"
+  },
+  {
+    "title": "Distributional Soft Actor-Critic: Off-Policy Reinforcement Learning for Addressing Value Estimation Errors",
+    "authors": "J. Duan, Y. Guan, S. E. Li, Y. Ren, Q. Sun, B. Cheng",
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+    "year": 2021,
+    "url": "https://doi.org/10.1109/tnnls.2021.3082568",
+    "pub_url": "https://arxiv.org/pdf/2001.02811",
+    "category": "",
+    "scholar_id": "W3015082424"
+  },
+  {
+    "title": "Direct and indirect reinforcement learning",
+    "authors": "Y. Guan, S. E. Li, J. Duan, J. Li, Y. Ren, Q. Sun, B. Cheng",
+    "venue": "International Journal of Intelligent Systems",
+    "year": 2021,
+    "url": "https://doi.org/10.1002/int.22466",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3167264379"
+  },
+  {
+    "title": "Integrated Decision and Control: Towards Interpretable and Efficient Driving Intelligence.",
+    "authors": "Y. Guan, Y. Ren, S. E. Li, H. Ma, J. Duan, B. Cheng",
+    "venue": "arXiv preprint",
+    "year": 2021,
+    "url": "https://openalex.org/W3138915777",
+    "pub_url": "https://arxiv.org/pdf/2103.10290v1",
+    "category": "",
+    "scholar_id": "W3138915777"
+  },
+  {
+    "title": "Integrated Decision and Control: Towards Interpretable and Computationally Efficient Driving Intelligence",
+    "authors": "Y. Guan, Y. Ren, Q. Sun, S. E. Li, H. Ma, J. Duan, Y. Dai, B. Cheng",
+    "venue": "arXiv preprint arXiv:arxiv.2103.10290",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2103.10290",
+    "pub_url": "https://arxiv.org/pdf/2103.10290",
+    "category": "",
+    "scholar_id": "W3160223607"
+  },
+  {
+    "title": "Approximate Optimal Filter for Linear Gaussian Time-invariant Systems",
+    "authors": "K. Tang, S. E. Li, Y. Yin, Y. Guan, J. Duan, W. Cao, J. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2103.05505",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2103.05505",
+    "pub_url": "https://arxiv.org/pdf/2103.05505",
+    "category": "",
+    "scholar_id": "W3135893859"
+  },
+  {
+    "title": "Decision-Making under On-Ramp merge Scenarios by Distributional Soft Actor-Critic Algorithm",
+    "authors": "Y. Kong, Y. Guan, J. Duan, S. E. Li, Q. Sun, B. Nie",
+    "venue": "arXiv preprint arXiv:arxiv.2103.04535",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2103.04535",
+    "pub_url": "https://arxiv.org/pdf/2103.04535",
+    "category": "",
+    "scholar_id": "W3133570884"
+  },
+  {
+    "title": "Mixed Policy Gradient.",
+    "authors": "Y. Guan, J. Duan, S. E. Li, J. Li, J. Chen, B. Cheng",
+    "venue": "arXiv preprint",
+    "year": 2021,
+    "url": "https://openalex.org/W3130974966",
+    "pub_url": "http://export.arxiv.org/pdf/2102.11513",
+    "category": "",
+    "scholar_id": "W3130974966"
+  },
+  {
+    "title": "Recurrent Model Predictive Control",
+    "authors": "Z. Liu, J. Duan, W. Wang, S. E. Li, Y. Yin, Z. Lin, Q. Sun, B. Cheng",
+    "venue": "arXiv preprint arXiv:arxiv.2102.11736",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2102.11736",
+    "pub_url": "https://arxiv.org/pdf/2102.11736",
+    "category": "",
+    "scholar_id": "W3133216895"
+  },
+  {
+    "title": "Mixed Policy Gradient: off-policy reinforcement learning driven jointly by data and model",
+    "authors": "Y. Guan, J. Duan, S. E. Li, J. Li, J. Chen, B. Cheng",
+    "venue": "arXiv preprint arXiv:arxiv.2102.11513",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2102.11513",
+    "pub_url": "https://arxiv.org/pdf/2102.11513",
+    "category": "",
+    "scholar_id": "W4392220968"
+  },
+  {
+    "title": "Separated Proportional-Integral Lagrangian for Chance Constrained\\n Reinforcement Learning",
+    "authors": "B. Peng, Y. Mu, J. Duan, Y. Guan, S. E. Li, J. Chen",
+    "venue": "arXiv preprint",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2102.08539",
+    "pub_url": "https://arxiv.org/pdf/2102.08539",
+    "category": "",
+    "scholar_id": "W3216680232"
+  },
+  {
+    "title": "Solving Finite-Horizon HJB for Optimal Control of Continuous-Time Systems",
+    "authors": "Z. Lin, J. Duan, S. E. Li, J. Li, H. Ma, Q. Sun, J. Chen, B. Cheng",
+    "venue": "",
+    "year": 2021,
+    "url": "https://doi.org/10.1109/icccr49711.2021.9349412",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3131282584"
+  },
+  {
+    "title": "Reinforced Optimal Estimator",
+    "authors": "W. Cao, J. Chen, J. Duan, S. E. Li, Y. Lyu, Z. Gu, Y. Zhang",
+    "venue": "IFAC-PapersOnLine",
+    "year": 2021,
+    "url": "https://doi.org/10.1016/j.ifacol.2021.11.201",
+    "pub_url": "https://doi.org/10.1016/j.ifacol.2021.11.201",
+    "category": "",
+    "scholar_id": "W4205534431"
+  },
+  {
+    "title": "Continuous-time finite-horizon ADP for automated vehicle controller design with high efficiency",
+    "authors": "Z. Lin, J. Duan, S. E. Li, H. Ma, Y. Yin, B. Cheng",
+    "venue": "2020 3rd International Conference on Unmanned Systems (ICUS)",
+    "year": 2020,
+    "url": "https://doi.org/10.1109/icus50048.2020.9274944",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3110685645"
+  },
+  {
+    "title": "Improving Generalization of Reinforcement Learning with Minimax Distributional Soft Actor-Critic",
+    "authors": "Y. Ren, J. Duan, S. E. Li, Y. Guan, Q. Sun",
+    "venue": "",
+    "year": 2020,
+    "url": "https://doi.org/10.1109/itsc45102.2020.9294300",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3114647763"
+  },
+  {
+    "title": "Safe Reinforcement Learning for Autonomous Vehicles through Parallel Constrained Policy Optimization",
+    "authors": "L. Wen, J. Duan, S. E. Li, S. Xu, H. Peng",
+    "venue": "",
+    "year": 2020,
+    "url": "https://doi.org/10.1109/itsc45102.2020.9294262",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3115648115"
+  },
+  {
+    "title": "Ternary Policy Iteration Algorithm for Nonlinear Robust Control",
+    "authors": "J. Li, S. E. Li, Y. Guan, J. Duan, W. Li, Y. Yin",
+    "venue": "arXiv preprint arXiv:arxiv.2007.06810",
+    "year": 2020,
+    "url": "https://doi.org/10.48550/arxiv.2007.06810",
+    "pub_url": "https://arxiv.org/pdf/2007.06810",
+    "category": "",
+    "scholar_id": "W3042581999"
+  },
+  {
+    "title": "Continuous-time finite-horizon ADP for automated vehicle controller design with high efficiency",
+    "authors": "Z. Lin, J. Duan, S. E. Li, H. Ma, Y. Yin",
+    "venue": "arXiv preprint arXiv:arxiv.2007.02070",
+    "year": 2020,
+    "url": "https://doi.org/10.48550/arxiv.2007.02070",
+    "pub_url": "https://arxiv.org/pdf/2007.02070",
+    "category": "",
+    "scholar_id": "W3039423374"
+  },
+  {
+    "title": "Safe Reinforcement Learning for Autonomous Vehicles through Parallel Constrained Policy Optimization",
+    "authors": "L. Wen, J. Duan, S. E. Li, S. Xu, H. Peng",
+    "venue": "arXiv preprint arXiv:arxiv.2003.01303",
+    "year": 2020,
+    "url": "https://doi.org/10.48550/arxiv.2003.01303",
+    "pub_url": "https://arxiv.org/pdf/2003.01303",
+    "category": "",
+    "scholar_id": "W3009759305"
+  },
+  {
+    "title": "Improving Generalization of Reinforcement Learning with Minimax Distributional Soft Actor-Critic",
+    "authors": "Y. Ren, J. Duan, S. E. Li, Y. Guan, Q. Sun",
+    "venue": "arXiv preprint arXiv:arxiv.2002.05502",
+    "year": 2020,
+    "url": "https://doi.org/10.48550/arxiv.2002.05502",
+    "pub_url": "https://arxiv.org/pdf/2002.05502",
+    "category": "",
+    "scholar_id": "W3006409413"
+  },
+  {
+    "title": "Hierarchical reinforcement learning for self‐driving decision‐making without reliance on labelled driving data",
+    "authors": "J. Duan, S. E. Li, Y. Guan, Q. Sun, B. Cheng",
+    "venue": "IET Intelligent Transport Systems",
+    "year": 2020,
+    "url": "https://doi.org/10.1049/iet-its.2019.0317",
+    "pub_url": "https://ietresearch.onlinelibrary.wiley.com/doi/pdfdirect/10.1049/iet-its.2019.0317",
+    "category": "",
+    "scholar_id": "W3002044607"
+  },
+  {
+    "title": "Addressing Value Estimation Errors in Reinforcement Learning with a State-Action Return Distribution Function",
+    "authors": "J. Duan, Y. Guan, Y. Ren, S. E. Li, B. Cheng",
+    "venue": "",
+    "year": 2020,
+    "url": "https://openalex.org/W2998945017",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W2998945017"
+  },
+  {
+    "title": "Direct and indirect reinforcement learning",
+    "authors": "Y. Guan, S. E. Li, J. Duan, J. Li, Y. Ren, Q. Sun, B. Cheng",
+    "venue": "arXiv preprint arXiv:arxiv.1912.10600",
+    "year": 2019,
+    "url": "https://doi.org/10.48550/arxiv.1912.10600",
+    "pub_url": "https://arxiv.org/pdf/1912.10600",
+    "category": "",
+    "scholar_id": "W2996357468"
+  },
+  {
+    "title": "Deep adaptive dynamic programming for nonaffine nonlinear optimal control problem with state constraints",
+    "authors": "J. Duan, Z. Liu, S. E. Li, Q. Sun, Z. Jia, B. Cheng",
+    "venue": "arXiv preprint",
+    "year": 2019,
+    "url": "https://openalex.org/W2991604404",
+    "pub_url": "https://arxiv.org/pdf/1911.11397.pdf",
+    "category": "",
+    "scholar_id": "W2991604404"
+  },
+  {
+    "title": "Promoting connected and automated vehicles with cooperative sensing and control technology",
+    "authors": "S. E. Li, X. Long, C. Liu, J. Duan, Y. Bian",
+    "venue": "Institution of Engineering and Technology eBooks",
+    "year": 2019,
+    "url": "https://doi.org/10.1049/pbtr025e_ch23",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W3005406119"
+  },
+  {
+    "title": "Generalized Policy Iteration for Optimal Control in Continuous Time.",
+    "authors": "J. Duan, S. E. Li, Z. Liu, M. Bujarbaruah, B. Cheng",
+    "venue": "arXiv preprint",
+    "year": 2019,
+    "url": "https://openalex.org/W2972670442",
+    "pub_url": "https://arxiv.org/pdf/1909.05402.pdf",
+    "category": "",
+    "scholar_id": "W2972670442"
+  },
+  {
+    "title": "Drivers’ Braking Behaviors in Different Motion Patterns of Vehicle-Bicycle Conflicts",
+    "authors": "L. Hou, J. Duan, W. Wang, L. Ren-Jie, G. Li, B. Cheng",
+    "venue": "Journal of Advanced Transportation",
+    "year": 2019,
+    "url": "https://doi.org/10.1155/2019/4023970",
+    "pub_url": "http://downloads.hindawi.com/journals/jat/2019/4023970.pdf",
+    "category": "",
+    "scholar_id": "W2919095742"
+  },
+  {
+    "title": "Markov probabilistic decision making of self-driving cars in highway with random traffic flow: a simulation study",
+    "authors": "Y. Guan, S. E. Li, J. Duan, W. Wang, B. Cheng",
+    "venue": "Journal of Intelligent and Connected Vehicles",
+    "year": 2018,
+    "url": "https://doi.org/10.1108/jicv-01-2018-0003",
+    "pub_url": "https://doi.org/10.1108/jicv-01-2018-0003",
+    "category": "",
+    "scholar_id": "W2897676672"
+  },
+  {
+    "title": "Driver braking behavior analysis to improve autonomous emergency braking systems in typical Chinese vehicle-bicycle conflicts",
+    "authors": "J. Duan, R. Li, L. Hou, W. Wang, G. Li, S. E. Li, B. Cheng, H. Gao",
+    "venue": "Accident Analysis & Prevention",
+    "year": 2017,
+    "url": "https://doi.org/10.1016/j.aap.2017.08.022",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W2752924917"
+  },
+  {
+    "title": "Performance Enhanced Predictive Control for Adaptive Cruise Control System Considering Road Elevation Information",
+    "authors": "S. E. Li, Q. Guo, S. Xu, J. Duan, S. Li, C. Li, K. Su",
+    "venue": "IEEE Transactions on Intelligent Vehicles",
+    "year": 2017,
+    "url": "https://doi.org/10.1109/tiv.2017.2736246",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W2744452518"
+  },
+  {
+    "title": "Development of an Estimation Procedure for an Activity‐Based Travel Demand Model",
+    "authors": "W. Recker, J. Duan, H. Wang",
+    "venue": "Computer-Aided Civil and Infrastructure Engineering",
+    "year": 2008,
+    "url": "https://doi.org/10.1111/j.1467-8667.2008.00555.x",
+    "pub_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-8667.2008.00555.x",
+    "category": "",
+    "scholar_id": "W1564944673"
+  },
+  {
+    "title": "Atomistic Study of Self-Diffusion in Ni, Al and Ni&lt;sub&gt;3&lt;/sub&gt;Al",
+    "authors": "J. Duan, Y. Osetsky, D. Bacon",
+    "venue": "Defect and diffusion forum/Diffusion and defect data, solid state data. Part A, Defect and diffusion forum",
+    "year": 2001,
+    "url": "https://doi.org/10.4028/www.scientific.net/ddf.194-199.423",
+    "pub_url": null,
+    "category": "",
+    "scholar_id": "W2096819257"
+  }
+]
