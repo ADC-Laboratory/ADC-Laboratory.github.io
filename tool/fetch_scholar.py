@@ -108,7 +108,9 @@ def _oa_get(path: str, params: dict) -> dict:
 
 
 def _resolve_author_id() -> str:
-    """解析配置的作者身份，返回 OpenAlex 作者 ID（形如 A5012345678）"""
+    """解析配置的作者身份，返回 OpenAlex 作者 ID（形如 A5012345678）。
+    仅负责定位作者 ID；机构信息由后续的 _load_author_context 拉取。
+    """
     # 优先级 1：显式配置的 OpenAlex ID
     oa_id = getattr(config, "OPENALEX_AUTHOR_ID", "").strip()
     if oa_id:
@@ -124,75 +126,115 @@ def _resolve_author_id() -> str:
         print(f"[openalex] 找到 {aid} ({r.get('display_name')})")
         return aid
 
-    # 优先级 3：按名字搜索，挑最高匹配的
-    name = getattr(config, "AUTHOR_NAME", "Jingliang Duan")
-    print(f"[openalex] 按名字搜索作者: {name}")
+    # 优先级 3：按名字搜索，挑"作品最多"的（最简单的启发式）
+    # 不再用机构关键词硬编码——用户应该填 OPENALEX_AUTHOR_ID 来避免歧义
+    name = getattr(config, "AUTHOR_NAME", "")
+    if not name:
+        raise RuntimeError("config 里 OPENALEX_AUTHOR_ID / AUTHOR_ORCID / AUTHOR_NAME 至少要有一个")
+    print(f"[openalex] 按名字搜索: {name}（推荐填 OPENALEX_AUTHOR_ID 避免歧义）")
     r = _oa_get("/authors", {"search": name, "per_page": 10})
     results = r.get("results", [])
     if not results:
         raise RuntimeError(f"OpenAlex 找不到名字为 '{name}' 的作者")
-
-    # 用机构关键词辅助挑选正确的 Dr. Duan
-    # 段老师工作/访学经历：USTB（现职）、清华（博士）、NUS、UC Berkeley
-    hints = [s.lower() for s in getattr(
-        config, "AUTHOR_INSTITUTION_HINTS",
-        [
-            "University of Science and Technology Beijing", "USTB",
-            "Tsinghua",
-            "National University of Singapore", "NUS",
-            "University of California, Berkeley", "UC Berkeley", "Berkeley",
-        ],
-    )]
-
-    def score(a):
-        s = 0
-        affs = a.get("last_known_institutions") or []
-        for inst in affs:
-            nm = (inst.get("display_name") or "").lower()
-            for h in hints:
-                if h in nm:
-                    s += 100
-        s += min(a.get("works_count", 0), 50)  # 作品多的加分，但封顶
-        return s
-
-    results.sort(key=score, reverse=True)
+    # 按 works_count 降序取第一个
+    results.sort(key=lambda a: a.get("works_count", 0), reverse=True)
     best = results[0]
     aid = best["id"].rsplit("/", 1)[-1]
     affs = best.get("last_known_institutions") or []
     aff_name = affs[0].get("display_name") if affs else "(无机构)"
     print(f"[openalex] 挑选: {aid} - {best.get('display_name')} @ {aff_name}")
-    print(f"[openalex]   works_count={best.get('works_count')}, 备选 {len(results)-1} 个已跳过")
     return aid
 
 
-def _format_authors(authorships: list) -> str:
-    """把 OpenAlex 的 authorships 数组格式化成 'J Duan, Y Ren, ...' 形式"""
-    names = []
+def _load_author_context(author_id: str) -> dict:
+    """拉取 author 对象，提取机构白名单 + 备选名。
+    返回 {
+        "author_id": "A5xxx",
+        "display_name": "...",
+        "institution_ids": set() — 所有历史机构 OpenAlex ID，用于机构过滤
+        "institution_names": [...] — 仅供日志显示
+    }
+    """
+    data = _oa_get(f"/authors/{author_id}", {})
+
+    inst_ids: set[str] = set()
+    inst_names: list[str] = []
+    seen_ids: set[str] = set()
+
+    # affiliations 是历史机构列表（每个 entry 有 institution + years）
+    for aff in data.get("affiliations") or []:
+        inst = aff.get("institution") or {}
+        iid = (inst.get("id") or "").rsplit("/", 1)[-1]
+        name = (inst.get("display_name") or "").strip()
+        if iid and iid not in seen_ids:
+            seen_ids.add(iid)
+            inst_ids.add(iid)
+            inst_names.append(name)
+
+    # last_known_institutions 是最近机构（通常是 affiliations 的子集，但为了稳妥加进来）
+    for inst in data.get("last_known_institutions") or []:
+        iid = (inst.get("id") or "").rsplit("/", 1)[-1]
+        name = (inst.get("display_name") or "").strip()
+        if iid and iid not in seen_ids:
+            seen_ids.add(iid)
+            inst_ids.add(iid)
+            inst_names.append(name)
+
+    print(f"[author] {data.get('display_name')} 的历史机构（从 OpenAlex affiliations 自动获取）：")
+    for n in inst_names:
+        print(f"  - {n}")
+
+    return {
+        "author_id": author_id,
+        "display_name": data.get("display_name", ""),
+        "institution_ids": inst_ids,
+        "institution_names": inst_names,
+    }
+
+
+def _format_authors(authorships: list, bold_ids: set[str]) -> str:
+    """OpenAlex authorships → HTML 串。
+    `bold_ids` 里的 author.id 对应的作者名会被 <b> 包裹。
+    用 author.id 精确匹配，不依赖名字拼写（"J Duan" / "Jingliang Duan" / "段京良" 都同一个 ID）。
+    """
+    parts: list[str] = []
     for a in authorships:
         author = a.get("author") or {}
-        name = author.get("display_name", "").strip()
+        aid = (author.get("id") or "").rsplit("/", 1)[-1]
+        name = (author.get("display_name") or "").strip()
         if not name:
             continue
-        # 转成 "J Duan" 式缩写（除了我们关心的加粗名字）
-        parts = name.split()
-        if len(parts) >= 2:
-            initials = " ".join(p[0] + "." for p in parts[:-1] if p)
-            short = f"{initials} {parts[-1]}"
+        # 压缩成 "J. Duan"
+        bits = name.split()
+        if len(bits) >= 2:
+            initials = " ".join(p[0] + "." for p in bits[:-1] if p)
+            short = f"{initials} {bits[-1]}"
         else:
             short = name
-        names.append(short)
-    return ", ".join(names)
+        if aid and aid in bold_ids:
+            short = f"<b>{short}</b>"
+        parts.append(short)
+    return ", ".join(parts)
 
 
 def _extract_venue(work: dict) -> str:
-    """从 OpenAlex work 对象提取 venue 字段"""
-    # arXiv 和 preprint 特殊处理
-    loc = work.get("primary_location") or {}
-    src = loc.get("source") or {}
-    src_type = (src.get("type") or "").lower()
-    src_name = (src.get("display_name") or "").strip()
+    """从 OpenAlex work 对象提取 venue 字段。
+    
+    优先级（都是 OpenAlex 通用字段，不靠任何硬编码映射）：
+      1. primary_location.source.display_name     — OpenAlex 规范化的 source 名
+      2. primary_location.raw_source_name         — Crossref 传来的原始 venue 名
+                                                    （source 匹配失败时最关键的兜底）
+      3. 遍历 locations[] 找非空的 display_name / raw_source_name
+      4. 作为最后手段，返回空串（让 render_li 自己处理）
+    
+    Preprint/arXiv 特殊处理：拼成 "arXiv preprint arXiv:{id}"
+    """
+    # ---- Preprint / arXiv 特殊处理 ----
+    primary_loc = work.get("primary_location") or {}
+    primary_src = primary_loc.get("source") or {}
+    primary_name = (primary_src.get("display_name") or "").strip()
 
-    if work.get("type") == "preprint" or "arxiv" in src_name.lower():
+    if work.get("type") in ("preprint", "posted-content") or "arxiv" in primary_name.lower():
         arxiv_id = ""
         for lid in (work.get("ids") or {}).values():
             if isinstance(lid, str) and "arxiv" in lid.lower():
@@ -202,7 +244,43 @@ def _extract_venue(work: dict) -> str:
             return f"arXiv preprint arXiv:{arxiv_id}"
         return "arXiv preprint"
 
-    return src_name
+    # ---- 正常论文：按通用字段优先级尝试 ----
+    candidates: list[str] = []
+
+    # 1) primary_location 的结构化名字
+    if primary_name:
+        candidates.append(primary_name)
+
+    # 2) primary_location 的 raw name（Crossref 原始数据，OpenAlex 匹配失败时的兜底）
+    raw = (primary_loc.get("raw_source_name") or "").strip()
+    if raw:
+        candidates.append(raw)
+
+    # 3) 遍历所有 locations 找非空的（但跳过 arxiv / 仓库类的）
+    for loc in (work.get("locations") or []):
+        if not loc:
+            continue
+        src = loc.get("source") or {}
+        src_type = (src.get("type") or "").lower()
+        if src_type == "repository":
+            continue  # 跳过 arXiv / 机构仓库
+        for field in ("display_name",):
+            name = (src.get(field) or "").strip()
+            if name and "arxiv" not in name.lower():
+                candidates.append(name)
+        raw = (loc.get("raw_source_name") or "").strip()
+        if raw and "arxiv" not in raw.lower():
+            candidates.append(raw)
+
+    # 去重（保序），返回第一个
+    seen = set()
+    for c in candidates:
+        k = c.lower()
+        if k not in seen:
+            seen.add(k)
+            return c
+
+    return ""
 
 
 def _best_url(work: dict) -> tuple[str, Optional[str], Optional[str], Optional[str]]:
@@ -234,56 +312,51 @@ def _best_url(work: dict) -> tuple[str, Optional[str], Optional[str], Optional[s
     return primary, pdf, doi, arxiv_id
 
 
-def _matches_author_institutions(work: dict, author_id: str, hints: list[str]) -> bool:
-    """检查 work 里 Dr. Duan 对应的 authorship 是否关联到白名单机构
+def _matches_author_institutions(work: dict, author_id: str, institution_ids: set[str]) -> bool:
+    """检查 work 里目标作者对应的 authorship 关联的机构是否在已知机构集合里。
     
-    - 找到 authorships 里 author.id == target author_id 的那一条
-    - 查它的 institutions 里有没有任一关键词匹配
-    - 如果 authorships 里没有匹配的机构信息（空），默认通过（不误杀）
+    - 用 institution.id 精确匹配（不再靠字符串关键词）
+    - 已知机构集合来自 author.affiliations[]，自动从 OpenAlex 拉取
+    - 若该 authorship 没有机构信息，默认通过（OpenAlex 常常没抓全，避免误杀）
     """
-    target_url_suffix = author_id  # e.g. "A5067909017"
-    hints_lower = [h.lower() for h in hints]
-
     for a in work.get("authorships") or []:
         author = a.get("author") or {}
         aid = (author.get("id") or "").rsplit("/", 1)[-1]
-        if aid != target_url_suffix:
+        if aid != author_id:
             continue
-        # 这就是 Dr. Duan 的 authorship
+        # 这就是目标作者的 authorship
         insts = a.get("institutions") or []
         if not insts:
-            # 没有机构信息：给 benefit of doubt（OpenAlex 常常没抓全）
-            return True
+            return True  # 无机构信息 → 放行
         for inst in insts:
-            name = (inst.get("display_name") or "").lower()
-            for h in hints_lower:
-                if h in name:
-                    return True
-        # 有机构但都不匹配：拒绝
-        return False
-    # 没找到 target authorship（不应该，但保险起见）
-    return True
+            iid = (inst.get("id") or "").rsplit("/", 1)[-1]
+            if iid and iid in institution_ids:
+                return True
+        return False  # 有机构但都不匹配 → 拒绝
+    return True  # 没找到目标 authorship（不应该，保险起见放行）
 
 
-def _should_include(work: dict, author_id: str) -> tuple[bool, str]:
-    """判断 work 是否应该被包含。返回 (是否包含, 若不包含的原因)"""
+def _should_include(work: dict, author_ctx: dict) -> tuple[bool, str]:
+    """判断 work 是否应该被包含。返回 (是否包含, 不包含原因)"""
     oa_id = work["id"].rsplit("/", 1)[-1]
+    author_id = author_ctx["author_id"]
 
-    # 规则 3：黑名单
-    excludes = getattr(config, "EXCLUDE_OA_IDS", []) or []
+    # 规则 3：OpenAlex ID 黑名单
+    excludes = getattr(config, "EXCLUDE_WORK_IDS", None) or getattr(config, "EXCLUDE_OA_IDS", []) or []
     if oa_id in excludes:
-        return False, "在 EXCLUDE_OA_IDS 黑名单中"
+        return False, "在 EXCLUDE_WORK_IDS 黑名单中"
 
-    # 规则 1：年份
+    # 规则 1：最小年份
     min_year = getattr(config, "MIN_YEAR", 0) or 0
     year = work.get("publication_year") or 0
     if min_year and year and year < min_year:
         return False, f"年份 {year} < MIN_YEAR {min_year}"
 
-    # 规则 2：机构
+    # 规则 2：机构过滤（用 institution.id 精确匹配）
     if getattr(config, "REQUIRE_INSTITUTION_MATCH", False):
-        hints = getattr(config, "AUTHOR_INSTITUTION_HINTS", []) or []
-        if hints and not _matches_author_institutions(work, author_id, hints):
+        inst_ids = author_ctx.get("institution_ids") or set()
+        if inst_ids and not _matches_author_institutions(work, author_id, inst_ids):
+            # 收集 work 里 target 作者的机构名，方便日志定位
             affs = []
             for a in work.get("authorships") or []:
                 author = a.get("author") or {}
@@ -292,7 +365,7 @@ def _should_include(work: dict, author_id: str) -> tuple[bool, str]:
                     for inst in a.get("institutions") or []:
                         affs.append(inst.get("display_name", "?"))
                     break
-            return False, f"机构不匹配（该论文 Duan 关联机构：{affs or '无'}）"
+            return False, f"机构不匹配（该论文 {author_ctx.get('display_name', '作者')} 的关联机构：{affs or '无'}）"
 
     return True, ""
 
@@ -300,6 +373,15 @@ def _should_include(work: dict, author_id: str) -> tuple[bool, str]:
 def fetch_from_scholar(max_results: int) -> list[Pub]:
     """从 OpenAlex 抓取作者全部论文。"""
     author_id = _resolve_author_id()
+
+    # 拉取作者完整上下文（机构 ID 集合等），替代硬编码的 AUTHOR_INSTITUTION_HINTS
+    author_ctx = _load_author_context(author_id)
+
+    # 加粗 ID 集合（来自 config.BOLD_AUTHOR_IDS）
+    bold_ids = set(getattr(config, "BOLD_AUTHOR_IDS", []) or [])
+    # 向后兼容：旧 config 可能只写了 OPENALEX_AUTHOR_ID 作为 PI
+    bold_ids.add(author_id)
+    print(f"[bold] 加粗作者 ID 集合: {sorted(bold_ids)}")
 
     print(f"[openalex] 正在抓取 {author_id} 的作品列表 ...")
     all_works = []
@@ -328,7 +410,7 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
     filter_stats = {"year": 0, "institution": 0, "blacklist": 0}
     filtered_works = []
     for w in all_works:
-        ok, reason = _should_include(w, author_id)
+        ok, reason = _should_include(w, author_ctx)
         if not ok:
             if "MIN_YEAR" in reason:
                 filter_stats["year"] += 1
@@ -348,6 +430,18 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
     filtered_works = filtered_works[:max_results]
     print(f"[openalex] 过滤后 {len(filtered_works)} 篇，开始格式化 ...")
 
+    # 顺便统计 top co-authors，方便用户维护 BOLD_AUTHOR_IDS
+    coauthor_counter: dict[str, dict] = {}
+    for w in filtered_works:
+        for a in w.get("authorships") or []:
+            author = a.get("author") or {}
+            aid = (author.get("id") or "").rsplit("/", 1)[-1]
+            name = (author.get("display_name") or "").strip()
+            if not aid or aid == author_id:
+                continue
+            rec = coauthor_counter.setdefault(aid, {"count": 0, "name": name})
+            rec["count"] += 1
+
     pubs: list[Pub] = []
     for i, w in enumerate(filtered_works):
         try:
@@ -357,7 +451,8 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
 
             year = w.get("publication_year")
             authorships = w.get("authorships") or []
-            authors_str = _format_authors(authorships)
+            # authors 字段现在直接是带 <b> 的 HTML 串
+            authors_str = _format_authors(authorships, bold_ids)
             venue = _extract_venue(w)
             primary_url, download_url, doi, arxiv_id = _best_url(w)
             oa_id = w["id"].rsplit("/", 1)[-1]
@@ -393,6 +488,15 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
             continue
 
     print(f"[openalex] 成功解析 {len(pubs)} 篇")
+
+    # 打印 top co-authors（方便用户挑 ID 加到 BOLD_AUTHOR_IDS）
+    top = sorted(coauthor_counter.items(), key=lambda x: -x[1]["count"])[:25]
+    if top:
+        print(f"\n[coauthors] Top co-authors（按合作论文数，复制 ID 到 config.BOLD_AUTHOR_IDS 可加粗）：")
+        for aid, info in top:
+            bolded = " [已加粗]" if aid in bold_ids else ""
+            print(f"  {info['count']:3d} papers  {aid}  {info['name']}{bolded}")
+        print()
 
     # 过滤：最小年份 + 黑名单
     pubs = _apply_filters(pubs)
@@ -438,37 +542,8 @@ def _apply_filters(pubs: list[Pub]) -> list[Pub]:
     if dropped_by_kw:
         print(f"[filter] 按标题关键词过滤掉 {len(dropped_by_kw)} 篇")
 
-    # 额外的可疑提示：即使通过过滤，也标注一些可能误归的论文
-    _suggest_suspicious(kept)
-
     print(f"[filter] 过滤后剩余 {len(kept)} 篇")
     return kept
-
-
-def _suggest_suspicious(pubs: list[Pub]) -> None:
-    """检查剩余论文，提示可能误归的（基于：作者列表里没有已知的实验室成员/合作者）"""
-    # 已知的 Dr. Duan 合作者关键词（姓即可）
-    known_collaborators = [
-        "duan", "li", "guan", "ren", "sun", "cheng", "ma", "chen", "zou",
-        "yin", "wang", "zhang", "zheng", "zhou", "yu", "gu", "xu", "peng",
-        "lin", "hou", "jiang", "xiao", "yan", "jiao", "kong", "ji", "wei",
-        "yang", "song", "zhao", "cao", "liu", "mu", "dai", "ge",
-    ]
-
-    suspicious = []
-    for p in pubs:
-        # 把作者列表小写化
-        authors_lower = p.authors.lower()
-        # 如果作者列表里一个已知合作者都没匹配到，就可疑
-        if not any(c in authors_lower for c in known_collaborators):
-            suspicious.append(p)
-
-    if suspicious:
-        print(f"[filter] 以下 {len(suspicious)} 篇的作者列表看起来不像 Dr. Duan 圈子，")
-        print("         如果是误归，可以加到 config.EXCLUDE_WORK_IDS：")
-        for p in suspicious[:10]:
-            print(f"    ? [{p.year}] {p.oa_id}: {p.title[:80]}")
-            print(f"      作者: {p.authors[:120]}")
 
 
 # =============================================================================
@@ -582,33 +657,16 @@ def categorize(pub: Pub) -> str:
     return config.DEFAULT_CATEGORY
 
 
-def bold_authors(authors_str: str) -> str:
-    """在作者串中把本组成员用 <b>...</b> 包裹"""
-    # 按长度降序排序，先匹配长名字，避免 "J Duan" 吃掉 "Jingliang Duan"
-    names = sorted(set(config.BOLD_AUTHORS), key=len, reverse=True)
-    result = authors_str
-    for name in names:
-        # 用正则，大小写不敏感，边界用非字母数字
-        pattern = re.compile(
-            r"(?<![\w\u4e00-\u9fff])" + re.escape(name) + r"(?![\w\u4e00-\u9fff])",
-            re.IGNORECASE,
-        )
-        # 避免重复加粗
-        result = pattern.sub(lambda m: f"<BOLD>{m.group(0)}</BOLD>", result)
-    # 统一转成 <b>（先用占位符避免嵌套）
-    result = result.replace("<BOLD>", "<b>").replace("</BOLD>", "</b>")
-    return result
-
-
 # =============================================================================
 #  渲染：Pub 对象 → <li> HTML
 # =============================================================================
 
 def render_li(pub: Pub) -> str:
     """把一篇论文渲染成 <li>…</li> 片段。
-    加 data-src 属性标记为脚本生成，下次运行时可被覆盖更新。
+    pub.authors 已经在 fetch 阶段加粗好了（由 _format_authors 根据 BOLD_AUTHOR_IDS 生成）。
+    data-src 属性标记为脚本生成，下次运行时可被覆盖更新。
     """
-    authors_html = bold_authors(pub.authors)
+    authors_html = pub.authors
 
     # 标题部分
     if pub.url:
