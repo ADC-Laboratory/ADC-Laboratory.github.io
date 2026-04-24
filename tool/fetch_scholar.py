@@ -43,21 +43,32 @@ import config  # noqa: E402
 class Pub:
     """一篇论文的结构化表示"""
     title: str
-    authors: str          # "J Duan, Y Ren, ..." —— Scholar 返回的原始串
-    venue: str            # 发表场所（期刊名/会议名/arxiv）
+    authors: str          # "J Duan, Y Ren, ..."
+    venue: str
     year: Optional[int]
-    url: str              # scholar 指向的原始论文链接
-    pub_url: Optional[str] = None  # 出版商页面/arXiv 页面
+    url: str              # 主链接（DOI 优先）
+    pub_url: Optional[str] = None  # Download 链接
     category: str = ""    # journal / conference / arxiv / book_chapter
-    scholar_id: str = ""  # scholar 内部 id（用作去重 key）
+    oa_id: str = ""       # OpenAlex work ID
+    is_preprint: bool = False
+    doi: Optional[str] = None
+    arxiv_id: Optional[str] = None  # 如果能找到对应的 arXiv ID
 
-    def key(self) -> str:
-        """用于去重和识别"""
-        if self.scholar_id:
-            return f"sid:{self.scholar_id}"
-        # 标题规范化后做 fallback key
-        t = re.sub(r"\W+", "", self.title.lower())
-        return f"title:{t}"
+    def title_key(self) -> str:
+        """规范化标题作为去重 key。
+        全 lowercase、去所有非字母数字字符、压缩空格，避免标点/大小写差异导致重复。
+        """
+        return re.sub(r"\W+", "", self.title.lower())
+
+
+@dataclass
+class ExistingEntry:
+    """从现有 HTML 里解析出的一条论文条目"""
+    title_key: str
+    year: Optional[int]
+    raw_html: str         # 完整的 <li>...</li> HTML 原文
+    section: str          # "Journal" / "Conference Papers" / ...
+    is_auto: bool = False # 是否由脚本生成（下次可被覆盖）
 
 
 # =============================================================================
@@ -185,9 +196,8 @@ def _extract_venue(work: dict) -> str:
     return src_name
 
 
-def _best_url(work: dict) -> tuple[str, Optional[str]]:
-    """返回 (主链接, 下载链接)"""
-    # DOI 优先作为主链接
+def _best_url(work: dict) -> tuple[str, Optional[str], Optional[str], Optional[str]]:
+    """返回 (主链接, 下载链接, doi, arxiv_id)"""
     doi = work.get("doi")
     primary = doi or work.get("id", "")
 
@@ -195,26 +205,98 @@ def _best_url(work: dict) -> tuple[str, Optional[str]]:
     oa = work.get("open_access") or {}
     pdf = oa.get("oa_url")
     if not pdf:
-        # 备选：任一 location 的 pdf
         for loc in work.get("locations") or []:
             if loc.get("pdf_url"):
                 pdf = loc["pdf_url"]
                 break
 
-    return primary, pdf
+    # 找 arXiv ID
+    arxiv_id = None
+    for loc in (work.get("locations") or []):
+        src = loc.get("source") or {}
+        src_name = (src.get("display_name") or "").lower()
+        if "arxiv" in src_name:
+            landing = loc.get("landing_page_url") or ""
+            m = re.search(r"arxiv\.org/(?:abs|pdf)/(\d+\.\d+)", landing)
+            if m:
+                arxiv_id = m.group(1)
+                break
+
+    return primary, pdf, doi, arxiv_id
+
+
+def _matches_author_institutions(work: dict, author_id: str, hints: list[str]) -> bool:
+    """检查 work 里 Dr. Duan 对应的 authorship 是否关联到白名单机构
+    
+    - 找到 authorships 里 author.id == target author_id 的那一条
+    - 查它的 institutions 里有没有任一关键词匹配
+    - 如果 authorships 里没有匹配的机构信息（空），默认通过（不误杀）
+    """
+    target_url_suffix = author_id  # e.g. "A5067909017"
+    hints_lower = [h.lower() for h in hints]
+
+    for a in work.get("authorships") or []:
+        author = a.get("author") or {}
+        aid = (author.get("id") or "").rsplit("/", 1)[-1]
+        if aid != target_url_suffix:
+            continue
+        # 这就是 Dr. Duan 的 authorship
+        insts = a.get("institutions") or []
+        if not insts:
+            # 没有机构信息：给 benefit of doubt（OpenAlex 常常没抓全）
+            return True
+        for inst in insts:
+            name = (inst.get("display_name") or "").lower()
+            for h in hints_lower:
+                if h in name:
+                    return True
+        # 有机构但都不匹配：拒绝
+        return False
+    # 没找到 target authorship（不应该，但保险起见）
+    return True
+
+
+def _should_include(work: dict, author_id: str) -> tuple[bool, str]:
+    """判断 work 是否应该被包含。返回 (是否包含, 若不包含的原因)"""
+    oa_id = work["id"].rsplit("/", 1)[-1]
+
+    # 规则 3：黑名单
+    excludes = getattr(config, "EXCLUDE_OA_IDS", []) or []
+    if oa_id in excludes:
+        return False, "在 EXCLUDE_OA_IDS 黑名单中"
+
+    # 规则 1：年份
+    min_year = getattr(config, "MIN_YEAR", 0) or 0
+    year = work.get("publication_year") or 0
+    if min_year and year and year < min_year:
+        return False, f"年份 {year} < MIN_YEAR {min_year}"
+
+    # 规则 2：机构
+    if getattr(config, "REQUIRE_INSTITUTION_MATCH", False):
+        hints = getattr(config, "AUTHOR_INSTITUTION_HINTS", []) or []
+        if hints and not _matches_author_institutions(work, author_id, hints):
+            affs = []
+            for a in work.get("authorships") or []:
+                author = a.get("author") or {}
+                aid = (author.get("id") or "").rsplit("/", 1)[-1]
+                if aid == author_id:
+                    for inst in a.get("institutions") or []:
+                        affs.append(inst.get("display_name", "?"))
+                    break
+            return False, f"机构不匹配（该论文 Duan 关联机构：{affs or '无'}）"
+
+    return True, ""
 
 
 def fetch_from_scholar(max_results: int) -> list[Pub]:
-    """从 OpenAlex 抓取作者全部论文。
-    函数名保留 fetch_from_scholar 以避免影响其他模块。
-    """
+    """从 OpenAlex 抓取作者全部论文。"""
     author_id = _resolve_author_id()
 
     print(f"[openalex] 正在抓取 {author_id} 的作品列表 ...")
     all_works = []
     page = 1
-    per_page = 200  # OpenAlex 上限
-    while len(all_works) < max_results:
+    per_page = 200
+    while len(all_works) < max_results * 2:  # 多抓一些因为会被过滤掉一批
         r = _oa_get("/works", {
             "filter": f"author.id:{author_id}",
             "per_page": per_page,
@@ -231,11 +313,34 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
             break
         page += 1
 
-    all_works = all_works[:max_results]
-    print(f"[openalex] 共 {len(all_works)} 篇论文，开始格式化 ...")
+    print(f"[openalex] 共 {len(all_works)} 篇 raw works，开始过滤 ...")
+
+    # 过滤阶段
+    filter_stats = {"year": 0, "institution": 0, "blacklist": 0}
+    filtered_works = []
+    for w in all_works:
+        ok, reason = _should_include(w, author_id)
+        if not ok:
+            if "MIN_YEAR" in reason:
+                filter_stats["year"] += 1
+            elif "机构" in reason:
+                filter_stats["institution"] += 1
+            elif "黑名单" in reason:
+                filter_stats["blacklist"] += 1
+            title = (w.get("title") or "")[:60]
+            print(f"  [跳过] {w.get('publication_year', '?')}: {title} — {reason}")
+            continue
+        filtered_works.append(w)
+
+    if any(filter_stats.values()):
+        print(f"[filter] 过滤统计：年份 {filter_stats['year']} / "
+              f"机构 {filter_stats['institution']} / 黑名单 {filter_stats['blacklist']}")
+
+    filtered_works = filtered_works[:max_results]
+    print(f"[openalex] 过滤后 {len(filtered_works)} 篇，开始格式化 ...")
 
     pubs: list[Pub] = []
-    for i, w in enumerate(all_works):
+    for i, w in enumerate(filtered_works):
         try:
             title = (w.get("title") or "").strip()
             if not title:
@@ -245,8 +350,18 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
             authorships = w.get("authorships") or []
             authors_str = _format_authors(authorships)
             venue = _extract_venue(w)
-            primary_url, download_url = _best_url(w)
+            primary_url, download_url, doi, arxiv_id = _best_url(w)
             oa_id = w["id"].rsplit("/", 1)[-1]
+
+            # 判断是不是预印本
+            work_type = (w.get("type") or "").lower()
+            src = (w.get("primary_location") or {}).get("source") or {}
+            src_name = (src.get("display_name") or "").lower()
+            is_preprint = (
+                work_type in {"preprint", "posted-content"}
+                or "arxiv" in src_name
+                or venue.lower().startswith("arxiv")
+            )
 
             pub = Pub(
                 title=title,
@@ -255,16 +370,93 @@ def fetch_from_scholar(max_results: int) -> list[Pub]:
                 year=year,
                 url=primary_url,
                 pub_url=download_url,
-                scholar_id=oa_id,  # 复用这个字段保存 OpenAlex ID
+                oa_id=oa_id,
+                is_preprint=is_preprint,
+                doi=doi,
+                arxiv_id=arxiv_id,
             )
             pubs.append(pub)
-            if i < 5 or i % 20 == 0:
-                print(f"  [{i+1}/{len(all_works)}] {year or '????'}: {title[:70]}")
         except Exception as e:
             print(f"  [{i+1}] 处理失败: {e}")
             continue
 
+    print(f"[openalex] 成功解析 {len(pubs)} 篇")
+
+    # 过滤：最小年份 + 黑名单
+    pubs = _apply_filters(pubs)
+
     return pubs
+
+
+def _apply_filters(pubs: list[Pub]) -> list[Pub]:
+    """按 config 里的过滤规则过滤论文。用于剔除 OpenAlex 作者消歧错误归入的论文。"""
+    min_year = getattr(config, "MIN_YEAR", 0) or 0
+    exclude_ids = set(getattr(config, "EXCLUDE_WORK_IDS", []) or [])
+    exclude_keywords = [k.lower() for k in (getattr(config, "EXCLUDE_TITLE_KEYWORDS", []) or [])]
+
+    kept = []
+    dropped_by_year = []
+    dropped_by_id = []
+    dropped_by_kw = []
+
+    for p in pubs:
+        # 年份过滤
+        if min_year and p.year and p.year < min_year:
+            dropped_by_year.append(p)
+            continue
+        # ID 黑名单
+        if p.oa_id in exclude_ids:
+            dropped_by_id.append(p)
+            continue
+        # 标题关键词黑名单
+        title_lower = p.title.lower()
+        if any(kw in title_lower for kw in exclude_keywords):
+            dropped_by_kw.append(p)
+            continue
+        kept.append(p)
+
+    if dropped_by_year:
+        print(f"[filter] 按最小年份 ({min_year}) 过滤掉 {len(dropped_by_year)} 篇：")
+        for p in dropped_by_year:
+            print(f"    - [{p.year}] {p.oa_id}: {p.title[:80]}")
+        print(f"  提示：如果有误过滤，调低 config.MIN_YEAR；")
+        print(f"       如果确认是同名作者误归，可放心过滤。")
+    if dropped_by_id:
+        print(f"[filter] 按 ID 黑名单过滤掉 {len(dropped_by_id)} 篇")
+    if dropped_by_kw:
+        print(f"[filter] 按标题关键词过滤掉 {len(dropped_by_kw)} 篇")
+
+    # 额外的可疑提示：即使通过过滤，也标注一些可能误归的论文
+    _suggest_suspicious(kept)
+
+    print(f"[filter] 过滤后剩余 {len(kept)} 篇")
+    return kept
+
+
+def _suggest_suspicious(pubs: list[Pub]) -> None:
+    """检查剩余论文，提示可能误归的（基于：作者列表里没有已知的实验室成员/合作者）"""
+    # 已知的 Dr. Duan 合作者关键词（姓即可）
+    known_collaborators = [
+        "duan", "li", "guan", "ren", "sun", "cheng", "ma", "chen", "zou",
+        "yin", "wang", "zhang", "zheng", "zhou", "yu", "gu", "xu", "peng",
+        "lin", "hou", "jiang", "xiao", "yan", "jiao", "kong", "ji", "wei",
+        "yang", "song", "zhao", "cao", "liu", "mu", "dai", "ge",
+    ]
+
+    suspicious = []
+    for p in pubs:
+        # 把作者列表小写化
+        authors_lower = p.authors.lower()
+        # 如果作者列表里一个已知合作者都没匹配到，就可疑
+        if not any(c in authors_lower for c in known_collaborators):
+            suspicious.append(p)
+
+    if suspicious:
+        print(f"[filter] 以下 {len(suspicious)} 篇的作者列表看起来不像 Dr. Duan 圈子，")
+        print("         如果是误归，可以加到 config.EXCLUDE_WORK_IDS：")
+        for p in suspicious[:10]:
+            print(f"    ? [{p.year}] {p.oa_id}: {p.title[:80]}")
+            print(f"      作者: {p.authors[:120]}")
 
 
 # =============================================================================
@@ -300,14 +492,16 @@ def bold_authors(authors_str: str) -> str:
 
 
 # =============================================================================
-#  HTML 片段生成
+#  渲染：Pub 对象 → <li> HTML
 # =============================================================================
 
 def render_li(pub: Pub) -> str:
-    """把一篇论文渲染成 <li>…</li> 片段"""
+    """把一篇论文渲染成 <li>…</li> 片段。
+    加 data-src 属性标记为脚本生成，下次运行时可被覆盖更新。
+    """
     authors_html = bold_authors(pub.authors)
 
-    # 标题部分：有链接就加链接，没链接就纯文本
+    # 标题部分
     if pub.url:
         title_html = f'<a href="{pub.url}">"{pub.title},"</a>'
     else:
@@ -321,14 +515,19 @@ def render_li(pub: Pub) -> str:
         venue_bits.append(str(pub.year))
     venue_html = ", ".join(venue_bits) + "." if venue_bits else ""
 
-    # Download 链接（如果有 pub_url）
+    # 如果是正式发表版本但也有 arXiv 版，附加 arXiv 链接
+    extras = ""
+    if not pub.is_preprint and pub.arxiv_id:
+        extras += f' (arXiv: <a href="https://arxiv.org/abs/{pub.arxiv_id}">{pub.arxiv_id}</a>)'
+
+    # Download 链接
     download_html = ""
     if pub.pub_url:
         download_html = f'&nbsp;&nbsp;&nbsp;&nbsp;<a href="{pub.pub_url}">Download</a>'
 
     return (
-        '<li style="text-align: justify;"> '
-        f'{authors_html}, {title_html} {venue_html}{download_html}'
+        f'<li style="text-align: justify;" data-src="openalex:{pub.oa_id}" data-year="{pub.year or ""}"> '
+        f'{authors_html}, {title_html} {venue_html}{extras}{download_html}'
         '</li>'
     )
 
@@ -344,34 +543,70 @@ SECTION_MAP = {
     "ArXiv Papers": "arxiv",
     "Conference Papers": "conference",
 }
-
-# 脚本管理区块的标记注释。只有在这对注释之间的条目会被脚本覆盖/更新，
-# 手动写的条目留在注释外面不会被动。
-BEGIN_MARK = "<!-- AUTO-SCHOLAR-BEGIN -->"
-END_MARK = "<!-- AUTO-SCHOLAR-END -->"
+# 反向映射
+CATEGORY_TO_SECTION = {v: k for k, v in SECTION_MAP.items()}
 
 
-def extract_existing_keys(soup: BeautifulSoup) -> set[str]:
-    """从现有 HTML 里提取所有论文的标题作为去重 key（用于避免自动区重复添加手动条目）"""
-    keys = set()
-    for li in soup.find_all("li"):
-        text = li.get_text(" ", strip=True)
-        # 提取引号里的标题
-        m = re.search(r'["\u201c\u201d]([^"\u201c\u201d]{10,})["\u201c\u201d]', text)
-        if m:
-            t = re.sub(r"\W+", "", m.group(1).lower())
-            keys.add(f"title:{t}")
-    return keys
+def _normalize_title(text: str) -> str:
+    """从任意字符串提取规范化标题 key"""
+    return re.sub(r"\W+", "", text.lower())
+
+
+def _extract_title_from_li(li) -> Optional[str]:
+    """从 <li> 里提取引号包围的论文标题"""
+    text = li.get_text(" ", strip=True)
+    # 匹配 "..."  或 "..." (英文卷曲引号)
+    m = re.search(r'["\u201c]([^"\u201c\u201d]{10,})["\u201d"]', text)
+    if m:
+        return m.group(1).strip().rstrip(",").strip()
+    return None
+
+
+def _extract_year_from_li(li) -> Optional[int]:
+    """从 <li> 里抽取最可能的发表年份（1990-2099 的四位数）"""
+    # 优先读 data-year
+    if li.has_attr("data-year") and li["data-year"].isdigit():
+        return int(li["data-year"])
+    text = li.get_text(" ", strip=True)
+    years = [int(y) for y in re.findall(r"\b(19[89]\d|20\d{2})\b", text)]
+    if years:
+        # 取最大的，因为发表年份通常是 li 里最晚的年份
+        return max(years)
+    return None
+
+
+def parse_existing_entries(soup: BeautifulSoup) -> dict[str, list[ExistingEntry]]:
+    """解析现有 HTML 里所有区块的所有 <li> 条目"""
+    result: dict[str, list[ExistingEntry]] = {s: [] for s in SECTION_MAP}
+
+    for section_name in SECTION_MAP:
+        ol = find_section_ol(soup, section_name)
+        if ol is None:
+            continue
+        for li in ol.find_all("li", recursive=True):
+            title = _extract_title_from_li(li)
+            if not title:
+                # 没有可识别标题的 li（注释、空 li 等）跳过
+                continue
+            year = _extract_year_from_li(li)
+            is_auto = li.has_attr("data-src") and li["data-src"].startswith("openalex:")
+            entry = ExistingEntry(
+                title_key=_normalize_title(title),
+                year=year,
+                raw_html=str(li),
+                section=section_name,
+                is_auto=is_auto,
+            )
+            result[section_name].append(entry)
+
+    return result
 
 
 def find_section_ol(soup: BeautifulSoup, section_name: str):
-    """找到指定 h2 下方的 <ol> 元素。
-    如果只有 <ul> 没有嵌套 <ol>（如 ArXiv Papers 区块），就在 <ul> 里自动建一个空 <ol>。
-    """
+    """找到指定 h2 下方的 <ol>。如果只有 <ul> 没 <ol>，就地建一个。"""
     for header in soup.find_all("header"):
         h2 = header.find("h2")
         if h2 and h2.get_text(strip=True) == section_name:
-            # 往下找第一个 <ul> 或 <ol>
             node = header
             for _ in range(10):
                 node = node.find_next_sibling()
@@ -379,11 +614,9 @@ def find_section_ol(soup: BeautifulSoup, section_name: str):
                     break
                 if not hasattr(node, "find"):
                     continue
-                # 优先找直接的 <ol>
                 ol = node.find("ol") if node.name != "ol" else node
                 if ol:
                     return ol
-                # 找到了 <ul> 但里面没 <ol>：就地建一个
                 if node.name == "ul":
                     new_ol = soup.new_tag("ol")
                     node.append(new_ol)
@@ -391,55 +624,137 @@ def find_section_ol(soup: BeautifulSoup, section_name: str):
     return None
 
 
+def dedupe_pub_versions(pubs: list[Pub]) -> list[Pub]:
+    """OpenAlex 内部去重：同一论文的 preprint 和发表版本合并。
+    
+    规则：
+    - 按 title_key 分组
+    - 每组保留优先级最高的一个：非 preprint > preprint
+    - 如果保留的是非 preprint 且同组有 preprint 带 arxiv_id，把 arxiv_id 合并过去
+    """
+    groups: dict[str, list[Pub]] = {}
+    for p in pubs:
+        groups.setdefault(p.title_key(), []).append(p)
+
+    merged_count = 0
+    result: list[Pub] = []
+    for key, group in groups.items():
+        if len(group) == 1:
+            result.append(group[0])
+            continue
+
+        # 优先选非 preprint 的（如有多个，选年份最新的）
+        non_preprints = [p for p in group if not p.is_preprint]
+        preprints = [p for p in group if p.is_preprint]
+
+        if non_preprints:
+            chosen = max(non_preprints, key=lambda p: p.year or 0)
+            # 从 preprint 版本补充 arxiv_id（如果发表版没有）
+            if not chosen.arxiv_id:
+                for pp in preprints:
+                    if pp.arxiv_id:
+                        chosen.arxiv_id = pp.arxiv_id
+                        break
+        else:
+            chosen = max(preprints, key=lambda p: p.year or 0)
+
+        result.append(chosen)
+        merged_count += len(group) - 1
+
+    if merged_count:
+        print(f"[dedupe] 合并了 {merged_count} 个 preprint/重复版本")
+    return result
+
+
 def update_html(pubs: list[Pub], html_path: Path, dry_run: bool = False) -> None:
-    """把论文按分类插入到 publications.html 对应区块"""
+    """接管整个 HTML，合并现有条目 + OpenAlex 新论文，去重，按年份重排"""
     print(f"[html] 读取 {html_path}")
     html = html_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "lxml")
 
-    existing_keys = extract_existing_keys(soup)
-    print(f"[html] 现有论文条目 {len(existing_keys)} 条")
+    # ---- Step 1: OpenAlex 内部去重（preprint ↔ 已发表） ----
+    pubs = dedupe_pub_versions(pubs)
+    print(f"[dedupe] OpenAlex 去重后剩 {len(pubs)} 篇")
 
-    # 按分类分组 + 按年份降序
-    by_category: dict[str, list[Pub]] = {}
+    # ---- Step 2: 解析现有 HTML ----
+    existing_by_section = parse_existing_entries(soup)
+    existing_total = sum(len(v) for v in existing_by_section.values())
+    print(f"[html] 现有条目 {existing_total} 条")
+    for s, entries in existing_by_section.items():
+        n_auto = sum(1 for e in entries if e.is_auto)
+        print(f"  [{s}] 共 {len(entries)}（自动 {n_auto}，手写 {len(entries) - n_auto}）")
+
+    # ---- Step 3: 分类 OpenAlex pubs ----
     for p in pubs:
         p.category = categorize(p)
-        by_category.setdefault(p.category, []).append(p)
-    for cat in by_category:
-        by_category[cat].sort(key=lambda x: (x.year or 0), reverse=True)
 
-    added_count = 0
-    for section_title, cat_key in SECTION_MAP.items():
-        ol = find_section_ol(soup, section_title)
+    # 所有现有 entries 按 title_key 建索引（用于查重）
+    existing_by_key: dict[str, ExistingEntry] = {}
+    for entries in existing_by_section.values():
+        for e in entries:
+            # 多个相同 title_key 时保留第一个（通常手写优先）
+            if e.title_key not in existing_by_key:
+                existing_by_key[e.title_key] = e
+
+    # ---- Step 4: 构建每个 section 的最终条目列表 ----
+    # final_by_section[section] = list of (year, raw_html)
+    final_by_section: dict[str, list[tuple[Optional[int], str]]] = {s: [] for s in SECTION_MAP}
+
+    # 先把现有条目都加进去（保留在原 section）
+    # 自动条目会在下一步被 OpenAlex 数据覆盖更新
+    for section_name, entries in existing_by_section.items():
+        for e in entries:
+            if not e.is_auto:
+                # 手写条目：原封不动保留
+                final_by_section[section_name].append((e.year, e.raw_html))
+
+    # 处理 OpenAlex 条目
+    stats = {"new": 0, "updated": 0, "kept_existing": 0}
+    for pub in pubs:
+        target_section = CATEGORY_TO_SECTION.get(pub.category, "Journal")
+
+        if pub.title_key() in existing_by_key:
+            existing = existing_by_key[pub.title_key()]
+            if existing.is_auto:
+                # 自动条目：用 OpenAlex 最新数据覆盖（放到新 section，可能与原不同）
+                final_by_section[target_section].append((pub.year, render_li(pub)))
+                stats["updated"] += 1
+            else:
+                # 手写条目：保留，但已在上面加过了，这里跳过
+                stats["kept_existing"] += 1
+        else:
+            # 全新论文
+            final_by_section[target_section].append((pub.year, render_li(pub)))
+            stats["new"] += 1
+
+    print(f"[merge] 新增 {stats['new']} / 更新 {stats['updated']} / 保留手写 {stats['kept_existing']}")
+
+    # ---- Step 5: 按年份降序排序每个 section，然后重建 <ol> ----
+    for section_name, items in final_by_section.items():
+        items.sort(key=lambda x: (x[0] or 0), reverse=True)
+
+        ol = find_section_ol(soup, section_name)
         if ol is None:
-            print(f"[html] 警告：找不到区块 <h2>{section_title}</h2>，跳过")
+            print(f"[html] 警告：找不到区块 {section_name}，跳过")
             continue
 
-        # 找/建自动管理区
-        auto_block = _get_or_create_auto_block(ol, soup)
+        # 清空整个 ol
+        ol.clear()
 
-        # 清空自动区
-        for child in list(auto_block["content"]):
-            child.extract()
-
-        section_pubs = by_category.get(cat_key, [])
-        added_here = 0
-        for pub in section_pubs:
-            if pub.key() in existing_keys:
-                continue  # 手动区已有，不重复
-            li_html = render_li(pub)
+        # 重新插入，每个 li 前加换行和缩进
+        indent = "\n\t\t\t\t\t\t\t\t\t\t\t\t"
+        for year, li_html in items:
+            ol.append(indent)
             li_soup = BeautifulSoup(li_html, "lxml")
-            # lxml 会包 html/body，取真正的 <li>
             li_tag = li_soup.find("li")
             if li_tag:
-                auto_block["end_mark"].insert_before(li_tag)
-                auto_block["end_mark"].insert_before("\n\t\t\t\t\t\t\t\t\t\t\t")
-                added_here += 1
+                ol.append(li_tag)
+        ol.append("\n\t\t\t\t\t\t\t\t\t\t\t")
 
-        print(f"[html] [{section_title}] 自动添加 {added_here} 条")
-        added_count += added_here
+        print(f"[html] [{section_name}] 重建完成，共 {len(items)} 条")
 
-    print(f"[html] 总共新增/更新 {added_count} 条自动条目")
+    # ---- Step 6: 插入"最后更新时间"标记 ----
+    _update_last_updated_stamp(soup)
 
     if dry_run:
         print("[dry-run] 未写入文件")
@@ -453,9 +768,9 @@ def update_html(pubs: list[Pub], html_path: Path, dry_run: bool = False) -> None
     shutil.copy2(html_path, backup_path)
     print(f"[backup] 已备份到 {backup_path}")
 
-    # 清理旧备份，只保留最近 10 个
+    # 清理旧备份，只保留最近 5 份
     backups = sorted(backup_dir.glob("publications.*.html"))
-    for old in backups[:-10]:
+    for old in backups[:-5]:
         old.unlink()
 
     # 写回
@@ -463,40 +778,28 @@ def update_html(pubs: list[Pub], html_path: Path, dry_run: bool = False) -> None
     print(f"[html] 已更新 {html_path}")
 
 
-def _get_or_create_auto_block(ol, soup):
-    """在 <ol> 里找到（或创建）自动管理区域标记对
-    返回 dict: { 'begin_mark': Comment, 'end_mark': Comment, 'content': [...] }
+def _update_last_updated_stamp(soup: BeautifulSoup) -> None:
+    """在 publications.html 显眼位置放一个"最后更新时间"的小标注。
+    查找 id="last-updated" 的元素；如果没找到，就在第一个 <article> 开头创建一个。
     """
-    from bs4 import Comment
+    stamp_text = f"Last updated: {datetime.now().strftime('%Y-%m-%d')} (auto-synced from OpenAlex)"
 
-    begin = None
-    end = None
-    for c in ol.children:
-        if isinstance(c, Comment):
-            s = c.string.strip() if c.string else ""
-            if s == BEGIN_MARK.strip("<!- >"):
-                begin = c
-            elif s == END_MARK.strip("<!- >"):
-                end = c
+    existing = soup.find(id="last-updated")
+    if existing is not None:
+        existing.clear()
+        existing.string = stamp_text
+        return
 
-    if begin is None or end is None:
-        # 创建一对标记，插到 ol 末尾
-        begin = Comment(" AUTO-SCHOLAR-BEGIN ")
-        end = Comment(" AUTO-SCHOLAR-END ")
-        ol.append("\n\t\t\t\t\t\t\t\t\t\t")
-        ol.append(begin)
-        ol.append("\n")
-        ol.append(end)
-        ol.append("\n\t\t\t\t\t\t\t\t\t")
-
-    # 收集两标记之间的内容
-    content = []
-    node = begin.next_sibling
-    while node is not None and node is not end:
-        content.append(node)
-        node = node.next_sibling
-
-    return {"begin_mark": begin, "end_mark": end, "content": content}
+    # 没有，就创建一个并插到第一个 <article> 开头
+    article = soup.find("article")
+    if article is None:
+        return
+    p = soup.new_tag("p", id="last-updated",
+                     style="font-size: 0.85em; color: #888; margin-bottom: 1em;")
+    p.string = stamp_text
+    # 插到 article 最前面
+    article.insert(0, p)
+    article.insert(1, "\n\t\t\t\t\t\t\t")
 
 
 # =============================================================================

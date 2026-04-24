@@ -30,6 +30,24 @@ AUTHOR_INSTITUTION_HINTS = [
     "Beijing Institute",
 ]
 
+# ============ 论文过滤（OpenAlex 作者消歧不完美，需要过滤）============
+# OpenAlex 可能把同名不同人的论文归到一个 author ID 下（比如 2001 年研究原子
+# 扩散的另一个 J. Duan）。下面的规则用来排除这些误入的论文。
+
+# 规则 1：最早年份。早于这个年份的论文直接排除。
+# Dr. Duan 的学术生涯从约 2017 年开始，设 2016 足够安全。
+MIN_YEAR = 2016
+
+# 规则 2：机构过滤。要求论文里 Dr. Duan 对应的 authorship 必须关联至少一个
+# 下列关键词的机构。设为 True 启用，设为 False 关闭（机构信息不全时会误杀）。
+REQUIRE_INSTITUTION_MATCH = True
+# 复用上面的 AUTHOR_INSTITUTION_HINTS
+
+# 规则 3：手动黑名单。如果发现误入论文，把它的 OpenAlex work ID 加到这里。
+# work ID 可以从 OpenAlex 页面 URL 看到，形如 "W1234567890"
+# 示例：EXCLUDE_OA_IDS = ["W2060123456", "W2100999999"]
+EXCLUDE_OA_IDS = []
+
 # ============ OpenAlex 礼貌池配置 ============
 # 在请求中带上 email 会进入 "polite pool"，响应更快。
 # 可以留空，但填了更好，建议填实验室联系邮箱
@@ -40,6 +58,31 @@ SCHOLAR_USER_ID = "jaofXZIAAAAJ"
 
 # ============ 抓取控制 ============
 MAX_PUBLICATIONS = 500
+
+# 最小发表年份。早于这个年份的论文会被过滤掉。
+# 用途：OpenAlex 的作者消歧偶尔会出错，把其他同名作者（"J. Duan"）的论文
+# 错归到 Dr. Duan 名下。Dr. Jingliang Duan 的学术生涯从约 2017 年开始，
+# 所以设为 2016 可以过滤掉绝大部分误归。
+# 设为 0 或 None 表示不过滤。
+MIN_YEAR = 2016
+
+# 显式屏蔽列表（两种方式，任选或组合）
+# ---
+# 1. 按 OpenAlex work ID 屏蔽（精确，推荐）
+# 首次跑完后看日志，把误归论文的 W 开头 ID 复制到这里即可
+EXCLUDE_WORK_IDS = [
+    # 示例：
+    # "W2068472093",  # W. Recker et al., Travel Demand Model, 2008（不是本 Duan）
+    # "W2035826671",  # J. Duan et al., Self-Diffusion in Ni Al, 2001（不是本 Duan）
+]
+
+# 2. 按标题关键词屏蔽（命中即过滤，大小写不敏感）
+# 适合：不想一个个贴 ID 时，用主题关键词一网打尽
+EXCLUDE_TITLE_KEYWORDS = [
+    # 示例（这些明显不是 Dr. Duan 的方向）：
+    # "travel demand",
+    # "self-diffusion",
+]
 
 # ============ 作者名字加粗规则 ============
 # 这些名字出现在作者列表中时会被自动加粗 <b>...</b>
