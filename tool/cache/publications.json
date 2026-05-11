@@ -1,5 +1,35 @@
 [
   {
+    "title": "Real-time distributed predictive control of connected vehicles by neural approximation",
+    "authors": "S. Wu, Q. Ge, <b>J. Duan</b>, G. Sartoretti, S. W. Li, L. Yao, G. Zhan, X. Zhang, S. Zheng",
+    "venue": "Transportation Research Part C Emerging Technologies",
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.trc.2026.105722",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W7160608502",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1016/j.trc.2026.105722",
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
+  },
+  {
+    "title": "iLQR-based hierarchical trajectory tracking control for underground articulated vehicles",
+    "authors": "X. Cao, Y. Zhang, S. Wu, C. Zou, M. Guo, F. Ma, L. Zheng, L. Gao, <b>J. Duan</b>",
+    "venue": "Tunnelling and Underground Space Technology",
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.tust.2026.107750",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W7160529372",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1016/j.tust.2026.107750",
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
+  },
+  {
     "title": "On the Optimization Landscape of Observer-based Dynamic Linear Quadratic Control",
     "authors": "<b>J. Duan</b>, J. Li, Y. Ma, L. Tang, G. Li, L. Zhang, S. E. Li, L. Zhao",
     "venue": "arXiv preprint arXiv:arxiv.2604.10635",
