@@ -135,6 +135,21 @@
     "source_type": "repository"
   },
   {
+    "title": "DIK: A Diffusion Inverse Kinematics Method of Robot Manipulators",
+    "authors": "J. Wu, W. Zou, Y. Ma, H. Yan, J. Zhao, Y. Wang, S. W. Li, <b>J. Duan</b>",
+    "venue": "IEEE/ASME Transactions on Mechatronics",
+    "year": 2026,
+    "url": "https://doi.org/10.1109/tmech.2026.3688180",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W7161238191",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1109/tmech.2026.3688180",
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
+  },
+  {
     "title": "Mixed Policy Gradient for Accelerated Reinforcement Learning with Performance Enhancement",
     "authors": "Y. Guan, J. Li, <b>J. Duan</b>, J. Gao, Y. Ma, B. Cheng, S. E. Li",
     "venue": "arXiv preprint",
