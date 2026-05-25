@@ -150,6 +150,21 @@
     "source_type": "journal"
   },
   {
+    "title": "Reinforcement Learning-Enhanced Adaptive Sliding Mode Control for Wheeled Mobile Robot Trajectory Tracking",
+    "authors": "Y. Ju, H. Yan, M. Guo, B. Yang, Y. Yang, J. Liu, L. Zheng, <b>J. Duan</b>",
+    "venue": "Lecture notes in electrical engineering",
+    "year": 2026,
+    "url": "https://doi.org/10.1007/978-981-95-9354-5_19",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W7161767855",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1007/978-981-95-9354-5_19",
+    "arxiv_id": null,
+    "work_type": "book-chapter",
+    "source_type": "book series"
+  },
+  {
     "title": "Mixed Policy Gradient for Accelerated Reinforcement Learning with Performance Enhancement",
     "authors": "Y. Guan, J. Li, <b>J. Duan</b>, J. Gao, Y. Ma, B. Cheng, S. E. Li",
     "venue": "arXiv preprint",
