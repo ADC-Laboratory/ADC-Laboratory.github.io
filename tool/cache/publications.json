@@ -1,5 +1,35 @@
 [
   {
+    "title": "FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion",
+    "authors": "G. Lu, Y. Dun, Y. Zhou, L. I. Tao, <b>J. Duan</b>, J. Li, G. Li",
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://openalex.org/W7167154715",
+    "pub_url": "https://arxiv.org/pdf/2606.31691",
+    "category": "",
+    "oa_id": "W7167154715",
+    "is_preprint": true,
+    "doi": null,
+    "arxiv_id": "2606.31691",
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
+    "title": "FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion",
+    "authors": "G. Lu, Y. Dun, Y. Zhou, L. I. Tao, <b>J. Duan</b>, J. Li, G. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2606.31691",
+    "year": 2026,
+    "url": "https://doi.org/10.48550/arxiv.2606.31691",
+    "pub_url": "https://doi.org/10.48550/arxiv.2606.31691",
+    "category": "",
+    "oa_id": "W7166819629",
+    "is_preprint": true,
+    "doi": "https://doi.org/10.48550/arxiv.2606.31691",
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
     "title": "Real-time distributed predictive control of connected vehicles by neural approximation",
     "authors": "S. Wu, Q. Ge, <b>J. Duan</b>, G. Sartoretti, S. W. Li, L. Yao, G. Zhan, X. Zhang, S. Zheng",
     "venue": "Transportation Research Part C Emerging Technologies",
@@ -56,7 +86,7 @@
     "is_preprint": true,
     "doi": null,
     "arxiv_id": "2604.10635",
-    "work_type": "article",
+    "work_type": "preprint",
     "source_type": "repository"
   },
   {
@@ -116,7 +146,7 @@
     "is_preprint": true,
     "doi": null,
     "arxiv_id": "2602.15620",
-    "work_type": "article",
+    "work_type": "preprint",
     "source_type": "repository"
   },
   {
