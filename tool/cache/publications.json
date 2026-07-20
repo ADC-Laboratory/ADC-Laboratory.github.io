@@ -152,16 +152,16 @@
   {
     "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
     "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, <b>J. Duan</b>, S. E. Li",
-    "venue": "arXiv preprint arXiv:arxiv.2602.15620",
+    "venue": "Open MIND",
     "year": 2026,
     "url": "https://doi.org/10.48550/arxiv.2602.15620",
     "pub_url": null,
     "category": "",
     "oa_id": "W7130361034",
-    "is_preprint": true,
+    "is_preprint": false,
     "doi": "https://doi.org/10.48550/arxiv.2602.15620",
     "arxiv_id": null,
-    "work_type": "preprint",
+    "work_type": "article",
     "source_type": "repository"
   },
   {
@@ -191,7 +191,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1007/978-981-95-9354-5_19",
     "arxiv_id": null,
-    "work_type": "book-chapter",
+    "work_type": "conference-paper",
     "source_type": "book series"
   },
   {
@@ -221,7 +221,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cdc57313.2025.11312093",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -236,7 +236,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc60802.2025.11423690",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -266,7 +266,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cvci66304.2025.11348183",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -356,7 +356,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iv64158.2025.11097380",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -371,7 +371,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iv64158.2025.11097749",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -461,7 +461,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/b978-0-443-14081-5.00026-x",
     "arxiv_id": null,
-    "work_type": "book-chapter",
+    "work_type": "reference-entry",
     "source_type": "ebook platform"
   },
   {
@@ -596,7 +596,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1016/b978-0-443-14081-5.00043-x",
     "arxiv_id": null,
-    "work_type": "book-chapter",
+    "work_type": "reference-entry",
     "source_type": "ebook platform"
   },
   {
@@ -626,7 +626,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iavvc63304.2024.10786444",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -641,7 +641,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iros58592.2024.10802721",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -796,7 +796,7 @@
   },
   {
     "title": "Diffusion Actor-Critic with Entropy Regulator",
-    "authors": "<b>J. Duan</b>, Y. Jiang, S. E. Li, T. Liu, X. Song, L. Wang, W. Wang, Y. Wang, J. Wu, X. Liming, W. Zou",
+    "authors": "Y. Wang, Y. Jiang, S. E. Li, T. Liu, X. Song, L. Wang, W. Wang, X. Liming, J. Wu, <b>J. Duan</b>, S. E. Li",
     "venue": "Advances in Neural Information Processing Systems 37",
     "year": 2024,
     "url": "https://doi.org/10.52202/079017-1717",
@@ -806,7 +806,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.52202/079017-1717",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -926,7 +926,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icus58632.2023.10318393",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -956,7 +956,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1609/aaai.v37i6.25865",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -971,7 +971,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.23919/acc55779.2023.10156372",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1076,7 +1076,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cdc51059.2022.9992814",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -1091,7 +1091,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/cdc51059.2022.9992503",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -1136,7 +1136,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icus55513.2022.9986954",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -1241,7 +1241,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.23919/ccc55666.2022.9902759",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -1256,7 +1256,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.23919/acc53348.2022.9867384",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -1316,7 +1316,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icccr54399.2022.9790288",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1436,7 +1436,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc48978.2021.9564576",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1472,16 +1472,16 @@
   {
     "title": "Separated Proportional-Integral Lagrangian for Chance Constrained Reinforcement Learning",
     "authors": "B. Peng, Y. Mu, <b>J. Duan</b>, Y. Guan, S. E. Li, J. Chen",
-    "venue": "arXiv preprint",
+    "venue": "2021 IEEE Intelligent Vehicles Symposium (IV)",
     "year": 2021,
     "url": "https://doi.org/10.1109/iv48863.2021.9575205",
     "pub_url": "https://arxiv.org/pdf/2102.08539",
     "category": "",
     "oa_id": "W3133255192",
-    "is_preprint": true,
+    "is_preprint": false,
     "doi": "https://doi.org/10.1109/iv48863.2021.9575205",
     "arxiv_id": "2102.08539",
-    "work_type": "preprint",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1661,7 +1661,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icccr49711.2021.9349412",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1691,7 +1691,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/icus50048.2020.9274944",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": "conference"
   },
   {
@@ -1706,7 +1706,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc45102.2020.9294300",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1721,7 +1721,7 @@
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/itsc45102.2020.9294262",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "conference-paper",
     "source_type": ""
   },
   {
@@ -1843,6 +1843,21 @@
     "arxiv_id": "1911.11397",
     "work_type": "preprint",
     "source_type": "repository"
+  },
+  {
+    "title": "Promoting connected and automated vehicles with cooperative sensing and control technology",
+    "authors": "S. E. Li, X. Long, C. Liu, <b>J. Duan</b>, Y. Bian",
+    "venue": "Institution of Engineering and Technology eBooks",
+    "year": 2019,
+    "url": "https://doi.org/10.1049/pbtr025e_ch23",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W3005406119",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1049/pbtr025e_ch23",
+    "arxiv_id": null,
+    "work_type": "book-chapter",
+    "source_type": "ebook platform"
   },
   {
     "title": "Generalized Policy Iteration for Optimal Control in Continuous Time.",
