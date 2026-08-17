@@ -167,16 +167,16 @@
   {
     "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
     "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, <b>J. Duan</b>, S. E. Li",
-    "venue": "Open MIND",
+    "venue": "arXiv preprint arXiv:arxiv.2602.15620",
     "year": 2026,
     "url": "https://doi.org/10.48550/arxiv.2602.15620",
-    "pub_url": null,
+    "pub_url": "https://doi.org/10.48550/arxiv.2602.15620",
     "category": "",
     "oa_id": "W7130361034",
-    "is_preprint": false,
+    "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2602.15620",
     "arxiv_id": null,
-    "work_type": "article",
+    "work_type": "preprint",
     "source_type": "repository"
   },
   {
