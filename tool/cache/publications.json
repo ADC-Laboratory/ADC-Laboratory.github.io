@@ -17,21 +17,6 @@
   {
     "title": "FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion",
     "authors": "G. Lu, Y. Dun, Y. Zhou, L. I. Tao, <b>J. Duan</b>, J. Li, G. Li",
-    "venue": "arXiv preprint",
-    "year": 2026,
-    "url": "https://openalex.org/W7167154715",
-    "pub_url": "https://arxiv.org/pdf/2606.31691",
-    "category": "",
-    "oa_id": "W7167154715",
-    "is_preprint": true,
-    "doi": null,
-    "arxiv_id": "2606.31691",
-    "work_type": "preprint",
-    "source_type": "repository"
-  },
-  {
-    "title": "FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion",
-    "authors": "G. Lu, Y. Dun, Y. Zhou, L. I. Tao, <b>J. Duan</b>, J. Li, G. Li",
     "venue": "arXiv preprint arXiv:arxiv.2606.31691",
     "year": 2026,
     "url": "https://doi.org/10.48550/arxiv.2606.31691",
@@ -41,6 +26,21 @@
     "is_preprint": true,
     "doi": "https://doi.org/10.48550/arxiv.2606.31691",
     "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
+    "title": "FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion",
+    "authors": "G. Lu, Y. Dun, Y. Zhou, L. I. Tao, <b>J. Duan</b>, J. Li, G. Li",
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://openalex.org/W7167154715",
+    "pub_url": "https://arxiv.org/pdf/2606.31691",
+    "category": "",
+    "oa_id": "W7167154715",
+    "is_preprint": true,
+    "doi": null,
+    "arxiv_id": "2606.31691",
     "work_type": "preprint",
     "source_type": "repository"
   },
@@ -152,6 +152,21 @@
   {
     "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
     "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, <b>J. Duan</b>, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2602.15620",
+    "year": 2026,
+    "url": "https://doi.org/10.48550/arxiv.2602.15620",
+    "pub_url": "https://doi.org/10.48550/arxiv.2602.15620",
+    "category": "",
+    "oa_id": "W7130361034",
+    "is_preprint": true,
+    "doi": "https://doi.org/10.48550/arxiv.2602.15620",
+    "arxiv_id": null,
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
+    "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
+    "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, <b>J. Duan</b>, S. E. Li",
     "venue": "arXiv preprint",
     "year": 2026,
     "url": "https://openalex.org/W7130617831",
@@ -165,16 +180,16 @@
     "source_type": "repository"
   },
   {
-    "title": "STAPO: Stabilizing Reinforcement Learning for LLMs by Silencing Rare Spurious Tokens",
-    "authors": "S. Liu, Z. He, G. Zhan, L. Tao, Z. Zheng, J. Wu, Y. Wang, Y. Guan, K. Sheng, B. Zhang, K. Li, <b>J. Duan</b>, S. E. Li",
-    "venue": "arXiv preprint arXiv:arxiv.2602.15620",
+    "title": "Mixed Policy Gradient for Accelerated Reinforcement Learning with Performance Enhancement",
+    "authors": "Y. Guan, J. Li, <b>J. Duan</b>, J. Gao, Y. Ma, B. Cheng, S. E. Li",
+    "venue": "arXiv preprint",
     "year": 2026,
-    "url": "https://doi.org/10.48550/arxiv.2602.15620",
-    "pub_url": "https://doi.org/10.48550/arxiv.2602.15620",
+    "url": "https://doi.org/10.2139/ssrn.6277047",
+    "pub_url": "https://doi.org/10.2139/ssrn.6277047",
     "category": "",
-    "oa_id": "W7130361034",
+    "oa_id": "W7130699649",
     "is_preprint": true,
-    "doi": "https://doi.org/10.48550/arxiv.2602.15620",
+    "doi": "https://doi.org/10.2139/ssrn.6277047",
     "arxiv_id": null,
     "work_type": "preprint",
     "source_type": "repository"
@@ -208,21 +223,6 @@
     "arxiv_id": null,
     "work_type": "conference-paper",
     "source_type": "book series"
-  },
-  {
-    "title": "Mixed Policy Gradient for Accelerated Reinforcement Learning with Performance Enhancement",
-    "authors": "Y. Guan, J. Li, <b>J. Duan</b>, J. Gao, Y. Ma, B. Cheng, S. E. Li",
-    "venue": "arXiv preprint",
-    "year": 2026,
-    "url": "https://doi.org/10.2139/ssrn.6277047",
-    "pub_url": "https://doi.org/10.2139/ssrn.6277047",
-    "category": "",
-    "oa_id": "W7130699649",
-    "is_preprint": true,
-    "doi": "https://doi.org/10.2139/ssrn.6277047",
-    "arxiv_id": null,
-    "work_type": "preprint",
-    "source_type": "repository"
   },
   {
     "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
@@ -360,21 +360,6 @@
     "source_type": "journal"
   },
   {
-    "title": "Enhanced DACER Algorithm with Multimodal Q-value Distribution for Risk-Sensitive Stochastic Vehicle Environments",
-    "authors": "T. Liu, X. Song, Y. Wang, W. Zou, B. Shuai, H. Gao, W. He, <b>J. Duan</b>, S. E. Li",
-    "venue": "2025 IEEE Intelligent Vehicles Symposium (IV)",
-    "year": 2025,
-    "url": "https://doi.org/10.1109/iv64158.2025.11097380",
-    "pub_url": null,
-    "category": "",
-    "oa_id": "W4413018597",
-    "is_preprint": false,
-    "doi": "https://doi.org/10.1109/iv64158.2025.11097380",
-    "arxiv_id": null,
-    "work_type": "conference-paper",
-    "source_type": ""
-  },
-  {
     "title": "Distributional Soft Actor-Critic with Harmonic Gradient for Safe and Efficient Autonomous Driving in Multi-Lane Scenarios",
     "authors": "F. Zhang, G. Zhan, B. Shuai, T. Zhang, <b>J. Duan</b>, S. E. Li",
     "venue": "2025 IEEE Intelligent Vehicles Symposium (IV)",
@@ -385,6 +370,21 @@
     "oa_id": "W4413018168",
     "is_preprint": false,
     "doi": "https://doi.org/10.1109/iv64158.2025.11097749",
+    "arxiv_id": null,
+    "work_type": "conference-paper",
+    "source_type": ""
+  },
+  {
+    "title": "Enhanced DACER Algorithm with Multimodal Q-value Distribution for Risk-Sensitive Stochastic Vehicle Environments",
+    "authors": "T. Liu, X. Song, Y. Wang, W. Zou, B. Shuai, H. Gao, W. He, <b>J. Duan</b>, S. E. Li",
+    "venue": "2025 IEEE Intelligent Vehicles Symposium (IV)",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/iv64158.2025.11097380",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W4413018597",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1109/iv64158.2025.11097380",
     "arxiv_id": null,
     "work_type": "conference-paper",
     "source_type": ""
@@ -540,21 +540,6 @@
     "source_type": "repository"
   },
   {
-    "title": "Tractor Semi-Trailer Off-Tracking and Stability Approximate Bi-Level Policy Optimization",
-    "authors": "F. Zhang, <b>J. Duan</b>, H. Liu, X. Cao, S. Nie, C. Guo, Y. Xie, J. Ma, S. Wang",
-    "venue": "IEEE Transactions on Automation Science and Engineering",
-    "year": 2025,
-    "url": "https://doi.org/10.1109/tase.2025.3600553",
-    "pub_url": null,
-    "category": "",
-    "oa_id": "W4413318836",
-    "is_preprint": false,
-    "doi": "https://doi.org/10.1109/tase.2025.3600553",
-    "arxiv_id": null,
-    "work_type": "article",
-    "source_type": "journal"
-  },
-  {
     "title": "Off-Road Distributed-Drive Electric Vehicle Trajectory Tracking Control with Constrained Transformer Mpc",
     "authors": "F. Zhang, S. Wu, Y. Zhang, H. Liu, S. Nie, <b>J. Duan</b>, R. Liu, C. Xiang",
     "venue": "arXiv preprint",
@@ -568,6 +553,21 @@
     "arxiv_id": null,
     "work_type": "preprint",
     "source_type": "repository"
+  },
+  {
+    "title": "Tractor Semi-Trailer Off-Tracking and Stability Approximate Bi-Level Policy Optimization",
+    "authors": "F. Zhang, <b>J. Duan</b>, H. Liu, X. Cao, S. Nie, C. Guo, Y. Xie, J. Ma, S. Wang",
+    "venue": "IEEE Transactions on Automation Science and Engineering",
+    "year": 2025,
+    "url": "https://doi.org/10.1109/tase.2025.3600553",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W4413318836",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1109/tase.2025.3600553",
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Conformal Symplectic Optimization for Stable Reinforcement Learning",
@@ -810,19 +810,19 @@
     "source_type": "journal"
   },
   {
-    "title": "Diffusion Actor-Critic with Entropy Regulator",
-    "authors": "Y. Wang, L. Wang, Y. Jiang, W. Zou, T. Liu, X. Song, W. Wang, X. Liming, J. Wu, <b>J. Duan</b>, S. E. Li",
-    "venue": "Advances in Neural Information Processing Systems 37",
+    "title": "Fuel-efficient predictive cruise control using the explicit MPC method for commercial vehicles",
+    "authors": "F. Zhang, <b>J. Duan</b>, Y. Yin, C. Jiao, G. Xie, C. Zhang, S. E. Li, Z. Xin",
+    "venue": "International Journal of Vehicle Design",
     "year": 2024,
-    "url": "https://doi.org/10.52202/079017-1717",
-    "pub_url": null,
+    "url": "https://doi.org/10.1504/ijvd.2024.140432",
+    "pub_url": "https://doi.org/10.1504/ijvd.2024.140432",
     "category": "",
-    "oa_id": "W4415797600",
+    "oa_id": "W4401461207",
     "is_preprint": false,
-    "doi": "https://doi.org/10.52202/079017-1717",
+    "doi": "https://doi.org/10.1504/ijvd.2024.140432",
     "arxiv_id": null,
-    "work_type": "conference-paper",
-    "source_type": ""
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Safe Integrated Control of Drill Boom in Hole-Seeking Task Via Reinforcement Learning",
@@ -840,19 +840,19 @@
     "source_type": "repository"
   },
   {
-    "title": "Fuel-efficient predictive cruise control using the explicit MPC method for commercial vehicles",
-    "authors": "F. Zhang, <b>J. Duan</b>, Y. Yin, C. Jiao, G. Xie, C. Zhang, S. E. Li, Z. Xin",
-    "venue": "International Journal of Vehicle Design",
+    "title": "Diffusion Actor-Critic with Entropy Regulator",
+    "authors": "Y. Wang, L. Wang, Y. Jiang, W. Zou, T. Liu, X. Song, W. Wang, X. Liming, J. Wu, <b>J. Duan</b>, S. E. Li",
+    "venue": "Advances in Neural Information Processing Systems 37",
     "year": 2024,
-    "url": "https://doi.org/10.1504/ijvd.2024.140432",
-    "pub_url": "https://doi.org/10.1504/ijvd.2024.140432",
+    "url": "https://doi.org/10.52202/079017-1717",
+    "pub_url": null,
     "category": "",
-    "oa_id": "W4401461207",
+    "oa_id": "W4415797600",
     "is_preprint": false,
-    "doi": "https://doi.org/10.1504/ijvd.2024.140432",
+    "doi": "https://doi.org/10.52202/079017-1717",
     "arxiv_id": null,
-    "work_type": "article",
-    "source_type": "journal"
+    "work_type": "conference-paper",
+    "source_type": ""
   },
   {
     "title": "RL-Driven MPPI: Accelerating Online Control Laws Calculation With Offline Policy",
@@ -1395,21 +1395,6 @@
     "source_type": "journal"
   },
   {
-    "title": "Self-learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
-    "authors": "Y. Ren, J. Jiang, D. Yu, S. E. Li, <b>J. Duan</b>, C. Chen, K. Li",
-    "venue": "arXiv preprint arXiv:arxiv.2110.12359",
-    "year": 2021,
-    "url": "https://doi.org/10.48550/arxiv.2110.12359",
-    "pub_url": "https://arxiv.org/pdf/2110.12359",
-    "category": "",
-    "oa_id": "W4306315223",
-    "is_preprint": true,
-    "doi": "https://doi.org/10.48550/arxiv.2110.12359",
-    "arxiv_id": "2110.12359",
-    "work_type": "preprint",
-    "source_type": "repository"
-  },
-  {
     "title": "Encoding Integrated Decision and Control for Autonomous Driving with Mixed Traffic Flow.",
     "authors": "Y. Ren, J. Jiang, <b>J. Duan</b>, S. E. Li, D. Yu, G. Zhan",
     "venue": "",
@@ -1423,6 +1408,21 @@
     "arxiv_id": null,
     "work_type": "article",
     "source_type": ""
+  },
+  {
+    "title": "Self-learned Intelligence for Integrated Decision and Control of Automated Vehicles at Signalized Intersections",
+    "authors": "Y. Ren, J. Jiang, D. Yu, S. E. Li, <b>J. Duan</b>, C. Chen, K. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2110.12359",
+    "year": 2021,
+    "url": "https://doi.org/10.48550/arxiv.2110.12359",
+    "pub_url": "https://arxiv.org/pdf/2110.12359",
+    "category": "",
+    "oa_id": "W4306315223",
+    "is_preprint": true,
+    "doi": "https://doi.org/10.48550/arxiv.2110.12359",
+    "arxiv_id": "2110.12359",
+    "work_type": "preprint",
+    "source_type": "repository"
   },
   {
     "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
