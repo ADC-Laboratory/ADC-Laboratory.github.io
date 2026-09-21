@@ -1,5 +1,35 @@
 [
   {
+    "title": "Past, Future, All at Once: Mitigating Stability-Plasticity Dilemma via Post-hoc JANUS Rectification",
+    "authors": "Z. Zheng, L. Tao, Y. Guan, Y. Yang, W. Xiong, K. Sheng, B. Zhang, <b>J. Duan</b>, K. Li, S. E. Li",
+    "venue": "arXiv preprint",
+    "year": 2026,
+    "url": "https://openalex.org/W7213675639",
+    "pub_url": "https://arxiv.org/pdf/2609.19985",
+    "category": "",
+    "oa_id": "W7213675639",
+    "is_preprint": true,
+    "doi": null,
+    "arxiv_id": "2609.19985",
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
+    "title": "Beyond Token-Local Imitation: Reward-Compatible Temporal Credit Assignment for On-Policy Distillation",
+    "authors": "S. Liu, Z. He, L. Tao, G. Zhan, J. Gao, F. Zhang, <b>J. Duan</b>, W. Xiong, K. Sheng, B. Zhang, Y. Guan, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2609.16937",
+    "year": 2026,
+    "url": "https://doi.org/10.48550/arxiv.2609.16937",
+    "pub_url": "https://arxiv.org/pdf/2609.16937",
+    "category": "",
+    "oa_id": "W7213411194",
+    "is_preprint": true,
+    "doi": "https://doi.org/10.48550/arxiv.2609.16937",
+    "arxiv_id": "2609.16937",
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
     "title": "Recent Advances of Reinforcement Learning Algorithms for Autonomous Driving System",
     "authors": "B. Shuai, M. Hua, L. Tao, Z. Zheng, Y. Yang, Y. Guan, L. He, <b>J. Duan</b>, J. Gao, S. Feng, X. Zhan, J. Yu, Y. Yu, H. Zhang, S. E. Li",
     "venue": "Communications in Transportation Research",
