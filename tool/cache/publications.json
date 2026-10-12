@@ -287,7 +287,7 @@
   {
     "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
     "authors": "T. Zhang, P. Yuan, G. Zhan, Z. Lin, Y. Lyu, Z. Qin, <b>J. Duan</b>, L. Zhang, S. E. Li",
-    "venue": "2025 IEEE 64th Conference on Decision and Control (CDC)",
+    "venue": "Proceedings of the IEEE Conference on Decision & Control, including the Symposium on Adaptive Processes",
     "year": 2025,
     "url": "https://doi.org/10.1109/cdc57313.2025.11312093",
     "pub_url": null,
@@ -297,12 +297,12 @@
     "doi": "https://doi.org/10.1109/cdc57313.2025.11312093",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Distributional Soft Actor-Critic with Diffusion Policy",
     "authors": "T. Liu, Y. Wang, X. Song, W. Zou, L. Chen, L. Wang, B. Shuai, <b>J. Duan</b>, C. Liu",
-    "venue": "2025 IEEE 28th International Conference on Intelligent Transportation Systems (ITSC)",
+    "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)",
     "year": 2025,
     "url": "https://doi.org/10.1109/itsc60802.2025.11423690",
     "pub_url": null,
@@ -312,7 +312,7 @@
     "doi": "https://doi.org/10.1109/itsc60802.2025.11423690",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Mind Your Entropy: From Maximum Entropy to Trajectory Entropy-Constrained RL",
@@ -332,7 +332,7 @@
   {
     "title": "Generative Reinforcement Learning for Multimodal Trajectory Planning in Autonomous Driving",
     "authors": "W. Zou, L. Tao, Y. Wang, X. Zhang, B. Shuai, <b>J. Duan</b>, S. E. Li",
-    "venue": "2025 9th CAA International Conference on Vehicular Control and Intelligence (CVCI)",
+    "venue": "CAA International Conference on Vehicular Control and Intelligence (CVCI)",
     "year": 2025,
     "url": "https://doi.org/10.1109/cvci66304.2025.11348183",
     "pub_url": null,
@@ -342,7 +342,7 @@
     "doi": "https://doi.org/10.1109/cvci66304.2025.11348183",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Hierarchical MPC-based safe shared control for forward collision avoidance in collaborative driving",
@@ -392,7 +392,7 @@
   {
     "title": "Distributional Soft Actor-Critic with Harmonic Gradient for Safe and Efficient Autonomous Driving in Multi-Lane Scenarios",
     "authors": "F. Zhang, G. Zhan, B. Shuai, T. Zhang, <b>J. Duan</b>, S. E. Li",
-    "venue": "2025 IEEE Intelligent Vehicles Symposium (IV)",
+    "venue": "IEEE Intelligent Vehicles Symposium",
     "year": 2025,
     "url": "https://doi.org/10.1109/iv64158.2025.11097749",
     "pub_url": null,
@@ -402,12 +402,12 @@
     "doi": "https://doi.org/10.1109/iv64158.2025.11097749",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Enhanced DACER Algorithm with Multimodal Q-value Distribution for Risk-Sensitive Stochastic Vehicle Environments",
     "authors": "T. Liu, X. Song, Y. Wang, W. Zou, B. Shuai, H. Gao, W. He, <b>J. Duan</b>, S. E. Li",
-    "venue": "2025 IEEE Intelligent Vehicles Symposium (IV)",
+    "venue": "IEEE Intelligent Vehicles Symposium",
     "year": 2025,
     "url": "https://doi.org/10.1109/iv64158.2025.11097380",
     "pub_url": null,
@@ -417,7 +417,7 @@
     "doi": "https://doi.org/10.1109/iv64158.2025.11097380",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Towards robust motion control in multi-source uncertain scenarios by robust policy iteration",
@@ -602,7 +602,7 @@
   {
     "title": "Off-policy Reinforcement Learning with Model-based Exploration Augmentation",
     "authors": "L. Wang, X. Zhang, Y. Wang, G. Zhan, W. Wang, H. Gao, <b>J. Duan</b>, S. E. Li",
-    "venue": "Advances in Neural Information Processing Systems 38",
+    "venue": "neural information processing systems",
     "year": 2025,
     "url": "https://doi.org/10.52202/085713-3083",
     "pub_url": null,
@@ -612,7 +612,7 @@
     "doi": "https://doi.org/10.52202/085713-3083",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Conformal Symplectic Optimization for Stable Reinforcement Learning",
@@ -677,7 +677,7 @@
   {
     "title": "Driving at Realistic Urban Intersections with Adversarial Reinforcement Learning",
     "authors": "Y. Ren, L. Tao, <b>J. Duan</b>, H. Li, B. Jiang, S. E. Li",
-    "venue": "2024 IEEE International Automated Vehicle Validation Conference (IAVVC)",
+    "venue": "IEEE International Automated Vehicle Validation Conference (IAVVC)",
     "year": 2024,
     "url": "https://doi.org/10.1109/iavvc63304.2024.10786444",
     "pub_url": null,
@@ -687,12 +687,12 @@
     "doi": "https://doi.org/10.1109/iavvc63304.2024.10786444",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Guiding Reinforcement Learning with Incomplete System Dynamics",
     "authors": "S. Wang, <b>J. Duan</b>, N. P. Lawrence, P. D. Loewen, M. G. Forbes, R. B. Gopaluni, L. Zhang",
-    "venue": "2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+    "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
     "year": 2024,
     "url": "https://doi.org/10.1109/iros58592.2024.10802721",
     "pub_url": null,
@@ -702,7 +702,7 @@
     "doi": "https://doi.org/10.1109/iros58592.2024.10802721",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Smooth Filtering Neural Network for Reinforcement Learning",
@@ -887,7 +887,7 @@
   {
     "title": "Diffusion Actor-Critic with Entropy Regulator",
     "authors": "Y. Wang, L. Wang, Y. Jiang, W. Zou, T. Liu, X. Song, W. Wang, X. Liming, J. Wu, <b>J. Duan</b>, S. E. Li",
-    "venue": "Advances in Neural Information Processing Systems 37",
+    "venue": "neural information processing systems",
     "year": 2024,
     "url": "https://doi.org/10.52202/079017-1717",
     "pub_url": null,
@@ -897,7 +897,7 @@
     "doi": "https://doi.org/10.52202/079017-1717",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "RL-Driven MPPI: Accelerating Online Control Laws Calculation With Offline Policy",
@@ -977,7 +977,7 @@
   {
     "title": "Integrated Drill Boom Hole-Seeking Control via Reinforcement Learning",
     "authors": "H. Yan, H. Xu, H. Gao, F. Ma, S. E. Li, <b>J. Duan</b>",
-    "venue": "2023 IEEE International Conference on Unmanned Systems (ICUS)",
+    "venue": "IEEE International Conference on Unmanned Systems (ICUS)",
     "year": 2023,
     "url": "https://doi.org/10.1109/icus58632.2023.10318393",
     "pub_url": null,
@@ -987,7 +987,7 @@
     "doi": "https://doi.org/10.1109/icus58632.2023.10318393",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Global Convergence of Two-Timescale Actor-Critic for Solving Linear Quadratic Regulator",
@@ -1007,7 +1007,7 @@
   {
     "title": "Continuous-Time Policy Optimization",
     "authors": "G. Zhan, Y. Jiang, <b>J. Duan</b>, S. E. Li, B. Cheng, K. Li",
-    "venue": "2023 American Control Conference (ACC)",
+    "venue": "Proceedings of the ... American Control Conference/Proceedings of the American Control Conference",
     "year": 2023,
     "url": "https://doi.org/10.23919/acc55779.2023.10156372",
     "pub_url": null,
@@ -1017,7 +1017,7 @@
     "doi": "https://doi.org/10.23919/acc55779.2023.10156372",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Improve generalization of driving policy at signalized intersections with adversarial learning",
@@ -1112,7 +1112,7 @@
   {
     "title": "Primal-Dual Estimator Learning Method with Feasibility and Near-Optimality Guarantees",
     "authors": "W. Cao, <b>J. Duan</b>, S. E. Li, C. Chen, C. Liu, Y. Wang",
-    "venue": "2022 IEEE 61st Conference on Decision and Control (CDC)",
+    "venue": "Proceedings of the IEEE Conference on Decision & Control, including the Symposium on Adaptive Processes",
     "year": 2022,
     "url": "https://doi.org/10.1109/cdc51059.2022.9992814",
     "pub_url": null,
@@ -1127,7 +1127,7 @@
   {
     "title": "On the Optimization Landscape of Dynamic Output Feedback: A Case Study for Linear Quadratic Regulator",
     "authors": "<b>J. Duan</b>, W. Cao, Y. Zheng, L. F. Zhao",
-    "venue": "2022 IEEE 61st Conference on Decision and Control (CDC)",
+    "venue": "Proceedings of the IEEE Conference on Decision & Control, including the Symposium on Adaptive Processes",
     "year": 2022,
     "url": "https://doi.org/10.1109/cdc51059.2022.9992503",
     "pub_url": null,
@@ -1172,7 +1172,7 @@
   {
     "title": "Distributed Model Predictive Control of Connected Multi-Vehicle Systems at Unsignalized Intersections",
     "authors": "Q. Ge, G. Sartoretti, <b>J. Duan</b>, S. E. Li, Y. Yin, S. Zheng",
-    "venue": "2022 IEEE International Conference on Unmanned Systems (ICUS)",
+    "venue": "IEEE International Conference on Unmanned Systems (ICUS)",
     "year": 2022,
     "url": "https://doi.org/10.1109/icus55513.2022.9986954",
     "pub_url": null,
@@ -1277,7 +1277,7 @@
   {
     "title": "Point Instance Segmentation Considering Feature Enhancement for Lane Detection",
     "authors": "B. C. Zhao, X. Li, H. Li, C. Chen, Y. Ren, <b>J. Duan</b>",
-    "venue": "2022 41st Chinese Control Conference (CCC)",
+    "venue": "Chinese Control Conference (CCC)",
     "year": 2022,
     "url": "https://doi.org/10.23919/ccc55666.2022.9902759",
     "pub_url": null,
@@ -1292,7 +1292,7 @@
   {
     "title": "Optimization Landscape of Gradient Descent for Discrete-time Static Output Feedback",
     "authors": "<b>J. Duan</b>, J. Li, S. E. Li, L. F. Zhao",
-    "venue": "2022 American Control Conference (ACC)",
+    "venue": "Proceedings of the ... American Control Conference/Proceedings of the American Control Conference",
     "year": 2022,
     "url": "https://doi.org/10.23919/acc53348.2022.9867384",
     "pub_url": "https://arxiv.org/pdf/2109.13132",
@@ -1352,7 +1352,7 @@
   {
     "title": "Applications of Distributional Soft Actor-Critic in Real-world Autonomous Driving",
     "authors": "<b>J. Duan</b>, F. Zhang, S. E. Li, Y. Ren, B. Cheng, Z. Xin",
-    "venue": "2022 2nd International Conference on Computer, Control and Robotics (ICCCR)",
+    "venue": "International Conference on Computer, Control and Robotics (ICCCR)",
     "year": 2022,
     "url": "https://doi.org/10.1109/icccr54399.2022.9790288",
     "pub_url": null,
@@ -1362,7 +1362,7 @@
     "doi": "https://doi.org/10.1109/icccr54399.2022.9790288",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Recurrent Model Predictive Control: Learning an Explicit Recurrent Controller for Nonlinear Systems",
@@ -1487,7 +1487,7 @@
   {
     "title": "Separated Proportional-Integral Lagrangian for Chance Constrained Reinforcement Learning",
     "authors": "B. Peng, Y. Mu, <b>J. Duan</b>, Y. Guan, S. E. Li, J. Chen",
-    "venue": "2021 IEEE Intelligent Vehicles Symposium (IV)",
+    "venue": "IEEE Intelligent Vehicles Symposium",
     "year": 2021,
     "url": "https://doi.org/10.1109/iv48863.2021.9575205",
     "pub_url": "https://arxiv.org/pdf/2102.08539",
@@ -1497,7 +1497,7 @@
     "doi": "https://doi.org/10.1109/iv48863.2021.9575205",
     "arxiv_id": "2102.08539",
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Cover: International Journal of Intelligent Systems, Volume 36 Issue 8 August 2021",
@@ -1652,7 +1652,7 @@
   {
     "title": "Solving Finite-Horizon HJB for Optimal Control of Continuous-Time Systems",
     "authors": "Z. Lin, <b>J. Duan</b>, S. E. Li, J. Li, H. Ma, Q. Sun, J. Chen, B. Cheng",
-    "venue": "2021 International Conference on Computer, Control and Robotics (ICCCR)",
+    "venue": "International Conference on Computer, Control and Robotics (ICCCR)",
     "year": 2021,
     "url": "https://doi.org/10.1109/icccr49711.2021.9349412",
     "pub_url": null,
@@ -1662,7 +1662,7 @@
     "doi": "https://doi.org/10.1109/icccr49711.2021.9349412",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Reinforced Optimal Estimator",
@@ -1682,7 +1682,7 @@
   {
     "title": "Continuous-time finite-horizon ADP for automated vehicle controller design with high efficiency",
     "authors": "Z. Lin, <b>J. Duan</b>, S. E. Li, H. Ma, Y. Yin, B. Cheng",
-    "venue": "2020 3rd International Conference on Unmanned Systems (ICUS)",
+    "venue": "International Conference on Unmanned Systems (ICUS)",
     "year": 2020,
     "url": "https://doi.org/10.1109/icus50048.2020.9274944",
     "pub_url": null,
@@ -1697,7 +1697,7 @@
   {
     "title": "Improving Generalization of Reinforcement Learning with Minimax Distributional Soft Actor-Critic",
     "authors": "Y. Ren, <b>J. Duan</b>, S. E. Li, Y. Guan, Q. Sun",
-    "venue": "2020 IEEE 23rd International Conference on Intelligent Transportation Systems (ITSC)",
+    "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)",
     "year": 2020,
     "url": "https://doi.org/10.1109/itsc45102.2020.9294300",
     "pub_url": null,
@@ -1707,12 +1707,12 @@
     "doi": "https://doi.org/10.1109/itsc45102.2020.9294300",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Safe Reinforcement Learning for Autonomous Vehicles through Parallel Constrained Policy Optimization",
     "authors": "L. Wen, <b>J. Duan</b>, S. E. Li, S. Xu, H. Peng",
-    "venue": "2020 IEEE 23rd International Conference on Intelligent Transportation Systems (ITSC)",
+    "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)",
     "year": 2020,
     "url": "https://doi.org/10.1109/itsc45102.2020.9294262",
     "pub_url": null,
@@ -1722,7 +1722,7 @@
     "doi": "https://doi.org/10.1109/itsc45102.2020.9294262",
     "arxiv_id": null,
     "work_type": "conference-paper",
-    "source_type": ""
+    "source_type": "conference"
   },
   {
     "title": "Ternary Policy Iteration Algorithm for Nonlinear Robust Control",
