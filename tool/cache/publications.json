@@ -1,5 +1,20 @@
 [
   {
+    "title": "World Action Critic (WAC) Model: Joint Foresight and Criticism for Policy Learning",
+    "authors": "X. Zhang, H. Liu, Y. Guan, <b>J. Duan</b>, Y. Lyu, T. Zhang, S. Zhang, K. Sheng, B. Zhang, S. E. Li",
+    "venue": "arXiv preprint arXiv:arxiv.2610.22825",
+    "year": 2026,
+    "url": "https://doi.org/10.48550/arxiv.2610.22825",
+    "pub_url": "https://arxiv.org/pdf/2610.22825",
+    "category": "",
+    "oa_id": "W7222924149",
+    "is_preprint": true,
+    "doi": "https://doi.org/10.48550/arxiv.2610.22825",
+    "arxiv_id": "2610.22825",
+    "work_type": "preprint",
+    "source_type": "repository"
+  },
+  {
     "title": "Past, Future, All at Once: Mitigating Stability-Plasticity Dilemma via Post-hoc JANUS Rectification",
     "authors": "Z. Zheng, L. Tao, Y. Guan, Y. Yang, W. Xiong, K. Sheng, B. Zhang, <b>J. Duan</b>, K. Li, S. E. Li",
     "venue": "arXiv preprint",
