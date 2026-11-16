@@ -15,6 +15,21 @@
     "source_type": "journal"
   },
   {
+    "title": "Safe integrated control of drill boom in hole-seeking task via reinforcement learning",
+    "authors": "H. Yan, H. Xu, Y. Lyu, H. Wang, J. Wu, L. Gao, G. Li, F. Ma, <b>J. Duan</b>",
+    "venue": "Underground Space",
+    "year": 2026,
+    "url": "https://doi.org/10.1016/j.undsp.2026.09.010",
+    "pub_url": "https://www.sciencedirect.com/science/article/pii/S2467967426001340/pdf",
+    "category": "",
+    "oa_id": "W4405838356",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1016/j.undsp.2026.09.010",
+    "arxiv_id": null,
+    "work_type": "article",
+    "source_type": "journal"
+  },
+  {
     "title": "World Action Critic (WAC) Model: Joint Foresight and Criticism for Policy Learning",
     "authors": "X. Zhang, H. Liu, Y. Guan, <b>J. Duan</b>, Y. Lyu, T. Zhang, S. Zhang, K. Sheng, B. Zhang, S. E. Li",
     "venue": "arXiv preprint arXiv:arxiv.2610.22825",
@@ -165,6 +180,21 @@
     "source_type": "journal"
   },
   {
+    "title": "Reinforcement Learning-Enhanced Adaptive Sliding Mode Control for Wheeled Mobile Robot Trajectory Tracking",
+    "authors": "Y. Ju, H. Yan, M. Guo, B. Yang, Y. Yang, J. Liu, L. Zheng, <b>J. Duan</b>",
+    "venue": "Lecture notes in electrical engineering",
+    "year": 2026,
+    "url": "https://doi.org/10.1007/978-981-95-9354-5_19",
+    "pub_url": null,
+    "category": "",
+    "oa_id": "W7161767855",
+    "is_preprint": false,
+    "doi": "https://doi.org/10.1007/978-981-95-9354-5_19",
+    "arxiv_id": null,
+    "work_type": "conference-paper",
+    "source_type": "book series"
+  },
+  {
     "title": "On the Optimization Landscape of Observer-based Dynamic Linear Quadratic Control",
     "authors": "<b>J. Duan</b>, J. Li, Y. Ma, L. Tang, G. Li, L. Zhang, S. E. Li, L. Zhao",
     "venue": "arXiv preprint arXiv:arxiv.2604.10635",
@@ -270,19 +300,19 @@
     "source_type": "journal"
   },
   {
-    "title": "Reinforcement Learning-Enhanced Adaptive Sliding Mode Control for Wheeled Mobile Robot Trajectory Tracking",
-    "authors": "Y. Ju, H. Yan, M. Guo, B. Yang, Y. Yang, J. Liu, L. Zheng, <b>J. Duan</b>",
-    "venue": "Lecture notes in electrical engineering",
+    "title": "Foresight-Aware Reinforcement Learning for Infinite-Horizon Optimal Tracking Control",
+    "authors": "L. Tao, J. Li, <b>J. Duan</b>, S. E. Li, H. Li, L. Wu, K. Zhou, D. Zhang, X. Wang",
+    "venue": "IEEE Transactions on Control Systems Technology",
     "year": 2026,
-    "url": "https://doi.org/10.1007/978-981-95-9354-5_19",
-    "pub_url": null,
+    "url": "https://doi.org/10.1109/tcst.2026.3747302",
+    "pub_url": "https://doi.org/10.1109/tcst.2026.3747302",
     "category": "",
-    "oa_id": "W7161767855",
+    "oa_id": "W7225801739",
     "is_preprint": false,
-    "doi": "https://doi.org/10.1007/978-981-95-9354-5_19",
+    "doi": "https://doi.org/10.1109/tcst.2026.3747302",
     "arxiv_id": null,
-    "work_type": "conference-paper",
-    "source_type": "book series"
+    "work_type": "article",
+    "source_type": "journal"
   },
   {
     "title": "Predictive Lagrangian Optimization for Constrained Reinforcement Learning",
@@ -450,21 +480,6 @@
     "source_type": "journal"
   },
   {
-    "title": "Reinforcement Learning for Industrial Control: From Toolkit Development to Practical Applications",
-    "authors": "<b>J. Duan</b>, W. Wang, Y. Lyu, X. Zhang, X. Song, L. Xiao, S. E. Li",
-    "venue": "Elsevier eBooks",
-    "year": 2025,
-    "url": "https://doi.org/10.1016/b978-0-443-14081-5.00026-x",
-    "pub_url": null,
-    "category": "",
-    "oa_id": "W4409059820",
-    "is_preprint": false,
-    "doi": "https://doi.org/10.1016/b978-0-443-14081-5.00026-x",
-    "arxiv_id": null,
-    "work_type": "reference-entry",
-    "source_type": "ebook platform"
-  },
-  {
     "title": "Feasible Policy Iteration With Guaranteed Safe Exploration",
     "authors": "Y. Zhang, Y. Yang, S. E. Li, Y. Lyu, <b>J. Duan</b>, Z. Zheng, D. Zhang",
     "venue": "IEEE Transactions on Cybernetics",
@@ -583,21 +598,6 @@
     "arxiv_id": null,
     "work_type": "article",
     "source_type": "journal"
-  },
-  {
-    "title": "Data-Driven Safe Learning and Control with Safety Certificates",
-    "authors": "H. Ma, Y. Yang, W. Zou, G. Zhan, Z. Zheng, <b>J. Duan</b>, B. Shuai, C. Chen, S. E. Li",
-    "venue": "Elsevier eBooks",
-    "year": 2024,
-    "url": "https://doi.org/10.1016/b978-0-443-14081-5.00043-x",
-    "pub_url": null,
-    "category": "",
-    "oa_id": "W4404130614",
-    "is_preprint": false,
-    "doi": "https://doi.org/10.1016/b978-0-443-14081-5.00043-x",
-    "arxiv_id": null,
-    "work_type": "reference-entry",
-    "source_type": "ebook platform"
   },
   {
     "title": "Driving at Realistic Urban Intersections with Adversarial Reinforcement Learning",
@@ -763,21 +763,6 @@
     "arxiv_id": null,
     "work_type": "article",
     "source_type": "journal"
-  },
-  {
-    "title": "Safe Integrated Control of Drill Boom in Hole-Seeking Task Via Reinforcement Learning",
-    "authors": "H. Yan, H. Xu, Y. Lyu, J. Wu, L. Gao, G. Li, <b>J. Duan</b>, F. Ma",
-    "venue": "arXiv preprint",
-    "year": 2024,
-    "url": "https://doi.org/10.2139/ssrn.5073824",
-    "pub_url": "https://doi.org/10.2139/ssrn.5073824",
-    "category": "",
-    "oa_id": "W4405838356",
-    "is_preprint": true,
-    "doi": "https://doi.org/10.2139/ssrn.5073824",
-    "arxiv_id": null,
-    "work_type": "preprint",
-    "source_type": "repository"
   },
   {
     "title": "Diffusion Actor-Critic with Entropy Regulator",
